@@ -10,9 +10,9 @@ reg=require("./Services/registerAPI")
 search=require("./Services/searchAPI")
 mob = require("./Services/mobileAPI")
 
-app.use(exp.static(__dirname + '/dist/Ecommerce'));
+app.use(exp.static(__dirname + '/dist/ecommerce'));
 app.get('/*',(req,res)=>{
-    res.sendFile(path.join(__dirname + '/dist/Ecommerce/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/ecommerce/index.html'));
 })
 
 app.use("/category",cat)
