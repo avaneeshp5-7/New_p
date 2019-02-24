@@ -1,0 +1,26 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+.spn{
+    margin: 5px;
+}
+.fas{
+   border-radius: 4px 0px 0px 4px;color: white;background-color: rgb(0, 128, 128);width: 35px;height:36px;font-size: 17px;padding: 10px; 
+}
+.cartbtn{
+   border-radius: 0px;padding: 5px;color:white;margin-top: -6px;background-color: rgb(0, 128, 128);
+}
+
+/* #prospn{
+  border-radius:4px; border: 1px solid silver;width: 230px;box-shadow :0px 0px 5px black
+} */
+
+.img {
+   
+  transition: transform .4s;
+  margin: 0 auto;
+}
+
+.img:hover {
+  -ms-transform: scale(0.5); /* IE 9 */
+  -webkit-transform: scale(0.5); /* Safari 3-8 */
+  transform: scale(1.1); 
+}

@@ -1,0 +1,44 @@
+<div>
+<div class="row">
+  <div class="col-md-3" style="height:400px;margin-top: 11px">  
+    <img src="./assets/offer.jpg" class="ads" width="330px;" height="390px;" style="margin-left: 8px;" >
+  </div>
+  <div class="col" style="float: left ;">
+    <h5 class="" style="color:rgb(8, 5, 0);text-transform: uppercase;margin-left: 20px;font-weight: bold">New Product's</h5>
+      <span id="prospn12">
+          <span *ngFor="let pro of prodata" id="prospn">
+            <span class="spn" id="prospn1">
+                <span class="spn">
+                    <span>
+                       <img src="/assets/spnow.png" width="140px;" style="margin-left: 20px;margin-top: -42px;">
+                        <img src="/assets/MyImges/new p.gif" width="50px" style="margin-left: 167px;margin-top: -44px">
+                    </span>
+                    <img src="../../assets/uploads/{{pro.images}}" class="img" width="170px;" height="130" (click)="funDetail(pro._id)"
+                    style="cursor: pointer;margin-left: 15px;margin-top: -16px;"></span><br><br>
+              <span style="color:black;font-weight:bolder;font-size: 14px;text-align: justify;text-transform: uppercase;font-family: arial">&nbsp;&nbsp;&nbsp;&nbsp;{{pro.pname}}</span></span><br>
+              
+            <span class="spn">
+              <span style="color: rgb(55, 241, 18);font-size: 18px;">&nbsp;&nbsp;{{pro.pprice | currency: "INR"}}</span>
+            </span>
+            <br>
+            <span class="spn">
+              &nbsp; <span [ngStyle]="{backgroundColor:pro.pcolor,color:pro.pcolor}">. . . .  .</span>
+            </span>
+            <br>
+            <span class="spn">
+              <span style="color: rgb(230, 40, 49)">&nbsp; {{pro.pdesc}} </span>
+            </span>
+            <br>
+            &nbsp;&nbsp; 
+             <!-- <span id="spnbtn">
+              <i class="fa fa-shopping-cart fas"></i>
+              <button type="button"  class="btn btn-default cartbtn addcartbtn" (click)="funaddcart(pro)">
+                Add To Cart
+            </button>
+          </span> -->
+          </span>
+        </span>
+  </div>
+</div>
+</div><hr>
+<!-- Upcomming -->

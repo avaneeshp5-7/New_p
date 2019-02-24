@@ -1,0 +1,285 @@
+<body>
+ <!-- <app-header-menu></app-header-menu> -->
+  <div class="container-fluid" style="background-color:rgb(158, 198, 233);">
+    <div class="row">
+      <div class="col-md-2 col-sm-12 col-xm-12 ">
+        <img src="../assets/NGX_Logo2016_Wide.png" width="170" height="70px;">
+      </div>
+      <div class="col-md-4 col-sm-12 col-xm-12 "  >
+        <form action="" class="search-form">
+          <div class="form-group has-feedback">
+          <input type="text" (keyup)="search_keyup()"  class="form-control" name="search" id="search" placeholder="search" [(ngModel)]="txtsearch" (keyup)="fun_search_product()">
+        <div *ngIf="tmpforsearch" (mouseover)="search_keyup()"  style="background-color:white;overflow:auto;max-height:500px;z-index:1001;position:absolute;border-radius:10px;box-shadow:0px 2px 10px black;padding:5px;min-width:600px">
+        <img src="../assets/close.png" width="30px" (click)="fun_search_out()" style="position: fixed">
+        <br>
+          <div *ngFor="let ser of searchdata" style='padding:0px;cursor:pointer;background-color:honeydew' (mouseover)="fun_over_style(this)" (mouseout)="fun_out_style(this)" (click)="searchDetial(ser._id)">
+             <img src="../../assets/uploads/{{ser.images}}"style="float:right;width:100px;height:80px">
+           <h4 style="color:crimson"> {{ser.pname}}</h4>
+           <b> {{ser.pprice | currency:'INR'}}</b>
+            <span style="background-color:'{{ser.pcolor}}'">....</span>
+            <br>
+           <span style="color:darkslategray;font-size:15px"> {{ser.pdesc}}</span>
+            <hr>
+            </div>
+        </div>
+        </div>
+      </form>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xm-12">
+        <span class="fa fa-shopping-cart dropdown" data-toggle="dropdown" aria-hidden="true" style="width:50px;color:rgb(250, 242, 242);font-size:20px;float: right;margin-top:22px;cursor: pointer;background-color: plum;width: 30px;height: 30px;padding: 5px;margin-top: 18px;box-shadow: 0px 0px 8px #fff;border-radius: 4px;"> &nbsp;&nbsp;
+          &nbsp;
+         
+          <span class="dropdown-menu dropdown-menu-right text-center" style="width: auto;border-radius: 0px;margin-right: 50px;margin-top: 20px;box-shadow: 0px 0px 10px black;border-radius: 4px;">
+            <span class="dropdown-brand" href="#">
+              <h4>About Cart</h4>
+            </span>
+            <hr>
+              <input type="button" class="btn btn-primary" value="Clear Item" (click)="fun_clear_cart_detail()" style="border-radius: 0px; font-family: arial">    
+               <br><br>
+              <input type="button" class="btn btn-primary" value="Show Items" (click)="fun_cart_detail()" style="border-radius: 0px; font-family: arial">
+          </span>
+        </span>
+        <button class="text-center"  style="color:white;width: 30px;height: 30px; border-radius: 50%;background-color: rgb(34, 238, 85);border: 3px solid rgb(34, 238, 85); float: right;margin-top: 19px;margin-right:4px;box-shadow: 0px 0px 8px #fff;border-radius: 4px;"
+          (click)="fun_cart_detail()">
+          {{msg}}
+        </button>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-md  navbar-dark bg-dark">
+    <span class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </span>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a class="nav-link" href="#" style="color:white; font-size:15px;">Home</a>
+        </li>
+        <li class="nav-item dropdown" *ngFor="let cat of getcat">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color:white; font-size:15px;">
+            {{cat.cname}}
+          </a>
+          <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+            <li class="dropdown-submenu" *ngFor="let subcat of getsub">
+              <a class="dropdown-item" *ngIf="cat._id==subcat.catid">{{subcat.scatname}}</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item" *ngFor="let ssub of ssubdata">
+                  <a class="dropdown-item" [routerLink]="['/protemp', ssub]" *ngIf="subcat._id == ssub.scatid">{{ssub.subscatname}}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <form class="form-inline">
+      <span class="lgn_sup_btn">
+        <!-- *ngIf="login_display" -->
+        <i class="fa fa-user stl" style="color: mediumspringgreen"></i>&nbsp;&nbsp;
+        <span href="#myModal" class="trigger-btn spn" id="snupp"  data-toggle="modal" >SignUp</span>&nbsp;&nbsp;&nbsp;
+        <i class="fa fa-sign-in stl" style="color: mediumspringgreen"></i> &nbsp;&nbsp;
+        <span href="#myModal1" class="trigger-btn spn"  data-toggle="modal" >LogIn</span>
+      </span>
+      <span class="showwelcome">
+        <!--*ngIf="welcome_display" -->
+        
+        <span style="color:rgb(7, 138, 161)" *ngIf="dis">
+          Welcome
+          <span style="color:rgb(16, 215, 241)" (click)="showUserProfile()">{{fullname}}</span>
+          <span class="dropdown" title="User Profiles">
+            <a class="dropdown-toggle" data-toggle="dropdown" >
+            </a>
+            <div class="dropdown-menu dropdown-menu-right text-center  drpprof " style="margin-right:200px;" style="width: 250px;box-shadow: 0px 0px 10px black;" >
+              <span class="dropdown-brand" href="#"><i class="fa fa-user-circle" style="color: rgb(143, 160, 116);font-size: 40px;"></i></span>
+              <hr>
+              <a class="dropdown-item" href="#">{{fullname}}</a>
+              <a class="dropdown-item" href="#">{{contact}}</a> 
+              <a class="dropdown-item" href="#">{{email}}</a><br>
+              <button  class="btn btn-primary text-center" style="font-size:13px ;border-radius:0px;font-size: 16px;width: 164px" (click)="proedit(pp)"><i class="fa fa-edit"></i>&nbsp; Profile</button>&nbsp;&nbsp;
+              <button  class="btn btn-primary text-center" style="font-size:13px ;border-radius:0px;font-size: 16px;margin-top: 8px;" (click)="shopp_histry()"><i class="fa fa-folder-open"></i>&nbsp; Shopping Histry</button>&nbsp;&nbsp;
+              <button  class="btn btn-primary text-center" style="font-size:13px ;border-radius:0px;font-size: 16px ;width: 164px ;margin-top: 8px;margin-left: -8px;" (click)="logOut()"><i class="fa fa-sign-out"></i>&nbsp;LogOut</button>
+            <br><br>
+            </div>
+          </span>&nbsp;&nbsp;
+        </span>
+      </span>
+    </form>
+  </nav>
+  <!-- ======================== Registration Div =============== -->
+  <div>
+      <div id="myModal" class="modal fade text-center">
+          <div class="modal-dialog">
+            <div class="col-lg-12 col-sm-12 col-12 main-section">
+              <div class=" modal-content">
+                <div class="col-lg-12 col-sm-12 col-12 user-img"><br>
+                  <img src="assets/man.png" style="height: 60px;width: 70px"><br>
+                </div>
+                <div class="col-lg-12 col-sm-12 col-12 user-name"><br>
+                  <h2  style="color: aqua;font-family: Arial, Helvetica, sans-serif">Create New User</h2>
+                </div><br>
+                <div class="col-lg-12 col-sm-12 col-12 form-input">
+                    <form name="regfrm" #rfrm="ngForm">
+                        <div class="row">
+                          <div class="col-md-6 col-sm-12 col-xm-12 ">
+                            <!-- <span class="input-group-addon sett1">
+                              <i class="fa fa-user" style="background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:13px; "></i>
+                            </span> -->
+                            <input type="text" class="texbox" placeholder="First Name..." [(ngModel)]="fname" name="nn1" #reg1="ngModel" required>
+                          </div>
+                          <div class="col-md-6 col-sm-12 col-xm-12 ">
+                            <!-- <span class="input-group-addon sett">
+                              <i class="fa fa-user" style="background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:13px; "></i>
+                            </span> -->
+                            <input type="text" class="texbox" placeholder="Last Name..." [(ngModel)]="lname" name="nn2" #reg2="ngModel" required>
+                          </div>
+                        </div>
+                        <span *ngIf="reg1.errors && reg1.errors.required" class="regg">{{mm1}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span *ngIf="reg2.errors && reg2.errors.required" class="regg">{{mm2}}</span>
+                        <br>
+                        <div class="row">
+                          <div class="col-md-6 col-sm-12 col-xm-12">
+                            <!-- <span class="input-group-addon sett1">
+                              <i class="fa fa-envelope" style="background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:10px; "></i>
+                            </span> -->
+                            <input type="email" class="texbox" placeholder="Email ID..." [(ngModel)]="email" name="nn3" #reg3="ngModel" ng-Model email required 
+                            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                           
+                          </div>
+                          <div class="col-md-6 col-sm-12 col-xm-12">
+                            <!-- <span class="input-group-addon sett">
+                              <i class="fa fa-envelope" style="background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:10px; "></i>
+                            </span> -->
+                            <input type="text" class="texbox" placeholder="User ID..." [(ngModel)]="userid" name="nn4" #reg4="ngModel" required>
+                          </div>
+                        </div>
+                        <span *ngIf="reg3.errors && reg3.errors.pattern" style="color: rgb(246, 139, 180);;font-size: 12px;margin-left: -65px;">Invalid Email Id</span>
+                        <span *ngIf="reg3.errors && reg3.errors.required" class="regg">{{mm3}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span *ngIf="reg4.errors && reg4.errors.required" class="regg">{{mm4}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <br>
+                        <div class="row">
+                          <div class="col-md-6 col-sm-12 col-xm-12 ">
+                            <!-- <span class="input-group-addon sett1">
+                              <i class="fa fa-lock" style="background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:13px; "></i>
+                            </span> -->
+                            <input type="password" class="texbox" placeholder="Password..." [(ngModel)]="password" name="nn5" #reg5="ngModel" required>
+                          </div>
+                          <div class="col-md-6 col-sm-12 col-xm-12 ">
+                            <!-- <span class="input-group-addon sett">
+                              <i class="fa fa-lock" style="background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:13px; "></i>
+                            </span> -->
+                            <input type="password" class="texbox" placeholder="Re-Password.." [(ngModel)]="rpassword" (blur)="checkPass(password)" name="nn6" #reg6="ngModel" required>
+                          </div>
+                        </div>
+                        <span style="color: rgb(246, 139, 180);;font-size: 12px;margin-left: 0px;">{{psms}}</span>
+                        <span *ngIf="reg5.errors && reg5.errors.required" class="regg">{{mm5}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span *ngIf="reg6.errors && reg6.errors.required" class="regg">{{mm6}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <br>
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xm-12 ">
+                            <!-- <span class="input-group-addon sett1">
+                              <i class="fa fa-phone" style="background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:13px; "></i>
+                            </span> -->
+                            <input type="text" class="form-control tt" placeholder="Contact No.." [(ngModel)]="contact" name="nn7" #reg7="ngModel"
+                            pattern="[0-9]*" maxlength="10" required>
+                          </div>
+                        </div>
+                        <span *ngIf="reg7.errors && reg7.errors.required" class="regg">{{mm7}}</span>&nbsp;
+                        <span *ngIf="reg7.errors && reg7.errors.maxlength" class="regg">{{csms}}</span>
+                        <br>
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xm-12 ">
+                            <textarea type="text" class="form-control tt"  placeholder="Address Details..." [(ngModel)]="address" name="nn8" #reg8="ngModel" required></textarea>
+                          </div>
+                        </div>
+                        <span *ngIf="reg8.errors && reg8.errors.required" class="regg">{{mm8}}</span>
+                        <br>
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xm-12 ">
+                            <textarea type="text" class="form-control tt"  placeholder="Billing Address..." name="nn9" [(ngModel)]="saddress" name="nn9" #reg9="ngModel"
+                              required></textarea>
+                          </div>
+                        </div>
+                        <span *ngIf="reg9.errors && reg9.errors.required" class="regg" >{{mm9}}</span>
+                        <br>
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xm-12 ">
+                             
+                              <input type="button" value="Register" class="btn btn-success" style="border-radius: 0px;width:150px;float: right;"
+                                (click)="funRegister(rfrm)">
+                                <input type="button" value="Close" data-dismiss="modal" class="btn btn-danger" style="border-radius: 0px;float: right;margin-right: 7px;">
+                            </div>
+                        </div>
+                      </form>
+                </div>
+             <div class="container">
+                <!--  -->
+                </div>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+  </div>
+  <br>
+  <!-- ====================== End Registratio div ===================== -->
+  <!-- ======================== LogIn Div ================================= -->
+  <div class="logdiv text-center">
+   <div id="myModal1" class="modal fade text-center">
+          <div class="modal-dialog">
+            <div class="col-lg-12 col-sm-12 col-12 main-section">
+              <div class="modal-content">
+                <div class="col-lg-12 col-sm-12 col-12 user-img"><br>
+                  <img src="assets/man.png">
+                </div><br>
+                <div class="col-lg-12 col-sm-12 col-12 user-name">
+                  <h2 style="color: aqua;font-family: Arial, Helvetica, sans-serif">User LogIn</h2>
+                </div>
+                <div class="col-lg-12 col-sm-12 col-12 form-input text-center">
+                    <form name="frm1" #lform="ngForm">
+                        <div class="row text-center">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                              <br>
+                              <div>
+                                  <input type="text" class="form-control ltt" name="log1" [(ngModel)]="usrname" placeholder="Enter User ID" #up="ngModel"
+                                    required style="border-radius: 0px" />
+                              </div>
+                              <br>
+                                <div class="input-group text-center"> 
+                                  <input type="password" class="form-control ltt"  name="log2" [(ngModel)]="upass" placeholder="Enter Password" #uid="ngModel"
+                                    required style="border-radius: 0px ; width: 300px;" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <span *ngIf="up.errors && up.errors.required" class="valsp1">{{m1}}</span>
+                        <span *ngIf="uid.errors && uid.errors.required" class="valsp">{{m2}}</span>
+                        <br>
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <a (click)="funforgote()" style="color:rgb(176, 231, 213);cursor: pointer;" data-dismiss="modal">Fogot password ?</a>
+                            <input type="button" value="LogIn" class="btn btn-success lbtnn" (click)="funlog(lform)" style="float: right;">&nbsp;
+                            <input type="button" value="Close" class="btn btn-danger lbtnn" data-dismiss="modal" style="float: right;margin-right: 7px;" >
+                          </div>
+                        </div>
+                      </form>
+                </div>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  <!-- ======================================= End LogIn Div ========================== -->
+  <div>
+    <router-outlet>
+    </router-outlet>
+  </div>
+  <app-footer>
+  </app-footer>
+
+</body>

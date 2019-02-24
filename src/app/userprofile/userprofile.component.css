@@ -1,0 +1,13 @@
+.txt{
+    border-radius: 0px;
+    font-size: 20px;
+}
+.upbtn{
+    border-radius: 0px;     
+}
+.frmdiv{
+    border: 1px solid silver;
+    padding: 30px;
+    box-shadow:   0px 0px 8px rgb(156, 163, 155);
+    border-radius: 4px;
+}

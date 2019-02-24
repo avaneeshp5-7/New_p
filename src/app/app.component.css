@@ -1,0 +1,274 @@
+
+.nav-item
+{
+   
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+#im1{
+    width: 100%;
+    height: 300px;
+}
+
+.clr1{
+    color: white;
+}
+.bbtne{
+   border-radius: 0px;
+   background-color: red;
+
+}
+/*  */
+
+.frmdiv{
+    margin-left: 80px;
+}
+.texbox{
+    padding: 7px;
+    width:200px;
+    height: 39px;
+    border: 1px solid silver;
+    color: rgb(112, 32, 8);
+    font-size:22px;
+    /* font-weight:-500; */
+    font-family: French Script MT;
+}
+.area{
+    margin-left: 60px;
+    width: 520px;
+    color: rgb(112, 32, 8);
+    font-size: 12px;
+    /* font-weight:-500; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.sett1{
+    margin-left: 60px;
+}
+
+.valsp{
+    font-size: 12px;
+    color: rgb(246, 139, 180);
+    position:absolute;
+    left: 100px;
+    font-size:22px;
+    /* font-weight:-500; */
+    font-family: French Script MT;
+}
+.valsp1{
+    font-size: 12px;
+    color: rgb(246, 139, 180);
+    position:absolute;
+    left: 100px;
+    font-size:22px;
+    /* font-weight:-500; */
+    font-family: French Script MT;
+}
+
+.stl{
+    color: white;
+    font-size: 20px;
+    /* margin-left: -70px; */
+
+}
+.spn{
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tbox{
+    border-radius: 0px;
+    width: 200px;
+}
+.bbtnn{
+    width:100px;
+    border-radius: 0px;
+}
+
+.lbtn{
+    border-radius:0px;
+    width: 49px;
+    
+}
+
+.ssppnn{
+    margin-left: 100px;
+}
+.lbtnn{
+    width: 100px;
+    border-radius: 0px; 
+}
+
+.forrgot{
+    float: right;
+    margin-right: 50px; 
+}
+.awesom{
+    color: white;
+    background-color: #26A640;
+    font-size: 36px;
+    height: 45px;
+    width: 45px;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.awesom1{
+    color: white;
+    background-color: #26A640;
+    font-size: 25px;
+    height: 45px;
+    width: 45px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+
+.regg{
+
+    color: rgb(246, 139, 180);
+    /* font-size: 12px; */
+    font-size:22px;
+    /* font-weight:-500; */
+    font-family: French Script MT;
+
+}
+
+
+/* Seacrch */
+
+.SearchIcon
+{
+    color:#fff;
+   
+}
+.SearchButton
+{
+    background-color:rgb(245, 99, 1);
+    border-radius:1px;
+    margin-top: 15px;
+}
+.SearchButton:hover{
+    background-color:#C4161C;
+}
+
+.SearchBar{
+    border-radius: 0px;
+    margin-top: 15px;
+}
+
+
+
+
+
+/* MultiDrop */
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+.fa{
+    font-size: 16px;
+    padding: 0px;
+    margin-top: 5px;
+   
+}
+/*=======================================Search box====================================== */
+
+
+.search-form .form-group {
+    float: right !important;
+    transition: all 0.35s, border-radius 0s;
+    width: 350px;
+    height: 40px;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+  }
+  .search-form .form-group input.form-control {
+    padding-right: 30px;
+    border: 0 none;
+    background: transparent;
+    box-shadow: none;
+    display:block;
+  }
+  .search-form .form-group input.form-control::-webkit-input-placeholder {
+    display: none;
+  }
+  .search-form .form-group input.form-control:-moz-placeholder {
+    /* Firefox 18- */
+    display: none;
+  }
+  .search-form .form-group input.form-control::-moz-placeholder {
+    /* Firefox 19+ */
+    display: none;
+  }
+  .search-form .form-group input.form-control:-ms-input-placeholder {
+    display: none;
+  }
+  .tt{
+      border-radius: 0px;
+      border: 1px solid silver;
+      height: 40px;
+      color: rgb(112, 32, 8);
+      font-size:22px;
+      /* font-weight:-500; */
+      font-family: French Script MT;
+  }
+ .ltt
+ {
+    color: rgb(112, 32, 8);
+    font-size:22px;
+    /* font-weight:-500; */
+    padding: 5px;
+    font-family: French Script MT;
+ }

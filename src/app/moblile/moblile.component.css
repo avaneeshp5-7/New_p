@@ -1,0 +1,23 @@
+.img {
+   
+    transition: transform .4s;
+    margin: 0 auto;
+}
+
+.img:hover {
+    -ms-transform: scale(0.5); /* IE 9 */
+    -webkit-transform: scale(0.5); /* Safari 3-8 */
+     transform: scale(1.1); 
+}
+
+.ads {
+   
+	transition: transform .4s;
+	margin: 0 auto;
+  }
+  
+  .ads:hover {
+	-ms-transform: scale(0.5); /* IE 9 */
+	-webkit-transform: scale(0.5); /* Safari 3-8 */
+	transform: scale(1.1); 
+  }

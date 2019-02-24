@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+      <form class="form-horizontal md-block">
+        <fieldset class="frmdiv">
+          <h2 style="color:mediumspringgreen">Enter New Details</h2>
+          <br>
+          <div class="control-group">
+            <div class="controls" >
+              <input type="text" type="text" [(ngModel)]="uname" name="un" placeholder="Update Name" class="input-xlarge form-control txt"
+                required="">
+            </div>
+          </div>
+          <br>
+          <div class="control-group">
+            <div class="controls">
+              <input type="text" [(ngModel)]="email" name="em" placeholder="Update Email" class="input-xlarge form-control txt" required="">
+            </div>
+          </div>
+          <br>
+          <div class="control-group">
+            <div class="controls">
+              <input type="text" [(ngModel)]="contact" name="uco" placeholder="Update Contact" class="input-xlarge form-control txt" required="">
+            </div>
+          </div>
+          <br>
+          <div class="control-group">
+            <div class="controls">
+              <input type="text" [(ngModel)]="uid" name="uiid" placeholder="Update UserId" class="input-xlarge form-control txt" required="">
+            </div>
+          </div>
+          <br>
+          <div class="controls">
+            <input type="password" [(ngModel)]="upwd" name="up" placeholder="Update Password" class="input-xlarge form-control txt" required="">
+          </div>
+          <br>
+          <div class="control-group">
+            <div class="controls">
+              <input type="text" [(ngModel)]="addr" name="ad" placeholder="Update Billing" class="input-xlarge form-control txt" required="">
+            </div>
+          </div><br>
+          <div class="control-group">
+            <div class="controls">
+              <input type="text" [(ngModel)]="spaddr" name="spad" placeholder="Update Shipping" class="input-xlarge form-control txt" required="">
+            </div>
+          </div>
+          <br>
+          <div class="control-group">
+            <label class="control-label" for="button1id"></label>
+            <div class="controls">
+              <input type="button" value="Update Profile" class="btn btn-success upbtn" (click)="fun_update_profile()">&nbsp;&nbsp;
+              <input type="reset" value="Reset" class="btn btn-warning upbtn">
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div>
+    <div class="row">
+      <div class="col-md-12">
+        <h5 class="text-center" style="color:rgb(14, 9, 1);text-transform: uppercase;margin-left: 20px;font-weight: bold">Some Special Offer's</h5>
+        <span id="prospn12">
+          <span *ngFor="let upro of mdata" id="prospn" style="height: 350px;border: 1px solid silver;float: left;width: 210px;margin: 7px;padding: 17px; border-radius:4px;background-color: rgba(241, 221, 221, 0.137);box-shadow: 0px 0px 5px rgb(192, 186, 186);">
+            <span class="spn" id="prospn1">
+              <span class="spn">
+                <span></span>
+                <img src="../../assets/uploads/{{upro.images}}" class="img" width="110" height="200"  (click)="funDetails(upro._id)"
+                  style="cursor: pointer;margin-left: 32px;">
+              </span>
+              <br>
+              <br>
+              <span style="color:black;font-weight:bolder;font-size: 14px;text-align: justify;text-transform: uppercase;font-family: arial">
+               {{upro.pname}}
+               </span>
+            </span>
+            <br>
+            <span class="spn" style="color: rgb(55, 241, 18);font-size: 18px;">
+              {{upro.pprice | currency: "INR"}}
+            </span>
+            <br>
+            <span class="spn" [ngStyle]="{backgroundColor:upro.pcolor,color:upro.pcolor}">. . . . .
+            </span>
+            <br>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>

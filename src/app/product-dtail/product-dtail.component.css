@@ -1,0 +1,67 @@
+form {
+    width: 600px;
+    margin: 0 auto;
+    /* text-align: center; */
+    padding-top: 15px;
+  }
+  
+  .value-button {
+    display: inline-block;
+    border: 1px solid  rgb(152, 153, 226);
+    margin-top: -7px;
+    width: 40px;
+    height: 40px;
+    font-weight: bolder;
+    text-align: center;
+    font-size:20px;
+    vertical-align: middle;
+    padding: 2px 0;
+    background:rgb(152, 153, 226);
+ 
+    color:white;
+  }
+  
+  .value-button:hover {
+    cursor: pointer;
+    background-color:mediumslateblue;
+    color:rgb(0, 247, 255);
+  }
+  
+  form #decrease {
+    /* margin-right: -4px; */
+    border-radius: 8px 0 0 8px;
+  }
+  
+  form #increase {
+    /* margin-left: -4px; */
+    border-radius: 0 8px 8px 0;
+  }
+  
+  form #input-wrap {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  input#number {
+    text-align: center;
+    margin-top: -50px;
+    border: none;
+    border: 1px solid #ddd;
+
+    margin: 0px;
+    width: 40px;
+    height: 38px;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  .fas{
+    border-radius: 4px 0px 0px 4px;color: white;background-color: rgb(0, 128, 128);width: 35px;height:36px;font-size: 17px;padding: 10px; 
+ }
+ .cartbtn{
+    border-radius: 0px;padding: 5px;color:white;margin-top: -6px ;background-color: rgb(0, 128, 128)
+ }

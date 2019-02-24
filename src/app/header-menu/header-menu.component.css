@@ -1,0 +1,18 @@
+.heah{
+    /* background-color: rgb(235, 36, 36); */
+    padding: 10px;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+}
+span{
+    cursor: pointer;
+    padding: 10px;
+    color: white
+}
+a:hover{
+ text-decoration: none;
+}
+a{
+    color: white;
+}

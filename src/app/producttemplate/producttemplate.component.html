@@ -1,0 +1,14 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <div style="height:380px; width:245px; border: 1px solid silver; float: left;margin: 5px;padding: 10px; margin-left: 16px;background-color: rgba(241, 221, 221, 0.137);box-shadow: 0px 0px 5px rgb(192, 186, 186);border-radius: 4px;" *ngFor="let pro of ssubdata" >
+      <span><img src="../../assets/uploads/{{pro.images}}" class="img" width="126px;" height="170" (click)="funDetail(pro._id)" style="cursor: pointer;margin-left: 50px;margin-top: 15px;"></span><br><br>
+      <h4>{{pro.pname}}</h4>
+      <span style="color: green">{{pro.pprice | currency: "INR"}}</span><br>
+      <span class="spn" [ngStyle]="{backgroundColor:pro.pcolor,color:pro.pcolor}">. . . . .
+        </span>
+      <br>
+      <!-- <span>{{pro.pdesc}}</span><br> -->
+    </div>
+ </div>
+ </div>

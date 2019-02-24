@@ -1,0 +1,149 @@
+<!-- <input type="button" value="Click" (click)="funnext()"> -->
+<style>
+  .big{
+    overflow: hidden;
+    width:600px;
+    height:1000px;
+ border:3px solid red;
+ position:relative;
+  }
+  .inner{
+    position:absolute;  
+    width:0px;
+  }
+  .big div{
+    float:left;
+  }
+  img{
+    width:200px;
+ 
+  }
+</style>
+<!--
+
+<div class="big" >
+    <div class="inner" id="innerdiv"    *ngFor="let pro of prodata" >
+              <div class="abc"  style="float: left ;">
+                  <div>
+                      <div class="row">
+                       
+                        
+                        <div class="col">
+                         
+                            <span id="prospn12">
+                                <span *ngFor="let pro of prodata" id="prospn" style="background-color: #f8f5f596">
+                                  <span class="spn" id="prospn1" style="float: right;">
+                                      <span class="spn">
+                                          <span>
+                                              <img src="/assets/MyImges/new p.gif" width="50px" style="margin-left: 52px;margin-top: -10px">
+                                          </span><img src="../../assets/uploads/{{pro.images}}" class="img" width="170px;" height="130" (click)="funDetail(pro._id)"
+                                          style="cursor: pointer;margin-left: 15px;margin-top: -16px;"></span><br><br>
+                                    <span style="color:black;font-weight:bolder;font-size: 14px;text-align: justify;text-transform: uppercase;font-family: arial">&nbsp;&nbsp;&nbsp;&nbsp;{{pro.pname}}</span></span><br>
+                                    
+                                  <span class="spn">
+                                    <span style="color: rgb(55, 241, 18);font-size: 18px;">&nbsp;&nbsp;{{pro.pprice | currency: "INR"}}</span>
+                                  </span>
+                                  <br>
+                                  <span class="spn">
+                                    &nbsp; <span [ngStyle]="{backgroundColor:pro.pcolor,color:pro.pcolor}">. . . .  .</span>
+                                  </span>
+                                  <br>
+                                  <span class="spn">
+                                    <span style="color: rgb(230, 40, 49)">&nbsp; {{pro.pdesc}} </span></span>
+                                  
+                                </span>
+                              </span>
+                        </div>
+                      </div>
+                      </div>
+            
+                            <!-- Upcomming -->  
+           <!--   </div>
+
+              <div>
+              <div >
+                  <img  src="../../assets/uploads/{{pro.images}}"  />
+              </div>
+              <div >
+                  <img  src="../../assets/img/006.jpg" />
+              </div>
+              <div >
+                  <img  src="../../assets/img/007.jpg" />
+              </div>
+              <div >
+                  <img src="../../assets/img/008.jpg" />
+              </div>
+              <div >
+                  <img  src="../../assets/img/009.jpg" />
+              </div>
+              <div >
+                  <img  src="../../assets/img/010.jpg" />
+              </div>
+              <div >
+                  <img src="../../assets/img/011.jpg" />
+              </div>
+              <div >
+                  <img  src="../../assets/img/024.jpg" />
+              </div>
+              <div >
+                  <img  src="../../assets/img/025.jpg" />
+              </div>
+              <div >
+                  <img  src="../../assets/img/026.jpg" />
+              </div>
+              <div >
+                  <img  src="../../assets/img/027.jpg" />
+              </div>
+            </div>
+         </div>
+          <!-- Bullet Navigator -->
+        <div style="clear: both;"></div>
+
+
+
+<!-- 
+<div class="big" >
+  <div class="inner" id="innerdiv">
+            <div class="abc">
+                <img  src="../../assets/img/001.jpg" />
+            </div>
+            <div >
+                <img  src="../../assets/img/005.jpg" />
+            </div>
+            <div >
+                <img  src="../../assets/img/006.jpg" />
+            </div>
+            <div >
+                <img  src="../../assets/img/007.jpg" />
+            </div>
+            <div >
+                <img src="../../assets/img/008.jpg" />
+            </div>
+            <div >
+                <img  src="../../assets/img/009.jpg" />
+            </div>
+            <div >
+                <img  src="../../assets/img/010.jpg" />
+            </div>
+            <div >
+                <img src="../../assets/img/011.jpg" />
+            </div>
+            <div >
+                <img  src="../../assets/img/024.jpg" />
+            </div>
+            <div >
+                <img  src="../../assets/img/025.jpg" />
+            </div>
+            <div >
+                <img  src="../../assets/img/026.jpg" />
+            </div>
+            <div >
+                <img  src="../../assets/img/027.jpg" />
+            </div>
+          </div>
+       </div>
+        <!-- Bullet Navigator -->
+      <!-- <div style="clear: both;"></div> -->
+
+
+      

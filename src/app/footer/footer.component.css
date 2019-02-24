@@ -1,0 +1,24 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+    padding: 60px 0;
+    height:200px ;
+}
+
+#footer {
+    
+    background-color: rgb(75, 82, 88);
+}
+
+#footer a {
+    color: orange;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+.mrg{
+    padding: 10px;
+    width: 30px;   
+}
+.poss{
+    margin: 10px;
+}

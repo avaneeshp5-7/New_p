@@ -1,0 +1,14 @@
+.deco{
+    border-radius: 0px;
+    padding: 10px;
+    font-size: 24px;
+    height: 40px;
+}
+#otphed{
+    
+    font-family: Arial, Helvetica, sans-serif,;
+    color: rgb(141, 190, 174)
+}
+.otpbtn{
+    border-radius: 0px;
+}

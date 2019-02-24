@@ -1,0 +1,68 @@
+
+
+<div>
+ <div  class="row" *ngFor="let p of prodata">
+     <div class="col-md-4" style="float: right;">
+            <img src="../../assets/uploads/{{p.images}}" style="margin-left: 110px;" height="340px"   [imageZoom]="" [lensHeight]="40" [lensHeight]="40" width="300" [minZoomLevel]=".2" [maxZoomLevel]=".4" >
+     </div>
+     <div class="col-md-4" style="margin-top: -7px;">
+            <span style="font-weight:bold;font-size:25px;">{{p.pname | uppercase}}</span><br>
+            <span style="font-weight:bold;color:green;font-size:30px">{{p.pprice | currency: "INR"}}</span><br>
+            <span style="font-weight:bold"> Color:&nbsp;&nbsp;&nbsp;<span [ngStyle]="{backgroundColor:p.pcolor,color:p.pcolor}"> . . . . </span></span><br>
+            
+            <span style="font-size:15px;color: rgb(144, 146, 143)"> {{p.pdesc}}</span><br>
+           <br>
+            <span>
+                <rating [(ngModel)]="urat" [max]="5"   (click)="funRat(urat)" [readonly]="false">{{p.urat}}</rating>
+            </span>
+           <br>
+       
+            <span style="font-weight:bold;color:chocolate">Available Quantity:{{p.quantity}}</span>
+            <br>
+            <span style="color: rgb(17, 175, 59);font-size:15px;font-weight:bold;"> {{p.offer}}</span>
+            <form>
+                    <div class="value-button" id="decrease" (click)="decreaseValue()" ><img src="/assets/-.png" width="30px"></div>
+                    <input type="number" id="number" value="1"  name="qty"   readonly [(ngModel)]="value">
+                    <div class="value-button" id="increase" (click)="increaseValue(p.quantity)" ><img src="/assets/+.png" width="20px"></div>
+           </form>
+           <br>
+           <span id="spnbtn">
+                <i class="fa fa-shopping-cart fas"></i>
+                <button type="button"  class="btn b.tn-default cartbtn addcartbtn"  (click)="funaddcart(p)">
+                  Add To Cart
+              </button>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-danger" style="margin-top: -8px;" (click)="appobj.fun_cart_detail()">
+                    <span class="fa fa-shopping-cart "></span>
+                Buy Now
+              </button>
+            </span>
+
+     </div>
+ </div>
+</div>
+
+
+
+<!-- Upcomming product details -->
+<div>
+        <div  class="row" *ngFor="let p of updata">
+            <div class="col-md-4" style="float: right;">
+                   <img src="../../assets/uploads/{{p.images}}" style="margin-left: 40px;" height="340px"   [imageZoom]="" [lensHeight]="40" [lensHeight]="40" width="400" [minZoomLevel]=".2" [maxZoomLevel]=".4" >
+            </div>
+            <div class="col-md-4"><br>
+                   <span style="font-weight:bold;font-size:25px;">{{p.pname | uppercase}}</span><br>
+                   <span style="font-weight:bold;color:green;font-size:30px">{{p.pprice | currency: "INR"}}</span><br>
+                   <span style="font-weight:bold"> Color:&nbsp;&nbsp;&nbsp;<span [ngStyle]="{backgroundColor:p.pcolor,color:p.pcolor}">. . . . </span></span><br>
+                   <span style="font-size:15px;color: rgb(144, 146, 143)"> {{p.pdesc}}</span><br>
+                  <br>
+                   <span *ngFor="let rat of rat_arr"  class="fa fa-star" style="font-size:30px;color:rgb(54, 27, 206);margin-right:2px">
+                     
+                   </span>
+                   <span *ngIf="half==1" class="fa fa-star-half" style="font-size:30px;color:rgb(54, 27, 206);margin-right:2px"> </span>
+                 <br>
+                 <br>
+                   <span style="color: rgb(17, 175, 59);font-size:15px;font-weight:bold;"> {{p.offer}}</span>       
+            </div>
+        </div>
+       </div>

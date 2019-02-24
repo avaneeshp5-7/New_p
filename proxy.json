@@ -1,0 +1,14 @@
+{
+    "/category/*":{
+        "target":"http://localhost:8888"
+    },
+    "/register/*":{
+        "target":"http://localhost:8888"
+    },
+    "/searchapi/*":{
+        "target":"http://localhost:8888"
+    },
+    "/moblile/*":{
+        "target":"http://localhost:8888"
+    }
+}

@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+.fas{
+    border-radius: 4px 0px 0px 4px;color: white;background-color: rgb(0, 128, 128);width: 35px;height:36px;font-size: 17px;padding: 10px; 
+ }
+ .cartbtn{
+    border-radius: 0px;padding: 5px;color:white;margin-top: -6px;
+ }
