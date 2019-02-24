@@ -67372,10 +67372,9 @@ var ImageZoomContainer = (function () {
         this.parentImageContainer.onMouseScroll(event);
     };
     ImageZoomContainer.prototype.generateStyles = function () {
-        this.el.style.width = 600  + 'px';
-        this.el.style.height = 500 + 'px';
+        this.el.style.width = this.windowWidth + 'px';
+        this.el.style.height = this.windowHeight + 'px';
         this.el.style.border = this.borderSize + "px solid rgb(136, 136, 136)";
-        this.el.style.boxShadow="0px 0px 5px blue"
         this.el.style.left = this.left + 'px';
         this.el.style.top = this.top + 'px';
         this.el.style.backgroundImage = "url(" + this.image + ")";
@@ -67386,12 +67385,12 @@ var ImageZoomContainer = (function () {
         this.positionY = y;
     };
     ImageZoomContainer.prototype.setZoomSize = function (width, height) {
-        this.el.style.backgroundSize = 2800 + "px " + 2000 + "px";
-        this.imageWidth = 1400;
-        this.imageHeight = 1000;
+        this.el.style.backgroundSize = width + "px " + height + "px";
+        this.imageWidth = width;
+        this.imageHeight = height;
     };
     ImageZoomContainer.prototype.setWindowPosition = function (left, top) {
-        this.el.style.left = 430 + 'px';
+        this.el.style.left = left + 'px';
         this.el.style.top = top + 'px';
         this.left = left;
         this.top = top;
