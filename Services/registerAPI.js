@@ -1,7 +1,7 @@
 var exp = require("express")
 router = exp.Router()
 mg = require("mongojs")
-con = mg("mongodb://localhost:27017/nalax")
+con = mg("mongodb://jai:jai15507@ds149885.mlab.com:49885/ecodb")
 bp = require("body-parser")
 router.post("/userReg", function (rq, rs) {
     usrData = rq.body
