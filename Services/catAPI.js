@@ -6,6 +6,7 @@ bp=require("body-parser")
 // ======================= Get Category ===================//
 router.get("/getcato",function(rq,rs){
     con.category.find(function(err,catresult){
+        // console.log('result  in category');
     rs.send(catresult)
    });
 });

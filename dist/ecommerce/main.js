@@ -174,6 +174,7 @@ var AppComponent = /** @class */ (function () {
         this.reg = "rsh"; /*bodystate="bshow" */
         this.lpage = "hide";
         this.catcab = function (dt) {
+            console.log('menu data', dt);
             _this.getcat = JSON.parse(dt._body);
             _this.cobj.post("/category/subcat").subscribe(_this.subcback);
         };
