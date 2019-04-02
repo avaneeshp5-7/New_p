@@ -46,4 +46,15 @@ funRegister(regval)
    alert(dt['_body'][0]['message']);
  }
 }
+psms;
+checkPass(rpwd){
+if(rpwd!=this.rpassword)
+{
+  alert(" Password is not matched !")
+}
+else
+{
+  this.psms="";
+}
+}
 }

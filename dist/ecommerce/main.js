@@ -1997,6 +1997,14 @@ var RegistrationComponent = /** @class */ (function () {
             this.cobj.post("/register/userReg", userData).subscribe(this.usercback);
         }
     };
+    RegistrationComponent.prototype.checkPass = function (rpwd) {
+        if (rpwd != this.rpassword) {
+            alert(" Password is not matched !");
+        }
+        else {
+            this.psms = "";
+        }
+    };
     RegistrationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-registration',
