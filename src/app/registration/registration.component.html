@@ -47,7 +47,7 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xm-12">
               <input type="text" class="form-control con" placeholder="Contact No.." [(ngModel)]="contact" name="nn7" #reg7="ngModel"
-              pattern="[0-9]*" maxlength="10" required>
+              pattern="[0-9]*" maxlength="10" minlength="10" required>
             </div>
           </div>
           <span *ngIf="reg7.errors && reg7.errors.required" class="regg">{{mm7}}</span>&nbsp;
