@@ -34,6 +34,7 @@
     "ngx-rating": "0.0.9",
     "ngx-slider": "0.0.5",
     "nodemailer": "^5.1.1",
+    "npm": "^6.9.0",
     "path": "^0.12.7",
     "rxjs": "^6.0.0",
     "typescript": "~2.7.2",
@@ -61,7 +62,7 @@
     "tslint": "~5.9.1"
   },
   "engines": {
-    "node": "v10.15.2",
+    "node": "v10.3.0",
     "npm": "6.8.0"
   }
 }
