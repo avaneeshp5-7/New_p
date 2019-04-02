@@ -76,9 +76,9 @@
       <span class="lgn_sup_btn">
         <!-- *ngIf="login_display" -->
         <i class="fa fa-user stl" style="color: mediumspringgreen"></i>&nbsp;&nbsp;
-        <span href="#myModal" class="trigger-btn spn" id="snupp"  data-toggle="modal" >SignUp</span>&nbsp;&nbsp;&nbsp;
+        <span href="#myModal" class="trigger-btn spn" id="snupp" (click)="toRegister()">SignUp</span>&nbsp;&nbsp;&nbsp;
         <i class="fa fa-sign-in stl" style="color: mediumspringgreen"></i> &nbsp;&nbsp;
-        <span href="#myModal1" class="trigger-btn spn"  data-toggle="modal" >LogIn</span>
+        <span href="#myModal1" class="trigger-btn spn"   (click)="toLogin()">LogIn</span>
       </span>
       <span class="showwelcome">
         <!--*ngIf="welcome_display" -->
@@ -263,7 +263,7 @@
                           <div class="col-md-12 col-sm-12 col-xs-12">
                             <a (click)="funforgote()" style="color:rgb(176, 231, 213);cursor: pointer;" data-dismiss="modal">Fogot password ?</a>
                             <input type="button" value="LogIn" class="btn btn-success lbtnn" (click)="funlog(lform)" style="float: right;">&nbsp;
-                            <input type="button" value="Close" class="btn btn-danger lbtnn" data-dismiss="modal" style="float: right;margin-right: 7px;" >
+                            <input type="reset" value="Reset" class="btn btn-danger lbtnn" data-dismiss="modal" style="float: right;margin-right: 7px;" >
                           </div>
                         </div>
                       </form>

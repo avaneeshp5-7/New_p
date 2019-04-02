@@ -1,0 +1,9 @@
+.modal-content{
+  -webkit-box-shadow: inset 0 1px 2px rgb(153, 184, 212);
+  box-shadow: inset 0 1px 2px rgb(153, 184, 212);
+  background-color: rgb(153, 184, 212);
+  border-radius: 0px;
+}
+.ltt:focus{
+  outline: none;
+}

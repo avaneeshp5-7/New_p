@@ -32,12 +32,13 @@ import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { OtpComponent } from './otp/otp.component';
 import { NewpassordComponent } from './newpassord/newpassord.component';
 import { SendOtpComponent } from './send-otp/send-otp.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component'
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { RegistrationComponent } from './registration/registration.component'
 
 var robj=[
- 
- 
-{path:"",component:FirstPageComponent}, 
+
+
+{path:"",component:FirstPageComponent},
 	{path:"profile",component:UserprofileComponent},
 
 	        {path:"upcon",component:UpcommingComponent},
@@ -50,13 +51,15 @@ var robj=[
           {path:"otp_enter",component:OtpComponent},
           {path:"gen_new_pass",component:NewpassordComponent},
           {path:"send-otp-on",component:SendOtpComponent},
-          {path:"create-new-password",component:ResetPasswordComponent}
+          {path:"create-new-password",component:ResetPasswordComponent},
+          {path:"user-login-securly",component:LoginComponent},
+          {path:"new-user-regitration",component:RegistrationComponent}
 ]
 var router=RouterModule.forRoot(robj)
 
 @NgModule({
   declarations: [
-    
+
     AppComponent,
     LoginComponent,
     ProducttemplateComponent,
@@ -80,7 +83,8 @@ var router=RouterModule.forRoot(robj)
     OtpComponent,
     NewpassordComponent,
     SendOtpComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    RegistrationComponent
   ],
 
 

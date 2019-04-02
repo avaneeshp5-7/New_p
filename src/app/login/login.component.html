@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4" >
+    <div class="col-lg-12 col-sm-12 col-12 main-section">
+      <div class="modal-content" >
+        <div class="col-lg-12 col-sm-12 col-12 user-img" style="text-align: center"><br>
+          <img src="assets/man.png" style="width: 50px;height: 50px">
+        </div><br>
+        <div class="col-lg-12 col-sm-12 col-12 form-input text-center">
+          <form name="frm1" #lform="ngForm">
+            <div class="row text-center">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <br>
+                  <div>
+                    <input type="text" class="form-control ltt" name="log1" [(ngModel)]="usrname" placeholder="Enter User ID" #up="ngModel"
+                           required style="border-radius: 0px" />
+                  </div>
+                  <br>
+                  <div class="input-group text-center">
+                    <input type="password" class="form-control ltt"  name="log2" [(ngModel)]="upass" placeholder="Enter Password" #uid="ngModel"
+                           required style="border-radius: 0px ; width: 300px;" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span *ngIf="up.errors && up.errors.required" class="valsp1">{{m1}}</span>
+            <span *ngIf="uid.errors && uid.errors.required" class="valsp">{{m2}}</span>
+            <br>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <a (click)="funforgote()" style="color:rgb(176, 231, 213);cursor: pointer;" data-dismiss="modal">Fogot password ?</a>
+                <input type="button" value="LogIn" class="btn btn-success lbtnn" (click)="funlog(lform)" style="float: right;">&nbsp;
+                <input type="button" value="Reset" class="btn btn-danger lbtnn" data-dismiss="modal" style="float: right;margin-right: 7px;" >
+              </div>
+            </div>
+          </form>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>

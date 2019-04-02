@@ -1,7 +1,7 @@
 
 .nav-item
 {
-   
+
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
 }
@@ -17,7 +17,6 @@
 .bbtne{
    border-radius: 0px;
    background-color: red;
-
 }
 /*  */
 
@@ -91,7 +90,7 @@
 .lbtn{
     border-radius:0px;
     width: 49px;
-    
+
 }
 
 .ssppnn{
@@ -99,12 +98,12 @@
 }
 .lbtnn{
     width: 100px;
-    border-radius: 0px; 
+    border-radius: 0px;
 }
 
 .forrgot{
     float: right;
-    margin-right: 50px; 
+    margin-right: 50px;
 }
 .awesom{
     color: white;
@@ -143,7 +142,7 @@
 .SearchIcon
 {
     color:#fff;
-   
+
 }
 .SearchButton
 {
@@ -217,7 +216,7 @@
     font-size: 16px;
     padding: 0px;
     margin-top: 5px;
-   
+
 }
 /*=======================================Search box====================================== */
 

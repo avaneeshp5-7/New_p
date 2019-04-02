@@ -163,44 +163,44 @@ funRegister(regval)
 }
 // =========================== Log In Mod ===========================//
 
-usrname;upass;userdet;m1;m2;
-funlog(ldata)
-{
-   if(ldata.valid==false)
-   {
-    this. m1=" * Don't forget any !"
-     this.m2=" * Don't forget any !"
-     this.usrname="";
-     this.upass="";
-   }
-   else
-   {
-  var logData={userid:this.usrname,password:this.upass}
-  this.cobj.post("/register/logData",logData).subscribe(this.logcback)
-}
-}
-logcback=(dt)=>{
-     this.userdet=(JSON.parse(dt._body))
-     if(this.userdet.length==1){
-     localStorage.setItem("login_check","1")
-     localStorage.setItem("userdata",this.userdet)
-     localStorage.setItem("fullname",   this.userdet[0].fullname)
-     localStorage.setItem("email",this.userdet[0].email)
-     localStorage.setItem("Contact",this.userdet[0].Contact)
-     localStorage.setItem("userid",this.userdet[0]._id)
-     this.email=localStorage.getItem("email")
-     this.fullname=localStorage.getItem("fullname")
-     this.dis=true
-     this.lgn_sup_btn()
-     this.showwelcome()
-     this.lpage = "hide";
-     window.location.href=""
-    }
-  else
-  {
-    alert("try agin ! !")
-   }
-}
+// usrname;upass;userdet;m1;m2;
+// funlog(ldata)
+// {
+//    if(ldata.valid==false)
+//    {
+//     this. m1=" * Don't forget any !"
+//      this.m2=" * Don't forget any !"
+//      this.usrname="";
+//      this.upass="";
+//    }
+//    else
+//    {
+//   var logData={userid:this.usrname,password:this.upass}
+//   this.cobj.post("/register/logData",logData).subscribe(this.logcback)
+// }
+// }
+// logcback=(dt)=>{
+//      this.userdet=(JSON.parse(dt._body))
+//      if(this.userdet.length==1){
+//      localStorage.setItem("login_check","1")
+//      localStorage.setItem("userdata",this.userdet)
+//      localStorage.setItem("fullname",   this.userdet[0].fullname)
+//      localStorage.setItem("email",this.userdet[0].email)
+//      localStorage.setItem("Contact",this.userdet[0].Contact)
+//      localStorage.setItem("userid",this.userdet[0]._id)
+//      this.email=localStorage.getItem("email")
+//      this.fullname=localStorage.getItem("fullname")
+//      this.dis=true
+//      this.lgn_sup_btn()
+//      this.showwelcome()
+//      this.lpage = "hide";
+//      window.location.href=""
+//     }
+//   else
+//   {
+//     alert("try agin ! !")
+//    }
+// }
 
 logOut(){
   localStorage.removeItem("email")
@@ -261,8 +261,14 @@ else
   this.psms="";
 }
 }
+
+toLogin(){
+  this.rout.navigateByUrl('/user-login-securly');
+}
+toRegister(){
+  this.rout.navigateByUrl('/new-user-regitration');
+}
 funforgote(){
-  // window.location.href="/otp_enter"
   this.rout.navigateByUrl("/send-otp-on");
 }
 }

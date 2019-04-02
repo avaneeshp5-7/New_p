@@ -16,7 +16,10 @@ router.post("/userReg", function (rq, rs) {
         con.userReg.count({ userid: usrData.userid, password: usrData.password }, function (err, userRes) {
             var uobj = { user: userRes }
             if (uobj.user > 0) {
-                rs.send("You Allready Registered !")
+                rs.send({
+                    success:false,
+                    message:"Allready Registered!!"
+                })
             }
             else {
                 con.userReg.save({
@@ -24,7 +27,10 @@ router.post("/userReg", function (rq, rs) {
                     userid: usrData.userid, password: usrData.password, Contact: usrData.Contact,
                     address: usrData.address, active: 1
                 }, function () {
-                    rs.send("You Register Successfully  !!! \n"+"Remember Your Id is : " + usrData.userid+ " And Password Is : " + usrData.password)
+                    rs.send({
+                        success:true,
+                        message:"New User Registered!!"
+                    })   
                 })
             }
         })

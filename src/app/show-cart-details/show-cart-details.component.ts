@@ -35,7 +35,7 @@ export class ShowCartDetailsComponent implements OnInit {
         this.TotalAmnt+=allpprice
        // alert(this.TotalAmnt)
       }
-        
+
     }
     else {
       this.str = "Your cart is empty"
@@ -58,8 +58,9 @@ export class ShowCartDetailsComponent implements OnInit {
   }
   uid;total=0;
   fun_order_now() {
+    alert('buy_now');
     var arr
-    
+
     if (localStorage.getItem("login_check") != null) {
       arr = localStorage.getItem("cart_items")
       arr = arr.replace(/\\/g, "")
@@ -86,11 +87,11 @@ export class ShowCartDetailsComponent implements OnInit {
         if(localStorage.getItem("login_check") != null) {
           localStorage.removeItem("cart_items")
           this.robj.navigateByUrl("/p_details")
-        }  
+        }
       })
     }
     else {
-      this.app.logReg()
+      this.app.lgn_sup_btn();
     }
   }
   remove_cart_item(ind) {
@@ -101,7 +102,7 @@ export class ShowCartDetailsComponent implements OnInit {
     if (this.data.length == 0) {
       localStorage.removeItem("cart_items")
       this.str = "Your cart is empty"
-      
+
     }
     this.robj.navigateByUrl("/cartdet")
   }

@@ -1,0 +1,30 @@
+
+.texbox{
+  padding: 7px;
+  width:290px;
+  height: 39px;
+  border: 1px solid silver;
+  color: rgb(112, 32, 8);
+  font-size:22px;
+  font-family: French Script MT;
+}
+.areas{
+  color: rgb(112, 32, 8);
+  font-size: 22px;
+  border-radius: 0px;
+  height: 50px;
+  font-family: French Script MT;
+}
+.con{
+  color: rgb(112, 32, 8);
+  font-size: 22px;
+  border-radius: 0px;
+  height: 39px;
+  font-family: French Script MT;
+}
+
+.modal-dialogs{
+  -webkit-box-shadow: inset 0px 0px 4px 8px rgb(153, 184, 212);
+  box-shadow: inset 0px 0px 1px 2px rgb(153, 184, 212);
+  background-color: rgb(153, 184, 212);
+}
