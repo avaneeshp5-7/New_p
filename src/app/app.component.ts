@@ -241,7 +241,6 @@ showwelcome(){
   //alert("hii ")
   $(".showwelcome").show(100)
 }
-
 //================== Search detals =====================//
 searchDetial(pid){
   this.rout.navigateByUrl("/prodetail;proid="+pid)
@@ -261,7 +260,6 @@ else
   this.psms="";
 }
 }
-
 toLogin(){
   this.rout.navigateByUrl('/user-login-securly');
 }
