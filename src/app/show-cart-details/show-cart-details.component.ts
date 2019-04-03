@@ -58,9 +58,7 @@ export class ShowCartDetailsComponent implements OnInit {
   }
   uid;total=0;
   fun_order_now() {
-    alert('buy_now');
     var arr
-
     if (localStorage.getItem("login_check") != null) {
       arr = localStorage.getItem("cart_items")
       arr = arr.replace(/\\/g, "")
@@ -91,7 +89,8 @@ export class ShowCartDetailsComponent implements OnInit {
       })
     }
     else {
-      this.app.lgn_sup_btn();
+      alert('User must be logged In !!');
+      this.app.toLogin();
     }
   }
   remove_cart_item(ind) {

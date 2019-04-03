@@ -5,30 +5,15 @@ import $ from "jquery"
 import { allResolved } from 'q';
 import {ShowCartImageServiceService} from "./show-cart-image-service.service"
 import { Router } from '@angular/router';
-
-var myReg = [
-  trigger("regfrm", [
-    // ==================== Login And Regisrtation Form =============================== //
-    state("visible", style({ top: "60px" })),
-    state("invisible", style({ top: "-1600px" })),
-    transition("visible <=> invisible", animate("500ms ease-in")),
-    // login//===================
-    state("show", style({ top: "60px" })),
-    state("hide", style({ top: "-1600px" })),
-    transition("show <=> hide", animate("500ms ease-out")),
-  ])
-]
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  animations: [myReg]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 msg:string="0";fullname;arr;
   constructor(@Inject(Http) public cobj,public show_cart_icon_service:ShowCartImageServiceService,public rout:Router) {
     this.getCatRec();
-  //  alert(JSON.parse(localStorage.getItem('cart_items').length))
 }
 searchdata="abcd"
 login_display=true
@@ -51,10 +36,8 @@ fun_search_product(){
  }
 }
 tmpforsearch=false;
-///////
 bcolor="blue"
 search_keyup(){
-  //alert("ys")
   this.tmpforsearch=true
 }
 fun_over_style(t){
@@ -64,11 +47,9 @@ fun_out_style(t){
 t.style.backgroundColor="lightblue"
 }
 fun_search_out(){
-//alert("hi")
 this.tmpforsearch=false;
 }
-////////
-usid;
+usid;contact; email
 ngOnInit(){
   this.usid=localStorage.getItem("userid")
 if(localStorage.getItem("email")!=null)
@@ -87,14 +68,10 @@ if(localStorage.getItem("email")!=null)
     this.showwelcome()  
   }
   else{
-    //alert("b")
     this.login_display=true;
     this.welcome_display=true
      }  
 }
-
-
-
 
   title = 'app';
   rpage = "invisible"; reg="rsh";/*bodystate="bshow" */
@@ -128,80 +105,6 @@ if(localStorage.getItem("email")!=null)
   procback=(dt)=>{
     this.prodata=JSON.parse(dt._body)
   }
-//========================== Registrations =====================//
- fname;lname;userid;email;password;rpassword;contact;address;saddress;mm1;mm2;mm3;mm4;mm5;mm6;mm7;mm8;mm9
-funRegister(regval)
-{
-  if(regval.valid==false)
-  {
-   this.mm1=" * First name "
-   this.mm2=" * Last name  "
-   this.mm3=" * Enter Email  "
-   this.mm4=" * User id "
-   this.mm5=" * Enter Password "
-   this.mm6=" * Re-password"
-   this.mm7=" * Enter Contact "
-   this.mm8=" * Enter address "
-   this.mm9=" * Shipping address"
-  }
-  else
-  {
-  var userData={fullname:this.fname,email:this.email,userid:this.userid,
-  password:this.password,rpassword:this.rpassword,Contact:this.contact,
-  address:{BillindAdsress:[{name:this.fname},{Contact:this.contact},{biladdress:this.address}],
-  Shipping:[{lname:this.lname},{Contact:this.contact},{shipaddress:this.saddress}]}}
-
-   //console.log(userData)
-  this.cobj.post("/register/userReg",userData).subscribe(this.usercback)
-}
-}
-  usercback=(dt)=>{
-  alert(dt._body)
-  this.fname="";this.userid="";this.email="";this.password="";this.contact="";this.address="";this.fname="";this.rpassword="";
-  window.location.href=""
-  
-}
-// =========================== Log In Mod ===========================//
-
-// usrname;upass;userdet;m1;m2;
-// funlog(ldata)
-// {
-//    if(ldata.valid==false)
-//    {
-//     this. m1=" * Don't forget any !"
-//      this.m2=" * Don't forget any !"
-//      this.usrname="";
-//      this.upass="";
-//    }
-//    else
-//    {
-//   var logData={userid:this.usrname,password:this.upass}
-//   this.cobj.post("/register/logData",logData).subscribe(this.logcback)
-// }
-// }
-// logcback=(dt)=>{
-//      this.userdet=(JSON.parse(dt._body))
-//      if(this.userdet.length==1){
-//      localStorage.setItem("login_check","1")
-//      localStorage.setItem("userdata",this.userdet)
-//      localStorage.setItem("fullname",   this.userdet[0].fullname)
-//      localStorage.setItem("email",this.userdet[0].email)
-//      localStorage.setItem("Contact",this.userdet[0].Contact)
-//      localStorage.setItem("userid",this.userdet[0]._id)
-//      this.email=localStorage.getItem("email")
-//      this.fullname=localStorage.getItem("fullname")
-//      this.dis=true
-//      this.lgn_sup_btn()
-//      this.showwelcome()
-//      this.lpage = "hide";
-//      window.location.href=""
-//     }
-//   else
-//   {
-//     alert("try agin ! !")
-//    }
-// }
-
 logOut(){
   localStorage.removeItem("email")
   localStorage.removeItem("Contact")
@@ -249,7 +152,7 @@ searchDetial(pid){
 shopp_histry(){
   this.rout.navigateByUrl("/shopp;userid="+this.usid)
 }
-psms;
+psms;rpassword;
 checkPass(rpwd){
 if(rpwd!=this.rpassword)
 {

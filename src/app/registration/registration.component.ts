@@ -36,14 +36,17 @@ funRegister(regval)
   this.cobj.post("/register/userReg",userData).subscribe(this.usercback)
 }
 }
+register_data;
   usercback=(dt)=>{
-    console.log(dt['_body']);
-  if(dt['_body']['success']==true){
+    this.register_data=JSON.parse(dt['_body'])
+    console.log(this.register_data.success);
+  if(this.register_data['success']==true){
+    alert(this.register_data.message);
     this.fname="";this.userid="";this.email="";this.password="";this.contact="";this.address="";this.fname="";this.rpassword="";
     this.rout.navigateByUrl('/user-login-securly'); 
   }
  else{
-   alert(dt['_body'][0]['message']);
+   alert(this.register_data.message);
  }
 }
 psms;

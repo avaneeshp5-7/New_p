@@ -104,7 +104,7 @@ module.exports = "\r\n.nav-item\r\n{\r\n\r\n    font-family: Arial, Helvetica, s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body>\r\n <!-- <app-header-menu></app-header-menu> -->\r\n  <div class=\"container-fluid\" style=\"background-color:rgb(158, 198, 233);\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-2 col-sm-12 col-xm-12 \">\r\n        <img src=\"../assets/NGX_Logo2016_Wide.png\" width=\"170\" height=\"70px;\">\r\n      </div>\r\n      <div class=\"col-md-4 col-sm-12 col-xm-12 \"  >\r\n        <form action=\"\" class=\"search-form\">\r\n          <div class=\"form-group has-feedback\">\r\n          <input type=\"text\" (keyup)=\"search_keyup()\"  class=\"form-control\" name=\"search\" id=\"search\" placeholder=\"search\" [(ngModel)]=\"txtsearch\" (keyup)=\"fun_search_product()\">\r\n        <div *ngIf=\"tmpforsearch\" (mouseover)=\"search_keyup()\"  style=\"background-color:white;overflow:auto;max-height:500px;z-index:1001;position:absolute;border-radius:10px;box-shadow:0px 2px 10px black;padding:5px;min-width:600px\">\r\n        <img src=\"../assets/close.png\" width=\"30px\" (click)=\"fun_search_out()\" style=\"position: fixed\">\r\n        <br>\r\n          <div *ngFor=\"let ser of searchdata\" style='padding:0px;cursor:pointer;background-color:honeydew' (mouseover)=\"fun_over_style(this)\" (mouseout)=\"fun_out_style(this)\" (click)=\"searchDetial(ser._id)\">\r\n             <img src=\"../../assets/uploads/{{ser.images}}\"style=\"float:right;width:100px;height:80px\">\r\n           <h4 style=\"color:crimson\"> {{ser.pname}}</h4>\r\n           <b> {{ser.pprice | currency:'INR'}}</b>\r\n            <span style=\"background-color:'{{ser.pcolor}}'\">....</span>\r\n            <br>\r\n           <span style=\"color:darkslategray;font-size:15px\"> {{ser.pdesc}}</span>\r\n            <hr>\r\n            </div>\r\n        </div>\r\n        </div>\r\n      </form>\r\n      </div>\r\n      <div class=\"col-md-6 col-sm-12 col-xm-12\">\r\n        <span class=\"fa fa-shopping-cart dropdown\" data-toggle=\"dropdown\" aria-hidden=\"true\" style=\"width:50px;color:rgb(250, 242, 242);font-size:20px;float: right;margin-top:22px;cursor: pointer;background-color: plum;width: 30px;height: 30px;padding: 5px;margin-top: 18px;box-shadow: 0px 0px 8px #fff;border-radius: 4px;\"> &nbsp;&nbsp;\r\n          &nbsp;\r\n         \r\n          <span class=\"dropdown-menu dropdown-menu-right text-center\" style=\"width: auto;border-radius: 0px;margin-right: 50px;margin-top: 20px;box-shadow: 0px 0px 10px black;border-radius: 4px;\">\r\n            <span class=\"dropdown-brand\" href=\"#\">\r\n              <h4>About Cart</h4>\r\n            </span>\r\n            <hr>\r\n              <input type=\"button\" class=\"btn btn-primary\" value=\"Clear Item\" (click)=\"fun_clear_cart_detail()\" style=\"border-radius: 0px; font-family: arial\">    \r\n               <br><br>\r\n              <input type=\"button\" class=\"btn btn-primary\" value=\"Show Items\" (click)=\"fun_cart_detail()\" style=\"border-radius: 0px; font-family: arial\">\r\n          </span>\r\n        </span>\r\n        <button class=\"text-center\"  style=\"color:white;width: 30px;height: 30px; border-radius: 50%;background-color: rgb(34, 238, 85);border: 3px solid rgb(34, 238, 85); float: right;margin-top: 19px;margin-right:4px;box-shadow: 0px 0px 8px #fff;border-radius: 4px;\"\r\n          (click)=\"fun_cart_detail()\">\r\n          {{msg}}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <nav class=\"navbar navbar-expand-md  navbar-dark bg-dark\">\r\n    <span class=\"navbar-toggler\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </span>\r\n    <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\r\n      <ul class=\"navbar-nav\">\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"#\" style=\"color:white; font-size:15px;\">Home</a>\r\n        </li>\r\n        <li class=\"nav-item dropdown\" *ngFor=\"let cat of getcat\">\r\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\" style=\"color:white; font-size:15px;\">\r\n            {{cat.cname}}\r\n          </a>\r\n          <ul class=\"dropdown-menu multi-level\" role=\"menu\" aria-labelledby=\"dropdownMenu\">\r\n            <li class=\"dropdown-submenu\" *ngFor=\"let subcat of getsub\">\r\n              <a class=\"dropdown-item\" *ngIf=\"cat._id==subcat.catid\">{{subcat.scatname}}</a>\r\n              <ul class=\"dropdown-menu\">\r\n                <li class=\"nav-item\" *ngFor=\"let ssub of ssubdata\">\r\n                  <a class=\"dropdown-item\" [routerLink]=\"['/protemp', ssub]\" *ngIf=\"subcat._id == ssub.scatid\">{{ssub.subscatname}}</a>\r\n                </li>\r\n              </ul>\r\n            </li>\r\n          </ul>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n    <form class=\"form-inline\">\r\n      <span class=\"lgn_sup_btn\">\r\n        <!-- *ngIf=\"login_display\" -->\r\n        <i class=\"fa fa-user stl\" style=\"color: mediumspringgreen\"></i>&nbsp;&nbsp;\r\n        <span href=\"#myModal\" class=\"trigger-btn spn\" id=\"snupp\" (click)=\"toRegister()\">SignUp</span>&nbsp;&nbsp;&nbsp;\r\n        <i class=\"fa fa-sign-in stl\" style=\"color: mediumspringgreen\"></i> &nbsp;&nbsp;\r\n        <span href=\"#myModal1\" class=\"trigger-btn spn\"   (click)=\"toLogin()\">LogIn</span>\r\n      </span>\r\n      <span class=\"showwelcome\">\r\n        <!--*ngIf=\"welcome_display\" -->\r\n        \r\n        <span style=\"color:rgb(7, 138, 161)\" *ngIf=\"dis\">\r\n          Welcome\r\n          <span style=\"color:rgb(16, 215, 241)\" (click)=\"showUserProfile()\">{{fullname}}</span>\r\n          <span class=\"dropdown\" title=\"User Profiles\">\r\n            <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" >\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-menu-right text-center  drpprof \" style=\"margin-right:200px;\" style=\"width: 250px;box-shadow: 0px 0px 10px black;\" >\r\n              <span class=\"dropdown-brand\" href=\"#\"><i class=\"fa fa-user-circle\" style=\"color: rgb(143, 160, 116);font-size: 40px;\"></i></span>\r\n              <hr>\r\n              <a class=\"dropdown-item\" href=\"#\">{{fullname}}</a>\r\n              <a class=\"dropdown-item\" href=\"#\">{{contact}}</a> \r\n              <a class=\"dropdown-item\" href=\"#\">{{email}}</a><br>\r\n              <button  class=\"btn btn-primary text-center\" style=\"font-size:13px ;border-radius:0px;font-size: 16px;width: 164px\" (click)=\"proedit(pp)\"><i class=\"fa fa-edit\"></i>&nbsp; Profile</button>&nbsp;&nbsp;\r\n              <button  class=\"btn btn-primary text-center\" style=\"font-size:13px ;border-radius:0px;font-size: 16px;margin-top: 8px;\" (click)=\"shopp_histry()\"><i class=\"fa fa-folder-open\"></i>&nbsp; Shopping Histry</button>&nbsp;&nbsp;\r\n              <button  class=\"btn btn-primary text-center\" style=\"font-size:13px ;border-radius:0px;font-size: 16px ;width: 164px ;margin-top: 8px;margin-left: -8px;\" (click)=\"logOut()\"><i class=\"fa fa-sign-out\"></i>&nbsp;LogOut</button>\r\n            <br><br>\r\n            </div>\r\n          </span>&nbsp;&nbsp;\r\n        </span>\r\n      </span>\r\n    </form>\r\n  </nav>\r\n  <!-- ======================== Registration Div =============== -->\r\n  <div>\r\n      <div id=\"myModal\" class=\"modal fade text-center\">\r\n          <div class=\"modal-dialog\">\r\n            <div class=\"col-lg-12 col-sm-12 col-12 main-section\">\r\n              <div class=\" modal-content\">\r\n                <div class=\"col-lg-12 col-sm-12 col-12 user-img\"><br>\r\n                  <img src=\"assets/man.png\" style=\"height: 60px;width: 70px\"><br>\r\n                </div>\r\n                <div class=\"col-lg-12 col-sm-12 col-12 user-name\"><br>\r\n                  <h2  style=\"color: aqua;font-family: Arial, Helvetica, sans-serif\">Create New User</h2>\r\n                </div><br>\r\n                <div class=\"col-lg-12 col-sm-12 col-12 form-input\">\r\n                    <form name=\"regfrm\" #rfrm=\"ngForm\">\r\n                        <div class=\"row\">\r\n                          <div class=\"col-md-6 col-sm-12 col-xm-12 \">\r\n                            <!-- <span class=\"input-group-addon sett1\">\r\n                              <i class=\"fa fa-user\" style=\"background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:13px; \"></i>\r\n                            </span> -->\r\n                            <input type=\"text\" class=\"texbox\" placeholder=\"First Name...\" [(ngModel)]=\"fname\" name=\"nn1\" #reg1=\"ngModel\" required>\r\n                          </div>\r\n                          <div class=\"col-md-6 col-sm-12 col-xm-12 \">\r\n                            <!-- <span class=\"input-group-addon sett\">\r\n                              <i class=\"fa fa-user\" style=\"background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:13px; \"></i>\r\n                            </span> -->\r\n                            <input type=\"text\" class=\"texbox\" placeholder=\"Last Name...\" [(ngModel)]=\"lname\" name=\"nn2\" #reg2=\"ngModel\" required>\r\n                          </div>\r\n                        </div>\r\n                        <span *ngIf=\"reg1.errors && reg1.errors.required\" class=\"regg\">{{mm1}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n                        <span *ngIf=\"reg2.errors && reg2.errors.required\" class=\"regg\">{{mm2}}</span>\r\n                        <br>\r\n                        <div class=\"row\">\r\n                          <div class=\"col-md-6 col-sm-12 col-xm-12\">\r\n                            <!-- <span class=\"input-group-addon sett1\">\r\n                              <i class=\"fa fa-envelope\" style=\"background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:10px; \"></i>\r\n                            </span> -->\r\n                            <input type=\"email\" class=\"texbox\" placeholder=\"Email ID...\" [(ngModel)]=\"email\" name=\"nn3\" #reg3=\"ngModel\" ng-Model email required \r\n                            pattern=\"^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$\">\r\n                           \r\n                          </div>\r\n                          <div class=\"col-md-6 col-sm-12 col-xm-12\">\r\n                            <!-- <span class=\"input-group-addon sett\">\r\n                              <i class=\"fa fa-envelope\" style=\"background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:10px; \"></i>\r\n                            </span> -->\r\n                            <input type=\"text\" class=\"texbox\" placeholder=\"User ID...\" [(ngModel)]=\"userid\" name=\"nn4\" #reg4=\"ngModel\" required>\r\n                          </div>\r\n                        </div>\r\n                        <span *ngIf=\"reg3.errors && reg3.errors.pattern\" style=\"color: rgb(246, 139, 180);;font-size: 12px;margin-left: -65px;\">Invalid Email Id</span>\r\n                        <span *ngIf=\"reg3.errors && reg3.errors.required\" class=\"regg\">{{mm3}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n                        <span *ngIf=\"reg4.errors && reg4.errors.required\" class=\"regg\">{{mm4}}</span>&nbsp;&nbsp;&nbsp;&nbsp;\r\n                        <br>\r\n                        <div class=\"row\">\r\n                          <div class=\"col-md-6 col-sm-12 col-xm-12 \">\r\n                            <!-- <span class=\"input-group-addon sett1\">\r\n                              <i class=\"fa fa-lock\" style=\"background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:13px; \"></i>\r\n                            </span> -->\r\n                            <input type=\"password\" class=\"texbox\" placeholder=\"Password...\" [(ngModel)]=\"password\" name=\"nn5\" #reg5=\"ngModel\" required>\r\n                          </div>\r\n                          <div class=\"col-md-6 col-sm-12 col-xm-12 \">\r\n                            <!-- <span class=\"input-group-addon sett\">\r\n                              <i class=\"fa fa-lock\" style=\"background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:13px; \"></i>\r\n                            </span> -->\r\n                            <input type=\"password\" class=\"texbox\" placeholder=\"Re-Password..\" [(ngModel)]=\"rpassword\" (blur)=\"checkPass(password)\" name=\"nn6\" #reg6=\"ngModel\" required>\r\n                          </div>\r\n                        </div>\r\n                        <span style=\"color: rgb(246, 139, 180);;font-size: 12px;margin-left: 0px;\">{{psms}}</span>\r\n                        <span *ngIf=\"reg5.errors && reg5.errors.required\" class=\"regg\">{{mm5}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n                        <span *ngIf=\"reg6.errors && reg6.errors.required\" class=\"regg\">{{mm6}}</span>&nbsp;&nbsp;&nbsp;&nbsp;\r\n                        <br>\r\n                        <div class=\"row\">\r\n                          <div class=\"col-md-12 col-sm-12 col-xm-12 \">\r\n                            <!-- <span class=\"input-group-addon sett1\">\r\n                              <i class=\"fa fa-phone\" style=\"background-color:#26A640;color:white;padding:10px;font-size:19px;width:40px;padding-left:13px; \"></i>\r\n                            </span> -->\r\n                            <input type=\"text\" class=\"form-control tt\" placeholder=\"Contact No..\" [(ngModel)]=\"contact\" name=\"nn7\" #reg7=\"ngModel\"\r\n                            pattern=\"[0-9]*\" maxlength=\"10\" required>\r\n                          </div>\r\n                        </div>\r\n                        <span *ngIf=\"reg7.errors && reg7.errors.required\" class=\"regg\">{{mm7}}</span>&nbsp;\r\n                        <span *ngIf=\"reg7.errors && reg7.errors.maxlength\" class=\"regg\">{{csms}}</span>\r\n                        <br>\r\n                        <div class=\"row\">\r\n                          <div class=\"col-md-12 col-sm-12 col-xm-12 \">\r\n                            <textarea type=\"text\" class=\"form-control tt\"  placeholder=\"Address Details...\" [(ngModel)]=\"address\" name=\"nn8\" #reg8=\"ngModel\" required></textarea>\r\n                          </div>\r\n                        </div>\r\n                        <span *ngIf=\"reg8.errors && reg8.errors.required\" class=\"regg\">{{mm8}}</span>\r\n                        <br>\r\n                        <div class=\"row\">\r\n                          <div class=\"col-md-12 col-sm-12 col-xm-12 \">\r\n                            <textarea type=\"text\" class=\"form-control tt\"  placeholder=\"Billing Address...\" name=\"nn9\" [(ngModel)]=\"saddress\" name=\"nn9\" #reg9=\"ngModel\"\r\n                              required></textarea>\r\n                          </div>\r\n                        </div>\r\n                        <span *ngIf=\"reg9.errors && reg9.errors.required\" class=\"regg\" >{{mm9}}</span>\r\n                        <br>\r\n                        <div class=\"row\">\r\n                          <div class=\"col-md-12 col-sm-12 col-xm-12 \">\r\n                             \r\n                              <input type=\"button\" value=\"Register\" class=\"btn btn-success\" style=\"border-radius: 0px;width:150px;float: right;\"\r\n                                (click)=\"funRegister(rfrm)\">\r\n                                <input type=\"button\" value=\"Close\" data-dismiss=\"modal\" class=\"btn btn-danger\" style=\"border-radius: 0px;float: right;margin-right: 7px;\">\r\n                            </div>\r\n                        </div>\r\n                      </form>\r\n                </div>\r\n             <div class=\"container\">\r\n                <!--  -->\r\n                </div>\r\n                <br>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n\r\n\r\n\r\n  </div>\r\n  <br>\r\n  <!-- ====================== End Registratio div ===================== -->\r\n  <!-- ======================== LogIn Div ================================= -->\r\n  <div class=\"logdiv text-center\">\r\n   <div id=\"myModal1\" class=\"modal fade text-center\">\r\n          <div class=\"modal-dialog\">\r\n            <div class=\"col-lg-12 col-sm-12 col-12 main-section\">\r\n              <div class=\"modal-content\">\r\n                <div class=\"col-lg-12 col-sm-12 col-12 user-img\"><br>\r\n                  <img src=\"assets/man.png\">\r\n                </div><br>\r\n                <div class=\"col-lg-12 col-sm-12 col-12 user-name\">\r\n                  <h2 style=\"color: aqua;font-family: Arial, Helvetica, sans-serif\">User LogIn</h2>\r\n                </div>\r\n                <div class=\"col-lg-12 col-sm-12 col-12 form-input text-center\">\r\n                    <form name=\"frm1\" #lform=\"ngForm\">\r\n                        <div class=\"row text-center\">\r\n                          <div class=\"col-md-12 col-sm-12 col-xs-12\">\r\n                            <div class=\"form-group\">\r\n                              <br>\r\n                              <div>\r\n                                  <input type=\"text\" class=\"form-control ltt\" name=\"log1\" [(ngModel)]=\"usrname\" placeholder=\"Enter User ID\" #up=\"ngModel\"\r\n                                    required style=\"border-radius: 0px\" />\r\n                              </div>\r\n                              <br>\r\n                                <div class=\"input-group text-center\"> \r\n                                  <input type=\"password\" class=\"form-control ltt\"  name=\"log2\" [(ngModel)]=\"upass\" placeholder=\"Enter Password\" #uid=\"ngModel\"\r\n                                    required style=\"border-radius: 0px ; width: 300px;\" />\r\n                              </div>\r\n                            </div>\r\n                          </div>\r\n                        </div>\r\n                        <span *ngIf=\"up.errors && up.errors.required\" class=\"valsp1\">{{m1}}</span>\r\n                        <span *ngIf=\"uid.errors && uid.errors.required\" class=\"valsp\">{{m2}}</span>\r\n                        <br>\r\n                        <div class=\"row\">\r\n                          <div class=\"col-md-12 col-sm-12 col-xs-12\">\r\n                            <a (click)=\"funforgote()\" style=\"color:rgb(176, 231, 213);cursor: pointer;\" data-dismiss=\"modal\">Fogot password ?</a>\r\n                            <input type=\"button\" value=\"LogIn\" class=\"btn btn-success lbtnn\" (click)=\"funlog(lform)\" style=\"float: right;\">&nbsp;\r\n                            <input type=\"reset\" value=\"Reset\" class=\"btn btn-danger lbtnn\" data-dismiss=\"modal\" style=\"float: right;margin-right: 7px;\" >\r\n                          </div>\r\n                        </div>\r\n                      </form>\r\n                </div>\r\n                <br>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n  </div>\r\n  <!-- ======================================= End LogIn Div ========================== -->\r\n  <div>\r\n    <router-outlet>\r\n    </router-outlet>\r\n  </div>\r\n  <app-footer>\r\n  </app-footer>\r\n\r\n</body>"
+module.exports = "<body>\r\n <!-- <app-header-menu></app-header-menu> -->\r\n  <div class=\"container-fluid\" style=\"background-color:rgb(158, 198, 233);\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-2 col-sm-12 col-xm-12 \">\r\n        <img src=\"../assets/NGX_Logo2016_Wide.png\" width=\"170\" height=\"70px;\">\r\n      </div>\r\n      <div class=\"col-md-4 col-sm-12 col-xm-12 \"  >\r\n        <form action=\"\" class=\"search-form\">\r\n          <div class=\"form-group has-feedback\">\r\n          <input type=\"text\" (keyup)=\"search_keyup()\"  class=\"form-control\" name=\"search\" id=\"search\" placeholder=\"search\" [(ngModel)]=\"txtsearch\" (keyup)=\"fun_search_product()\">\r\n        <div *ngIf=\"tmpforsearch\" (mouseover)=\"search_keyup()\"  style=\"background-color:white;overflow:auto;max-height:500px;z-index:1001;position:absolute;border-radius:10px;box-shadow:0px 2px 10px black;padding:5px;min-width:600px\">\r\n        <img src=\"../assets/close.png\" width=\"30px\" (click)=\"fun_search_out()\" style=\"position: fixed\">\r\n        <br>\r\n          <div *ngFor=\"let ser of searchdata\" style='padding:0px;cursor:pointer;background-color:honeydew' (mouseover)=\"fun_over_style(this)\" (mouseout)=\"fun_out_style(this)\" (click)=\"searchDetial(ser._id)\">\r\n             <img src=\"../../assets/uploads/{{ser.images}}\"style=\"float:right;width:100px;height:80px\">\r\n           <h4 style=\"color:crimson\"> {{ser.pname}}</h4>\r\n           <b> {{ser.pprice | currency:'INR'}}</b>\r\n            <span style=\"background-color:'{{ser.pcolor}}'\">....</span>\r\n            <br>\r\n           <span style=\"color:darkslategray;font-size:15px\"> {{ser.pdesc}}</span>\r\n            <hr>\r\n            </div>\r\n        </div>\r\n        </div>\r\n      </form>\r\n      </div>\r\n      <div class=\"col-md-6 col-sm-12 col-xm-12\">\r\n        <span class=\"fa fa-shopping-cart dropdown\" data-toggle=\"dropdown\" aria-hidden=\"true\" style=\"width:50px;color:rgb(250, 242, 242);font-size:20px;float: right;margin-top:22px;cursor: pointer;background-color: plum;width: 30px;height: 30px;padding: 5px;margin-top: 18px;box-shadow: 0px 0px 8px #fff;border-radius: 4px;\"> &nbsp;&nbsp;\r\n          &nbsp;\r\n         \r\n          <span class=\"dropdown-menu dropdown-menu-right text-center\" style=\"width: auto;border-radius: 0px;margin-right: 50px;margin-top: 20px;box-shadow: 0px 0px 10px black;border-radius: 4px;\">\r\n            <span class=\"dropdown-brand\" href=\"#\">\r\n              <h4>About Cart</h4>\r\n            </span>\r\n            <hr>\r\n              <input type=\"button\" class=\"btn btn-primary\" value=\"Clear Item\" (click)=\"fun_clear_cart_detail()\" style=\"border-radius: 0px; font-family: arial\">    \r\n               <br><br>\r\n              <input type=\"button\" class=\"btn btn-primary\" value=\"Show Items\" (click)=\"fun_cart_detail()\" style=\"border-radius: 0px; font-family: arial\">\r\n          </span>\r\n        </span>\r\n        <button class=\"text-center\"  style=\"color:white;width: 30px;height: 30px; border-radius: 50%;background-color: rgb(34, 238, 85);border: 3px solid rgb(34, 238, 85); float: right;margin-top: 19px;margin-right:4px;box-shadow: 0px 0px 8px #fff;border-radius: 4px;\"\r\n          (click)=\"fun_cart_detail()\">\r\n          {{msg}}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <nav class=\"navbar navbar-expand-md  navbar-dark bg-dark\">\r\n    <span class=\"navbar-toggler\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </span>\r\n    <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\r\n      <ul class=\"navbar-nav\">\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"#\" style=\"color:white; font-size:15px;\">Home</a>\r\n        </li>\r\n        <li class=\"nav-item dropdown\" *ngFor=\"let cat of getcat\">\r\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\" style=\"color:white; font-size:15px;\">\r\n            {{cat.cname}}\r\n          </a>\r\n          <ul class=\"dropdown-menu multi-level\" role=\"menu\" aria-labelledby=\"dropdownMenu\">\r\n            <li class=\"dropdown-submenu\" *ngFor=\"let subcat of getsub\">\r\n              <a class=\"dropdown-item\" *ngIf=\"cat._id==subcat.catid\">{{subcat.scatname}}</a>\r\n              <ul class=\"dropdown-menu\">\r\n                <li class=\"nav-item\" *ngFor=\"let ssub of ssubdata\">\r\n                  <a class=\"dropdown-item\" [routerLink]=\"['/protemp', ssub]\" *ngIf=\"subcat._id == ssub.scatid\">{{ssub.subscatname}}</a>\r\n                </li>\r\n              </ul>\r\n            </li>\r\n          </ul>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n    <form class=\"form-inline\">\r\n      <span class=\"lgn_sup_btn\">\r\n        <!-- *ngIf=\"login_display\" -->\r\n        <i class=\"fa fa-user stl\" style=\"color: mediumspringgreen\"></i>&nbsp;&nbsp;\r\n        <span href=\"#myModal\" class=\"trigger-btn spn\" id=\"snupp\" (click)=\"toRegister()\">SignUp</span>&nbsp;&nbsp;&nbsp;\r\n        <i class=\"fa fa-sign-in stl\" style=\"color: mediumspringgreen\"></i> &nbsp;&nbsp;\r\n        <span href=\"#myModal1\" class=\"trigger-btn spn\"   (click)=\"toLogin()\">LogIn</span>\r\n      </span>\r\n      <span class=\"showwelcome\">\r\n        <!--*ngIf=\"welcome_display\" -->\r\n        \r\n        <span style=\"color:rgb(7, 138, 161)\" *ngIf=\"dis\">\r\n          Welcome\r\n          <span style=\"color:rgb(16, 215, 241)\" (click)=\"showUserProfile()\">{{fullname}}</span>\r\n          <span class=\"dropdown\" title=\"User Profiles\">\r\n            <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" >\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-menu-right text-center  drpprof \" style=\"margin-right:200px;\" style=\"width: 250px;box-shadow: 0px 0px 10px black;\" >\r\n              <span class=\"dropdown-brand\" href=\"#\"><i class=\"fa fa-user-circle\" style=\"color: rgb(143, 160, 116);font-size: 40px;\"></i></span>\r\n              <hr>\r\n              <a class=\"dropdown-item\" href=\"#\">{{fullname}}</a>\r\n              <a class=\"dropdown-item\" href=\"#\">{{contact}}</a> \r\n              <a class=\"dropdown-item\" href=\"#\">{{email}}</a><br>\r\n              <button  class=\"btn btn-primary text-center\" style=\"font-size:13px ;border-radius:0px;font-size: 16px;width: 164px\" (click)=\"proedit(pp)\"><i class=\"fa fa-edit\"></i>&nbsp; Profile</button>&nbsp;&nbsp;\r\n              <button  class=\"btn btn-primary text-center\" style=\"font-size:13px ;border-radius:0px;font-size: 16px;margin-top: 8px;\" (click)=\"shopp_histry()\"><i class=\"fa fa-folder-open\"></i>&nbsp; Shopping Histry</button>&nbsp;&nbsp;\r\n              <button  class=\"btn btn-primary text-center\" style=\"font-size:13px ;border-radius:0px;font-size: 16px ;width: 164px ;margin-top: 8px;margin-left: -8px;\" (click)=\"logOut()\"><i class=\"fa fa-sign-out\"></i>&nbsp;LogOut</button>\r\n            <br><br>\r\n            </div>\r\n          </span>&nbsp;&nbsp;\r\n        </span>\r\n      </span>\r\n    </form>\r\n  </nav>\r\n  <br>\r\n  <div>\r\n    <router-outlet>\r\n    </router-outlet>\r\n  </div>\r\n  <app-footer>\r\n  </app-footer>\r\n\r\n</body>"
 
 /***/ }),
 
@@ -119,12 +119,11 @@ module.exports = "<body>\r\n <!-- <app-header-menu></app-header-menu> -->\r\n  <
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _show_cart_image_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./show-cart-image-service.service */ "./src/app/show-cart-image-service.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _show_cart_image_service_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./show-cart-image-service.service */ "./src/app/show-cart-image-service.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -142,19 +141,6 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
-
-var myReg = [
-    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])("regfrm", [
-        // ==================== Login And Regisrtation Form =============================== //
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])("visible", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ top: "60px" })),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])("invisible", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ top: "-1600px" })),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])("visible <=> invisible", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])("500ms ease-in")),
-        // login//===================
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])("show", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ top: "60px" })),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])("hide", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ top: "-1600px" })),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])("show <=> hide", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])("500ms ease-out")),
-    ])
-];
 var AppComponent = /** @class */ (function () {
     function AppComponent(cobj, show_cart_icon_service, rout) {
         var _this = this;
@@ -167,7 +153,6 @@ var AppComponent = /** @class */ (function () {
         this.welcome_display = false;
         this.dis = false;
         this.tmpforsearch = false;
-        ///////
         this.bcolor = "blue";
         this.title = 'app';
         this.rpage = "invisible";
@@ -190,20 +175,7 @@ var AppComponent = /** @class */ (function () {
         this.procback = function (dt) {
             _this.prodata = JSON.parse(dt._body);
         };
-        this.usercback = function (dt) {
-            alert(dt._body);
-            _this.fname = "";
-            _this.userid = "";
-            _this.email = "";
-            _this.password = "";
-            _this.contact = "";
-            _this.address = "";
-            _this.fname = "";
-            _this.rpassword = "";
-            window.location.href = "";
-        };
         this.getCatRec();
-        //  alert(JSON.parse(localStorage.getItem('cart_items').length))
     }
     AppComponent.prototype.fun_search_product = function () {
         var _this = this;
@@ -219,7 +191,6 @@ var AppComponent = /** @class */ (function () {
         }
     };
     AppComponent.prototype.search_keyup = function () {
-        //alert("ys")
         this.tmpforsearch = true;
     };
     AppComponent.prototype.fun_over_style = function (t) {
@@ -229,7 +200,6 @@ var AppComponent = /** @class */ (function () {
         t.style.backgroundColor = "lightblue";
     };
     AppComponent.prototype.fun_search_out = function () {
-        //alert("hi")
         this.tmpforsearch = false;
     };
     AppComponent.prototype.ngOnInit = function () {
@@ -248,7 +218,6 @@ var AppComponent = /** @class */ (function () {
             this.showwelcome();
         }
         else {
-            //alert("b")
             this.login_display = true;
             this.welcome_display = true;
         }
@@ -264,66 +233,6 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.getCatRec = function () {
         this.cobj.get("/category/getcato").subscribe(this.catcab);
     };
-    AppComponent.prototype.funRegister = function (regval) {
-        if (regval.valid == false) {
-            this.mm1 = " * First name ";
-            this.mm2 = " * Last name  ";
-            this.mm3 = " * Enter Email  ";
-            this.mm4 = " * User id ";
-            this.mm5 = " * Enter Password ";
-            this.mm6 = " * Re-password";
-            this.mm7 = " * Enter Contact ";
-            this.mm8 = " * Enter address ";
-            this.mm9 = " * Shipping address";
-        }
-        else {
-            var userData = { fullname: this.fname, email: this.email, userid: this.userid,
-                password: this.password, rpassword: this.rpassword, Contact: this.contact,
-                address: { BillindAdsress: [{ name: this.fname }, { Contact: this.contact }, { biladdress: this.address }],
-                    Shipping: [{ lname: this.lname }, { Contact: this.contact }, { shipaddress: this.saddress }] } };
-            //console.log(userData)
-            this.cobj.post("/register/userReg", userData).subscribe(this.usercback);
-        }
-    };
-    // =========================== Log In Mod ===========================//
-    // usrname;upass;userdet;m1;m2;
-    // funlog(ldata)
-    // {
-    //    if(ldata.valid==false)
-    //    {
-    //     this. m1=" * Don't forget any !"
-    //      this.m2=" * Don't forget any !"
-    //      this.usrname="";
-    //      this.upass="";
-    //    }
-    //    else
-    //    {
-    //   var logData={userid:this.usrname,password:this.upass}
-    //   this.cobj.post("/register/logData",logData).subscribe(this.logcback)
-    // }
-    // }
-    // logcback=(dt)=>{
-    //      this.userdet=(JSON.parse(dt._body))
-    //      if(this.userdet.length==1){
-    //      localStorage.setItem("login_check","1")
-    //      localStorage.setItem("userdata",this.userdet)
-    //      localStorage.setItem("fullname",   this.userdet[0].fullname)
-    //      localStorage.setItem("email",this.userdet[0].email)
-    //      localStorage.setItem("Contact",this.userdet[0].Contact)
-    //      localStorage.setItem("userid",this.userdet[0]._id)
-    //      this.email=localStorage.getItem("email")
-    //      this.fullname=localStorage.getItem("fullname")
-    //      this.dis=true
-    //      this.lgn_sup_btn()
-    //      this.showwelcome()
-    //      this.lpage = "hide";
-    //      window.location.href=""
-    //     }
-    //   else
-    //   {
-    //     alert("try agin ! !")
-    //    }
-    // }
     AppComponent.prototype.logOut = function () {
         localStorage.removeItem("email");
         localStorage.removeItem("Contact");
@@ -336,10 +245,10 @@ var AppComponent = /** @class */ (function () {
     };
     AppComponent.prototype.showUserProfile = function () {
         //alert("j query")
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()(".drpprof").show("slow");
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".drpprof").show("slow");
     };
     AppComponent.prototype.proedit = function (userdata) {
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()(".drpprof").hide("slow");
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".drpprof").hide("slow");
         this.rout.navigateByUrl("/profile");
     };
     AppComponent.prototype.fun_cart_detail = function () {
@@ -355,11 +264,11 @@ var AppComponent = /** @class */ (function () {
         }
     };
     AppComponent.prototype.lgn_sup_btn = function () {
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()(".lgn_sup_btn").hide(100);
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".lgn_sup_btn").hide(100);
     };
     AppComponent.prototype.showwelcome = function () {
         //alert("hii ")
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()(".showwelcome").show(100);
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".showwelcome").show(100);
     };
     //================== Search detals =====================//
     AppComponent.prototype.searchDetial = function (pid) {
@@ -390,11 +299,10 @@ var AppComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
-            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")],
-            animations: [myReg]
+            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
-        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"])),
-        __metadata("design:paramtypes", [Object, _show_cart_image_service_service__WEBPACK_IMPORTED_MODULE_4__["ShowCartImageServiceService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"])),
+        __metadata("design:paramtypes", [Object, _show_cart_image_service_service__WEBPACK_IMPORTED_MODULE_3__["ShowCartImageServiceService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -1912,7 +1820,7 @@ var PurchagedetailsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n.texbox{\r\n  padding: 7px;\r\n  width:290px;\r\n  height: 39px;\r\n  border: 1px solid silver;\r\n  color: rgb(112, 32, 8);\r\n  font-size:22px;\r\n  font-family: French Script MT;\r\n}\r\n.areas{\r\n  color: rgb(112, 32, 8);\r\n  font-size: 22px;\r\n  border-radius: 0px;\r\n  height: 50px;\r\n  font-family: French Script MT;\r\n}\r\n.con{\r\n  color: rgb(112, 32, 8);\r\n  font-size: 22px;\r\n  border-radius: 0px;\r\n  height: 39px;\r\n  font-family: French Script MT;\r\n}\r\n.modal-dialogs{\r\n  box-shadow: inset 0px 0px 1px 2px rgb(153, 184, 212);\r\n  background-color: rgb(153, 184, 212);\r\n}\r\n"
+module.exports = "\r\n.texbox{\r\n  padding: 7px;\r\n  width:186px;\r\n  height: 39px;\r\n  border: 1px solid silver;\r\n  color: rgb(112, 32, 8);\r\n  /* font-size:22px; */\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\n.areas{\r\n  color: rgb(112, 32, 8);\r\n  /* font-size: 22px; */\r\n  border-radius: 0px;\r\n  height: 50px;\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\n.con{\r\n  color: rgb(112, 32, 8);\r\n  /* font-size: 22px; */\r\n  border-radius: 0px;\r\n  height: 39px;\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\n.modal-dialogs{\r\n  box-shadow: inset 0px 0px 1px 2px rgb(153, 184, 212);\r\n  background-color: rgb(153, 184, 212);\r\n}\r\n"
 
 /***/ }),
 
@@ -1923,7 +1831,7 @@ module.exports = "\r\n.texbox{\r\n  padding: 7px;\r\n  width:290px;\r\n  height:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n<div class=\"row\">\n  <div class=\"col-md-3\"></div>\n  <div class=\"col-md-6 modal-dialogs\" >\n      <div class=\"col-lg-12 col-sm-12 col-12 user-img\" style=\"text-align: center\"><br>\n        <img src=\"assets/man.png\" style=\"height: 70px;width: 70px;padding: 5px;\"><br>\n      </div>\n    <div class=\"col-lg-12 col-sm-12 col-12\">\n      <form name=\"regfrm\" #rfrm=\"ngForm\">\n          <div class=\"row\">\n            <div class=\"col-md-6 col-sm-12 col-xm-12 \">\n              <input type=\"text\" class=\"texbox\" placeholder=\"First Name...\" [(ngModel)]=\"fname\" name=\"nn1\" #reg1=\"ngModel\" required>\n            </div>\n            <div class=\"col-md-6 col-sm-12 col-xm-12 \">\n              <input type=\"text\" class=\"texbox\" placeholder=\"Last Name...\" [(ngModel)]=\"lname\" name=\"nn2\" #reg2=\"ngModel\" required>\n            </div>\n          </div>\n          <span *ngIf=\"reg1.errors && reg1.errors.required\" class=\"regg\">{{mm1}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n          <span *ngIf=\"reg2.errors && reg2.errors.required\" class=\"regg\">{{mm2}}</span>\n          <br>\n          <div class=\"row\">\n            <div class=\"col-md-6 col-sm-12 col-xm-12\">\n              <input type=\"email\" class=\"texbox\" placeholder=\"Email ID...\" [(ngModel)]=\"email\" name=\"nn3\" #reg3=\"ngModel\" ng-Model email required \n              pattern=\"^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$\">\n             \n            </div>\n            <div class=\"col-md-6 col-sm-12 col-xm-12\">\n              <input type=\"text\" class=\"texbox\" placeholder=\"User ID...\" [(ngModel)]=\"userid\" name=\"nn4\" #reg4=\"ngModel\" required>\n            </div>\n          </div>\n          <span *ngIf=\"reg3.errors && reg3.errors.pattern\" style=\"color: rgb(246, 139, 180);;font-size: 12px;margin-left: -65px;\">Invalid Email Id</span>\n          <span *ngIf=\"reg3.errors && reg3.errors.required\" class=\"regg\">{{mm3}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n          <span *ngIf=\"reg4.errors && reg4.errors.required\" class=\"regg\">{{mm4}}</span>&nbsp;&nbsp;&nbsp;&nbsp;\n          <br>\n          <div class=\"row\">\n            <div class=\"col-md-6 col-sm-12 col-xm-12 \">\n              <input type=\"password\" class=\"texbox\" placeholder=\"Password...\" [(ngModel)]=\"password\" name=\"nn5\" #reg5=\"ngModel\" required>\n            </div>\n            <div class=\"col-md-6 col-sm-12 col-xm-12 \">\n              <input type=\"password\" class=\"texbox\" placeholder=\"Re-Password..\" [(ngModel)]=\"rpassword\" (blur)=\"checkPass(password)\" name=\"nn6\" #reg6=\"ngModel\" required>\n            </div>\n          </div>\n          <span style=\"color: rgb(246, 139, 180);font-size: 12px;margin-left: 0px;\">{{psms}}</span>\n          <span *ngIf=\"reg5.errors && reg5.errors.required\" class=\"regg\">{{mm5}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n          <span *ngIf=\"reg6.errors && reg6.errors.required\" class=\"regg\">{{mm6}}</span>&nbsp;&nbsp;&nbsp;&nbsp;\n          <br>\n          <div class=\"row\">\n            <div class=\"col-md-12 col-sm-12 col-xm-12\">\n              <input type=\"text\" class=\"form-control con\" placeholder=\"Contact No..\" [(ngModel)]=\"contact\" name=\"nn7\" #reg7=\"ngModel\"\n              pattern=\"[0-9]*\" maxlength=\"10\" minlength=\"10\" required>\n            </div>\n          </div>\n          <span *ngIf=\"reg7.errors && reg7.errors.required\" class=\"regg\">{{mm7}}</span>&nbsp;\n          <span *ngIf=\"reg7.errors && reg7.errors.maxlength\" class=\"regg\">{{csms}}</span>\n          <br>\n          <div class=\"row\">\n            <div class=\"col-md-12 col-sm-12 col-xm-12 \">\n              <textarea type=\"text\" class=\"form-control areas\"  placeholder=\"Address Details...\" [(ngModel)]=\"address\" name=\"nn8\" #reg8=\"ngModel\" required></textarea>\n            </div>\n          </div>\n          <span *ngIf=\"reg8.errors && reg8.errors.required\" class=\"regg\">{{mm8}}</span>\n          <br>\n          <div class=\"row\">\n            <div class=\"col-md-12 col-sm-12 col-xm-12 \">\n              <textarea type=\"text\" class=\"form-control areas\"  placeholder=\"Billing Address...\" name=\"nn9\" [(ngModel)]=\"saddress\" name=\"nn9\" #reg9=\"ngModel\"\n                required></textarea>\n            </div>\n          </div>\n          <span *ngIf=\"reg9.errors && reg9.errors.required\" class=\"regg\" >{{mm9}}</span>\n          <br>\n          <div class=\"row\">\n            <div class=\"col-md-12 col-sm-12 col-xm-12 \">\n                <input type=\"button\" value=\"Register\" class=\"btn btn-success\" style=\"border-radius: 0px;width:150px;float: right;\"\n                  (click)=\"funRegister(rfrm)\">\n                  <input type=\"reset\" value=\"Reset\" data-dismiss=\"modal\" class=\"btn btn-danger\" style=\"border-radius: 0px;float: right;margin-right: 7px;\">\n              </div>\n          </div>\n          <br>\n      </form>\n  </div>\n  </div>\n  <div class=\"col-md-3\"></div>\n</div>\n</div>\n"
+module.exports = "<div>\n<div class=\"row\">\n  <div class=\"col-md-4\"></div>\n  <div class=\"col-md-4 modal-dialogs\" >\n      <div class=\"col-lg-12 col-sm-12 col-12 user-img\" style=\"text-align: center\"><br>\n        <img src=\"assets/man.png\" style=\"height: 70px;width: 70px;padding: 5px;\"><br>\n      </div>\n    <div class=\"col-lg-12 col-sm-12 col-12\">\n      <form name=\"regfrm\" #rfrm=\"ngForm\">\n          <div class=\"row\">\n            <div class=\"col-md-6 col-sm-12 col-xm-12 \">\n              <input type=\"text\" class=\"texbox\" placeholder=\"First Name...\" [(ngModel)]=\"fname\" name=\"nn1\" #reg1=\"ngModel\" required>\n            </div>\n            <div class=\"col-md-6 col-sm-12 col-xm-12 \">\n              <input type=\"text\" class=\"texbox\" placeholder=\"Last Name...\" [(ngModel)]=\"lname\" name=\"nn2\" #reg2=\"ngModel\" required>\n            </div>\n          </div>\n          <span *ngIf=\"reg1.errors && reg1.errors.required\" class=\"regg\">{{mm1}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n          <span *ngIf=\"reg2.errors && reg2.errors.required\" class=\"regg\">{{mm2}}</span>\n          <br>\n          <div class=\"row\">\n            <div class=\"col-md-6 col-sm-12 col-xm-12\">\n              <input type=\"email\" class=\"texbox\" placeholder=\"Email ID...\" [(ngModel)]=\"email\" name=\"nn3\" #reg3=\"ngModel\" ng-Model email required \n              pattern=\"^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$\">\n             \n            </div>\n            <div class=\"col-md-6 col-sm-12 col-xm-12\">\n              <input type=\"text\" class=\"texbox\" placeholder=\"User ID...\" [(ngModel)]=\"userid\" name=\"nn4\" #reg4=\"ngModel\" required>\n            </div>\n          </div>\n          <span *ngIf=\"reg3.errors && reg3.errors.pattern\" style=\"color: rgb(246, 139, 180);;font-size: 12px;margin-left: -65px;\">Invalid Email Id</span>\n          <span *ngIf=\"reg3.errors && reg3.errors.required\" class=\"regg\">{{mm3}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n          <span *ngIf=\"reg4.errors && reg4.errors.required\" class=\"regg\">{{mm4}}</span>&nbsp;&nbsp;&nbsp;&nbsp;\n          <br>\n          <div class=\"row\">\n            <div class=\"col-md-6 col-sm-12 col-xm-12 \">\n              <input type=\"password\" class=\"texbox\" placeholder=\"Password...\" [(ngModel)]=\"password\" name=\"nn5\" #reg5=\"ngModel\" required>\n            </div>\n            <div class=\"col-md-6 col-sm-12 col-xm-12 \">\n              <input type=\"password\" class=\"texbox\" placeholder=\"Re-Password..\" [(ngModel)]=\"rpassword\" (blur)=\"checkPass(password)\" name=\"nn6\" #reg6=\"ngModel\" required>\n            </div>\n          </div>\n          <span style=\"color: rgb(246, 139, 180);font-size: 12px;margin-left: 0px;\">{{psms}}</span>\n          <span *ngIf=\"reg5.errors && reg5.errors.required\" class=\"regg\">{{mm5}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n          <span *ngIf=\"reg6.errors && reg6.errors.required\" class=\"regg\">{{mm6}}</span>&nbsp;&nbsp;&nbsp;&nbsp;\n          <br>\n          <div class=\"row\">\n            <div class=\"col-md-12 col-sm-12 col-xm-12\">\n              <input type=\"text\" class=\"form-control con\" placeholder=\"Contact No..\" [(ngModel)]=\"contact\" name=\"nn7\" #reg7=\"ngModel\"\n              pattern=\"[0-9]*\" maxlength=\"10\" minlength=\"10\" required>\n            </div>\n          </div>\n          <span *ngIf=\"reg7.errors && reg7.errors.required\" class=\"regg\">{{mm7}}</span>&nbsp;\n          <span *ngIf=\"reg7.errors && reg7.errors.maxlength\" class=\"regg\">{{csms}}</span>\n          <br>\n          <div class=\"row\">\n            <div class=\"col-md-12 col-sm-12 col-xm-12 \">\n              <textarea type=\"text\" class=\"form-control areas\"  placeholder=\"Address Details...\" [(ngModel)]=\"address\" name=\"nn8\" #reg8=\"ngModel\" required></textarea>\n            </div>\n          </div>\n          <span *ngIf=\"reg8.errors && reg8.errors.required\" class=\"regg\">{{mm8}}</span>\n          <br>\n          <div class=\"row\">\n            <div class=\"col-md-12 col-sm-12 col-xm-12 \">\n              <textarea type=\"text\" class=\"form-control areas\"  placeholder=\"Billing Address...\" name=\"nn9\" [(ngModel)]=\"saddress\" name=\"nn9\" #reg9=\"ngModel\"\n                required></textarea>\n            </div>\n          </div>\n          <span *ngIf=\"reg9.errors && reg9.errors.required\" class=\"regg\" >{{mm9}}</span>\n          <br>\n          <div class=\"row\">\n            <div class=\"col-md-12 col-sm-12 col-xm-12 \">\n                <input type=\"button\" value=\"Register\" class=\"btn btn-success\" style=\"border-radius: 0px;width:150px;float: right;\"\n                  (click)=\"funRegister(rfrm)\">\n                  <input type=\"reset\" value=\"Reset\" data-dismiss=\"modal\" class=\"btn btn-danger\" style=\"border-radius: 0px;float: right;margin-right: 7px;\">\n              </div>\n          </div>\n          <br>\n      </form>\n  </div>\n  </div>\n  <div class=\"col-md-4\"></div>\n</div>\n</div>\n"
 
 /***/ }),
 
@@ -1958,8 +1866,10 @@ var RegistrationComponent = /** @class */ (function () {
         this.cobj = cobj;
         this.rout = rout;
         this.usercback = function (dt) {
-            console.log(dt['_body']);
-            if (dt['_body']['success'] == true) {
+            _this.register_data = JSON.parse(dt['_body']);
+            console.log(_this.register_data.success);
+            if (_this.register_data['success'] == true) {
+                alert(_this.register_data.message);
                 _this.fname = "";
                 _this.userid = "";
                 _this.email = "";
@@ -1971,7 +1881,7 @@ var RegistrationComponent = /** @class */ (function () {
                 _this.rout.navigateByUrl('/user-login-securly');
             }
             else {
-                alert(dt['_body'][0]['message']);
+                alert(_this.register_data.message);
             }
         };
     }
@@ -2377,7 +2287,6 @@ var ShowCartDetailsComponent = /** @class */ (function () {
     };
     ShowCartDetailsComponent.prototype.fun_order_now = function () {
         var _this = this;
-        alert('buy_now');
         var arr;
         if (localStorage.getItem("login_check") != null) {
             arr = localStorage.getItem("cart_items");
@@ -2409,7 +2318,8 @@ var ShowCartDetailsComponent = /** @class */ (function () {
             });
         }
         else {
-            this.app.lgn_sup_btn();
+            alert('User must be logged In !!');
+            this.app.toLogin();
         }
     };
     ShowCartDetailsComponent.prototype.remove_cart_item = function (ind) {

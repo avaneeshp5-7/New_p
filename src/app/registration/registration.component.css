@@ -1,26 +1,26 @@
 
 .texbox{
   padding: 7px;
-  width:290px;
+  width:186px;
   height: 39px;
   border: 1px solid silver;
   color: rgb(112, 32, 8);
-  font-size:22px;
-  font-family: French Script MT;
+  /* font-size:22px; */
+  font-family: Arial, Helvetica, sans-serif;
 }
 .areas{
   color: rgb(112, 32, 8);
-  font-size: 22px;
+  /* font-size: 22px; */
   border-radius: 0px;
   height: 50px;
-  font-family: French Script MT;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .con{
   color: rgb(112, 32, 8);
-  font-size: 22px;
+  /* font-size: 22px; */
   border-radius: 0px;
   height: 39px;
-  font-family: French Script MT;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .modal-dialogs{
