@@ -358,6 +358,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _send_otp_send_otp_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./send-otp/send-otp.component */ "./src/app/send-otp/send-otp.component.ts");
 /* harmony import */ var _reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./reset-password/reset-password.component */ "./src/app/reset-password/reset-password.component.ts");
 /* harmony import */ var _registration_registration_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./registration/registration.component */ "./src/app/registration/registration.component.ts");
+/* harmony import */ var _app_userauth_service__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../app/userauth.service */ "./src/app/userauth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -399,15 +400,16 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var robj = [
     { path: "", component: _first_page_first_page_component__WEBPACK_IMPORTED_MODULE_17__["FirstPageComponent"] },
-    { path: "profile", component: _userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_22__["UserprofileComponent"] },
+    { path: "profile", component: _userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_22__["UserprofileComponent"], canActivate: [_app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]] },
     { path: "upcon", component: _upcomming_upcomming_component__WEBPACK_IMPORTED_MODULE_23__["UpcommingComponent"] },
     { path: "protemp", component: _producttemplate_producttemplate_component__WEBPACK_IMPORTED_MODULE_7__["ProducttemplateComponent"] },
     { path: "prodetail", component: _product_dtail_product_dtail_component__WEBPACK_IMPORTED_MODULE_16__["ProductDtailComponent"] },
-    { path: "cartdet", component: _show_cart_details_show_cart_details_component__WEBPACK_IMPORTED_MODULE_24__["ShowCartDetailsComponent"] },
-    { path: "shopp", component: _shoppinghistry_shoppinghistry_component__WEBPACK_IMPORTED_MODULE_27__["ShoppinghistryComponent"] },
-    { path: "p_details", component: _purchagedetails_purchagedetails_component__WEBPACK_IMPORTED_MODULE_26__["PurchagedetailsComponent"] },
+    { path: "cartdet", component: _show_cart_details_show_cart_details_component__WEBPACK_IMPORTED_MODULE_24__["ShowCartDetailsComponent"], canActivate: [_app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]] },
+    { path: "shopp", component: _shoppinghistry_shoppinghistry_component__WEBPACK_IMPORTED_MODULE_27__["ShoppinghistryComponent"], canActivate: [_app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]] },
+    { path: "p_details", component: _purchagedetails_purchagedetails_component__WEBPACK_IMPORTED_MODULE_26__["PurchagedetailsComponent"], canActivate: [_app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]] },
     { path: "mobil", component: _moblile_moblile_component__WEBPACK_IMPORTED_MODULE_28__["MoblileComponent"] },
     { path: "otp_enter", component: _otp_otp_component__WEBPACK_IMPORTED_MODULE_30__["OtpComponent"] },
     { path: "gen_new_pass", component: _newpassord_newpassord_component__WEBPACK_IMPORTED_MODULE_31__["NewpassordComponent"] },
@@ -452,7 +454,7 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"], _angular_http__WEBPACK_IMPORTED_MODULE_3__["HttpModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"], router, angular2_image_zoom__WEBPACK_IMPORTED_MODULE_18__["ImageZoomModule"], ngx_slider__WEBPACK_IMPORTED_MODULE_19__["SliderModule"], ngx_rating__WEBPACK_IMPORTED_MODULE_20__["RatingModule"]
             ],
-            providers: [_show_cart_image_service_service__WEBPACK_IMPORTED_MODULE_21__["ShowCartImageServiceService"]],
+            providers: [_show_cart_image_service_service__WEBPACK_IMPORTED_MODULE_21__["ShowCartImageServiceService"], _app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
@@ -1747,7 +1749,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"text-center\">\r\n  <img src=\"/assets/ok.png\" class=\"img-responsive\" width=\"200px\">\r\n</div>\r\n<h5 class=\"text-center\" style=\"color: rgb(54, 211, 54);font-size: 38px;font-weight: bold\">\r\n  Your Order Successfull !</h5>\r\n<h6 class=\"text-center\"> You'll recieve a sms once your order is dispatched.</h6>\r\n<p class=\"text-center\" style=\"font-size: 20px\">Your order will sent to you on your Location.</p>\r\n<h3 class=\"text-center\" style=\"color: blue;\">Thank's For Shopping with Us !</h3>\r\n\r\n\r\n"
+module.exports = "<div class=\"text-center\">\r\n  <img src=\"/assets/ok.png\" class=\"img-responsive\" width=\"200px\">\r\n</div>\r\n<h5 class=\"text-center\" style=\"color: rgb(54, 211, 54);font-size: 38px;font-weight: bold\">\r\n  Your Order Successfull !</h5>\r\n<h6 class=\"text-center\"> You'll recieve a sms once your order is dispatched.</h6>\r\n<p class=\"text-center\" style=\"font-size: 20px\">Your order will sent to you on your Location.</p>\r\n<h3 class=\"text-center\" style=\"color: blue;\">Thank's For Shopping with Us !</h3>\r\n<div class=\"text-center\"><button class=\"btn btn-success\" (click)=\"Continue()\">Shopping Continue</button></div>\r\n"
 
 /***/ }),
 
@@ -1797,6 +1799,9 @@ var PurchagedetailsComponent = /** @class */ (function () {
                 });
             }
         });
+    };
+    PurchagedetailsComponent.prototype.Continue = function () {
+        window.location.href = "";
     };
     PurchagedetailsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2476,6 +2481,56 @@ var UpcommingComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], UpcommingComponent);
     return UpcommingComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/userauth.service.ts":
+/*!*************************************!*\
+  !*** ./src/app/userauth.service.ts ***!
+  \*************************************/
+/*! exports provided: UserauthService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserauthService", function() { return UserauthService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var UserauthService = /** @class */ (function () {
+    function UserauthService(_router) {
+        this._router = _router;
+    }
+    UserauthService.prototype.canActivate = function (next, state) {
+        alert('auth');
+        if (localStorage.getItem('login_check') != null) {
+            return true;
+        }
+        else {
+            this._router.navigateByUrl('/user-login-securly');
+            return false;
+        }
+    };
+    UserauthService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], UserauthService);
+    return UserauthService;
 }());
 
 

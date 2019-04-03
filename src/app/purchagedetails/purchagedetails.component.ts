@@ -27,5 +27,7 @@ pid;purdata
       }
     })
   }
-
+  Continue(){
+    window.location.href="";
+  }
 }

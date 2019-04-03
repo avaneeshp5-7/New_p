@@ -34,19 +34,16 @@ import { NewpassordComponent } from './newpassord/newpassord.component';
 import { SendOtpComponent } from './send-otp/send-otp.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { RegistrationComponent } from './registration/registration.component'
-
+import {UserauthService} from '../app/userauth.service'
 var robj=[
-
-
 {path:"",component:FirstPageComponent},
-	{path:"profile",component:UserprofileComponent},
-
+	{path:"profile",component:UserprofileComponent,canActivate: [UserauthService]},
 	        {path:"upcon",component:UpcommingComponent},
           {path:"protemp",component:ProducttemplateComponent},
           {path:"prodetail",component:ProductDtailComponent},
-          {path:"cartdet",component:ShowCartDetailsComponent},
-          {path:"shopp",component:ShoppinghistryComponent},
-          {path:"p_details",component:PurchagedetailsComponent},
+          {path:"cartdet",component:ShowCartDetailsComponent,canActivate: [UserauthService]},
+          {path:"shopp",component:ShoppinghistryComponent,canActivate: [UserauthService]},
+          {path:"p_details",component:PurchagedetailsComponent,canActivate: [UserauthService]},
           {path:"mobil",component:MoblileComponent},
           {path:"otp_enter",component:OtpComponent},
           {path:"gen_new_pass",component:NewpassordComponent},
@@ -91,7 +88,7 @@ var router=RouterModule.forRoot(robj)
   imports: [
     BrowserModule,BrowserAnimationsModule,HttpModule,FormsModule,router,ImageZoomModule,SliderModule,RatingModule
   ],
-  providers: [ShowCartImageServiceService],
+  providers: [ShowCartImageServiceService,UserauthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
