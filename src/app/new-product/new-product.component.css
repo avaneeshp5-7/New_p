@@ -1,4 +1,43 @@
- .spn{
+@media (min-width: 361px) { 
+	#prospn{
+	border-radius: 4px;
+    margin-top: 13px;
+    margin-left: 64px;
+    padding: 10px;
+    float: left;
+    border: 1px solid silver;
+    width: 230px;
+    background-color: rgba(241, 221, 221, 0.137);
+    box-shadow: 0px 0px 5px rgb(192, 186, 186);
+}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) { 
+	.spn{
+		margin-left: 50px;
+	}
+} */
+
+/* // Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) { 
+	.spn{
+		margin-left: 50px;
+	}
+} */
+
+/* // Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) { 
+	.spn{
+		margin-left: 50px;
+	}
+} */
+
+/* #prospn12{
+	margin: auto;
+} */
+
+.spn{
      margin: 8px;
  }
  .fas{

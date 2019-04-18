@@ -1,6 +1,8 @@
 var exp = require("express")
 router = exp.Router()
 mg = require("mongojs")
+const passport=require('passport');
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;;
 con = mg("mongodb://jai:jai15507@ds149885.mlab.com:49885/ecodb")
 bp = require("body-parser")
 router.post("/userReg", function (rq, rs) {
@@ -44,4 +46,25 @@ router.post("/logData", function (req, res) {
     })
 })
 
+// router.get('/google_log',(req,res)=>{
+   
+//     passport.serializeUser((user, done) => {
+//         done(null, user);
+//         console.log('google')
+//     });
+//     passport.deserializeUser((user, done) => {
+//         done(null, user);
+//     });
+//     console.log('google')
+//     passport.use(new GoogleStrategy({
+//         callbackURL: '/auth/google/redirect',
+//         clientID: "331258029449-fgj5pcln3r51fq1f53kgtpld8on8onc8.apps.googleusercontent.com",
+//         clientSecret: "_n1e97MWkFmMa2hdQC6m1iBA",
+//     }, (token, refreshToken, profile, done) => {
+//         return done(null, {
+//             scope: profile,
+//             token: token
+//         });
+//     }));
+// })
 module.exports = router;

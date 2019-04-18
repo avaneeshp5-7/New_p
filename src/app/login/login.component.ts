@@ -52,4 +52,10 @@ logcback=(dt)=>{
 funforgote(){
   this.rout.navigateByUrl("/send-otp-on");
 }
+google_login()
+{
+  this.cobj.get("/register/google_log").subscribe(dt=>{
+    alert('Logged');
+  })
+}
 }
