@@ -34,7 +34,8 @@ import { NewpassordComponent } from './newpassord/newpassord.component';
 import { SendOtpComponent } from './send-otp/send-otp.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { RegistrationComponent } from './registration/registration.component'
-import {UserauthService} from '../app/userauth.service'
+import {UserauthService} from '../app/userauth.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 var robj=[
 {path:"",component:FirstPageComponent},
 	{path:"profile",component:UserprofileComponent,canActivate: [UserauthService]},
@@ -50,8 +51,9 @@ var robj=[
           {path:"send-otp-on",component:SendOtpComponent},
           {path:"create-new-password",component:ResetPasswordComponent},
           {path:"user-login-securly",component:LoginComponent},
-          {path:"new-user-regitration",component:RegistrationComponent}
-]
+          {path:"new-user-regitration",component:RegistrationComponent},
+          {path:"**", component:PageNotFoundComponent},
+] 
 var router=RouterModule.forRoot(robj)
 
 @NgModule({
@@ -81,7 +83,8 @@ var router=RouterModule.forRoot(robj)
     NewpassordComponent,
     SendOtpComponent,
     ResetPasswordComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    PageNotFoundComponent
   ],
 
 

@@ -104,7 +104,7 @@ module.exports = ".nav-item\r\n{\r\n\r\n    font-family: Arial, Helvetica, sans-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body>\r\n <!-- <app-header-menu></app-header-menu> -->\r\n  <div class=\"container-fluid\" style=\"background-color:rgb(158, 198, 233);\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-2 col-sm-12 col-xm-12 \">\r\n        <img src=\"../assets/NGX_Logo2016_Wide.png\" width=\"170\" height=\"70px;\">\r\n      </div>\r\n      <div class=\"col-md-4 col-sm-12 col-xm-12 \"  >\r\n        <form action=\"\" class=\"search-form\">\r\n          <div class=\"form-group has-feedback\">\r\n          <input type=\"text\" (keyup)=\"search_keyup()\"  class=\"form-control\" name=\"search\" id=\"search\" placeholder=\"search\" [(ngModel)]=\"txtsearch\" (keyup)=\"fun_search_product()\">\r\n        <div *ngIf=\"tmpforsearch\" (mouseover)=\"search_keyup()\"  style=\"background-color:white;overflow:auto;max-height:500px;z-index:1001;position:absolute;border-radius:10px;box-shadow:0px 2px 10px black;padding:5px;min-width:600px\">\r\n        <img src=\"../assets/close.png\" width=\"30px\" (click)=\"fun_search_out()\" style=\"position: fixed\">\r\n        <br>\r\n          <div *ngFor=\"let ser of searchdata\" style='padding:0px;cursor:pointer;background-color:honeydew' (mouseover)=\"fun_over_style(this)\" (mouseout)=\"fun_out_style(this)\" (click)=\"searchDetial(ser._id)\">\r\n             <img src=\"../../assets/uploads/{{ser.images}}\"style=\"float:right;width:100px;height:80px\">\r\n           <h4 style=\"color:crimson\"> {{ser.pname}}</h4>\r\n           <b> {{ser.pprice | currency:'INR'}}</b>\r\n            <span style=\"background-color:'{{ser.pcolor}}'\">....</span>\r\n            <br>\r\n           <span style=\"color:darkslategray;font-size:15px\"> {{ser.pdesc}}</span>\r\n            <hr>\r\n            </div>\r\n        </div>\r\n        </div>\r\n      </form>\r\n      </div>\r\n      <div class=\"col-md-6 col-sm-12 col-xm-12\">\r\n        <span class=\"fa fa-shopping-cart dropdown\" data-toggle=\"dropdown\" aria-hidden=\"true\" style=\"width:50px;color:rgb(250, 242, 242);font-size:20px;float: right;margin-top:22px;cursor: pointer;background-color: plum;width: 30px;height: 30px;padding: 5px;margin-top: 18px;box-shadow: 0px 0px 8px #fff;border-radius: 4px;\"> &nbsp;&nbsp;\r\n          &nbsp;\r\n         \r\n          <span class=\"dropdown-menu dropdown-menu-right text-center\" style=\"width: auto;border-radius: 0px;margin-right: 50px;margin-top: 20px;box-shadow: 0px 0px 10px black;border-radius: 4px;\">\r\n            <span class=\"dropdown-brand\" href=\"#\">\r\n              <h4>About Cart</h4>\r\n            </span>\r\n            <hr>\r\n              <input type=\"button\" class=\"btn btn-primary\" value=\"Clear Item\" (click)=\"fun_clear_cart_detail()\" style=\"border-radius: 0px; font-family: arial\">    \r\n               <br><br>\r\n              <input type=\"button\" class=\"btn btn-primary\" value=\"Show Items\" (click)=\"fun_cart_detail()\" style=\"border-radius: 0px; font-family: arial\">\r\n          </span>\r\n        </span>\r\n        <button class=\"text-center\"  style=\"color:white;width: 30px;height: 30px; border-radius: 50%;background-color: rgb(34, 238, 85);border: 3px solid rgb(34, 238, 85); float: right;margin-top: 19px;margin-right:4px;box-shadow: 0px 0px 8px #fff;border-radius: 4px;\"\r\n          (click)=\"fun_cart_detail()\">\r\n          {{msg}}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <nav class=\"navbar navbar-expand-md  navbar-dark bg-dark\">\r\n    <span class=\"navbar-toggler\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </span>\r\n    <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\r\n      <ul class=\"navbar-nav\">\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"#\" style=\"color:white; font-size:15px;\">Home</a>\r\n        </li>\r\n        <li class=\"nav-item dropdown\" *ngFor=\"let cat of getcat\">\r\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\" style=\"color:white; font-size:15px;\">\r\n            {{cat.cname}}\r\n          </a>\r\n          <ul class=\"dropdown-menu multi-level\" role=\"menu\" aria-labelledby=\"dropdownMenu\">\r\n            <li class=\"dropdown-submenu\" *ngFor=\"let subcat of getsub\">\r\n              <a class=\"dropdown-item\" *ngIf=\"cat._id==subcat.catid\">{{subcat.scatname}}</a>\r\n              <ul class=\"dropdown-menu\">\r\n                <li class=\"nav-item\" *ngFor=\"let ssub of ssubdata\">\r\n                  <a class=\"dropdown-item\" [routerLink]=\"['/protemp', ssub]\" *ngIf=\"subcat._id == ssub.scatid\">{{ssub.subscatname}}</a>\r\n                </li>\r\n              </ul>\r\n            </li>\r\n          </ul>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n    <form class=\"form-inline\">\r\n      <span class=\"lgn_sup_btn\">\r\n        <!-- *ngIf=\"login_display\" -->\r\n        <i class=\"fa fa-user stl\" style=\"color: mediumspringgreen\"></i>&nbsp;&nbsp;\r\n        <span href=\"#myModal\" class=\"trigger-btn spn\" id=\"snupp\" (click)=\"toRegister()\">SignUp</span>&nbsp;&nbsp;&nbsp;\r\n        <i class=\"fa fa-sign-in stl\" style=\"color: mediumspringgreen\"></i> &nbsp;&nbsp;\r\n        <span href=\"#myModal1\" class=\"trigger-btn spn\"   (click)=\"toLogin()\">LogIn</span>\r\n      </span>\r\n      <span class=\"showwelcome\">\r\n        <!--*ngIf=\"welcome_display\" -->\r\n        \r\n        <span style=\"color:rgb(7, 138, 161)\" *ngIf=\"dis\">\r\n          Welcome\r\n          <span style=\"color:rgb(16, 215, 241)\" (click)=\"showUserProfile()\">{{fullname}}</span>\r\n          <span class=\"dropdown\" title=\"User Profiles\">\r\n            <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" >\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-menu-right text-center  drpprof \" style=\"margin-right:200px;\" style=\"width: 250px;box-shadow: 0px 0px 10px black;\" >\r\n              <span class=\"dropdown-brand\" href=\"#\"><i class=\"fa fa-user-circle\" style=\"color: rgb(143, 160, 116);font-size: 40px;\"></i></span>\r\n              <hr>\r\n              <a class=\"dropdown-item\" href=\"#\">{{fullname}}</a>\r\n              <a class=\"dropdown-item\" href=\"#\">{{contact}}</a> \r\n              <a class=\"dropdown-item\" href=\"#\">{{email}}</a><br>\r\n              <button  class=\"btn btn-primary text-center\" style=\"font-size:13px ;border-radius:0px;font-size: 16px;width: 164px\" (click)=\"proedit(pp)\"><i class=\"fa fa-edit\"></i>&nbsp; Profile</button>&nbsp;&nbsp;\r\n              <button  class=\"btn btn-primary text-center\" style=\"font-size:13px ;border-radius:0px;font-size: 16px;margin-top: 8px;\" (click)=\"shopp_histry()\"><i class=\"fa fa-folder-open\"></i>&nbsp; Shopping Histry</button>&nbsp;&nbsp;\r\n              <button  class=\"btn btn-primary text-center\" style=\"font-size:13px ;border-radius:0px;font-size: 16px ;width: 164px ;margin-top: 8px;margin-left: -8px;\" (click)=\"logOut()\"><i class=\"fa fa-sign-out\"></i>&nbsp;LogOut</button>\r\n            <br><br>\r\n            </div>\r\n          </span>&nbsp;&nbsp;\r\n        </span>\r\n      </span>\r\n    </form>\r\n  </nav>\r\n  <br>\r\n  <div>\r\n    <router-outlet>\r\n    </router-outlet>\r\n  </div>\r\n  <app-footer>\r\n  </app-footer>\r\n\r\n</body>"
+module.exports = "<body>\r\n <!-- <app-header-menu></app-header-menu> -->\r\n  <div class=\"container-fluid\" style=\"background-color:rgb(158, 198, 233);\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-2 col-sm-12 col-xm-12 \">\r\n        <img src=\"../assets/NGX_Logo2016_Wide.png\" width=\"170\" height=\"70px;\">\r\n      </div>\r\n      <div class=\"col-md-4 col-sm-12 col-xm-12 \"  >\r\n        <form action=\"\" class=\"search-form\">\r\n          <div class=\"form-group has-feedback\">\r\n          <input type=\"text\" (keyup)=\"search_keyup()\"  class=\"form-control\" name=\"search\" id=\"search\" placeholder=\"search\" [(ngModel)]=\"txtsearch\" (keyup)=\"fun_search_product()\">\r\n        <div *ngIf=\"tmpforsearch\" (mouseover)=\"search_keyup()\"  style=\"background-color:white;overflow:auto;max-height:500px;z-index:1001;position:absolute;border-radius:10px;box-shadow:0px 2px 10px black;padding:5px;min-width:600px\">\r\n        <img src=\"../assets/close.png\" width=\"30px\" (click)=\"fun_search_out()\" style=\"position: fixed\">\r\n        <br>\r\n          <div *ngFor=\"let ser of searchdata\" style='padding:0px;cursor:pointer;background-color:honeydew' (mouseover)=\"fun_over_style(this)\" (mouseout)=\"fun_out_style(this)\" (click)=\"searchDetial(ser._id)\">\r\n             <img src=\"../../assets/uploads/{{ser.images}}\"style=\"float:right;width:100px;height:80px\">\r\n           <h4 style=\"color:crimson\"> {{ser.pname}}</h4>\r\n           <b> {{ser.pprice | currency:'INR'}}</b>\r\n            <span style=\"background-color:'{{ser.pcolor}}'\">....</span>\r\n            <br>\r\n           <span style=\"color:darkslategray;font-size:15px\"> {{ser.pdesc}}</span>\r\n            <hr>\r\n            </div>\r\n        </div>\r\n        </div>\r\n      </form>\r\n      </div>\r\n      <div class=\"col-md-6 col-sm-12 col-xm-12\">\r\n        <span class=\"fa fa-shopping-cart dropdown\" data-toggle=\"dropdown\" aria-hidden=\"true\" style=\"width:50px;color:rgb(250, 242, 242);font-size:20px;float: right;margin-top:22px;cursor: pointer;background-color: plum;width: 30px;height: 30px;padding: 5px;margin-top: 18px;box-shadow: 0px 0px 8px #fff;border-radius: 4px;\"> &nbsp;&nbsp;\r\n          &nbsp;\r\n         \r\n          <span class=\"dropdown-menu dropdown-menu-right text-center\" style=\"width: auto;border-radius: 0px;margin-right: 50px;margin-top: 20px;box-shadow: 0px 0px 10px black;border-radius: 4px;\">\r\n            <span class=\"dropdown-brand\" href=\"#\">\r\n              <h4>About Cart</h4>\r\n            </span>\r\n            <hr>\r\n              <input type=\"button\" class=\"btn btn-primary\" value=\"Clear Item\" (click)=\"fun_clear_cart_detail()\" style=\"border-radius: 0px; font-family: arial\">    \r\n               <br><br>\r\n              <input type=\"button\" class=\"btn btn-primary\" value=\"Show Items\" (click)=\"fun_cart_detail()\" style=\"border-radius: 0px; font-family: arial\">\r\n          </span>\r\n        </span>\r\n        <button class=\"text-center\"  style=\"color:white;width: 30px;height: 30px; border-radius: 50%;background-color: rgb(34, 238, 85);border: 3px solid rgb(34, 238, 85); float: right;margin-top: 19px;margin-right:4px;box-shadow: 0px 0px 8px #fff;border-radius: 4px;\"\r\n          (click)=\"fun_cart_detail()\">\r\n          {{msg}}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <nav class=\"navbar navbar-expand-md  navbar-dark bg-dark\">\r\n    <span class=\"navbar-toggler\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </span>\r\n    <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\r\n      <ul class=\"navbar-nav\">\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" [routerLink]=\"['/home']\" style=\"color:white; font-size:15px;\">Home</a>\r\n        </li>\r\n        <li class=\"nav-item dropdown\" *ngFor=\"let cat of getcat\">\r\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\" style=\"color:white; font-size:15px;\">\r\n            {{cat.cname}}\r\n          </a>\r\n          <ul class=\"dropdown-menu multi-level\" role=\"menu\" aria-labelledby=\"dropdownMenu\">\r\n            <li class=\"dropdown-submenu\" *ngFor=\"let subcat of getsub\">\r\n              <a class=\"dropdown-item\" *ngIf=\"cat._id==subcat.catid\">{{subcat.scatname}}</a>\r\n              <ul class=\"dropdown-menu\">\r\n                <li class=\"nav-item\" *ngFor=\"let ssub of ssubdata\">\r\n                  <a class=\"dropdown-item\" [routerLink]=\"['/protemp', ssub]\" *ngIf=\"subcat._id == ssub.scatid\">{{ssub.subscatname}}</a>\r\n                </li>\r\n              </ul>\r\n            </li>\r\n          </ul>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n    <form class=\"form-inline\">\r\n      <span class=\"lgn_sup_btn\">\r\n        <!-- *ngIf=\"login_display\" -->\r\n        <i class=\"fa fa-user stl\" style=\"color: mediumspringgreen\"></i>&nbsp;&nbsp;\r\n        <span href=\"#myModal\" class=\"trigger-btn spn\" id=\"snupp\" (click)=\"toRegister()\">SignUp</span>&nbsp;&nbsp;&nbsp;\r\n        <i class=\"fa fa-sign-in stl\" style=\"color: mediumspringgreen\"></i> &nbsp;&nbsp;\r\n        <span href=\"#myModal1\" class=\"trigger-btn spn\"   (click)=\"toLogin()\">LogIn</span>\r\n      </span>\r\n      <span class=\"showwelcome\">\r\n        <!--*ngIf=\"welcome_display\" -->\r\n        \r\n        <span style=\"color:rgb(7, 138, 161)\" *ngIf=\"dis\">\r\n          Welcome\r\n          <span style=\"color:rgb(16, 215, 241)\" (click)=\"showUserProfile()\">{{fullname}}</span>\r\n          <span class=\"dropdown\" title=\"User Profiles\">\r\n            <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" >\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-menu-right text-center  drpprof \" style=\"margin-right:200px;\" style=\"width: 250px;box-shadow: 0px 0px 10px black;\" >\r\n              <span class=\"dropdown-brand\" href=\"#\"><i class=\"fa fa-user-circle\" style=\"color: rgb(143, 160, 116);font-size: 40px;\"></i></span>\r\n              <hr>\r\n              <a class=\"dropdown-item\" href=\"#\">{{fullname}}</a>\r\n              <a class=\"dropdown-item\" href=\"#\">{{contact}}</a> \r\n              <a class=\"dropdown-item\" href=\"#\">{{email}}</a><br>\r\n              <button  class=\"btn btn-primary text-center\" style=\"font-size:13px ;border-radius:0px;font-size: 16px;width: 164px\" (click)=\"proedit(pp)\"><i class=\"fa fa-edit\"></i>&nbsp; Profile</button>&nbsp;&nbsp;\r\n              <button  class=\"btn btn-primary text-center\" style=\"font-size:13px ;border-radius:0px;font-size: 16px;margin-top: 8px;\" (click)=\"shopp_histry()\"><i class=\"fa fa-folder-open\"></i>&nbsp; Shopping Histry</button>&nbsp;&nbsp;\r\n              <button  class=\"btn btn-primary text-center\" style=\"font-size:13px ;border-radius:0px;font-size: 16px ;width: 164px ;margin-top: 8px;margin-left: -8px;\" (click)=\"logOut()\"><i class=\"fa fa-sign-out\"></i>&nbsp;LogOut</button>\r\n            <br><br>\r\n            </div>\r\n          </span>&nbsp;&nbsp;\r\n        </span>\r\n      </span>\r\n    </form>\r\n  </nav>\r\n  <br>\r\n  <div>\r\n    <router-outlet>\r\n    </router-outlet>\r\n  </div>\r\n  <app-footer>\r\n  </app-footer>\r\n\r\n</body>"
 
 /***/ }),
 
@@ -359,12 +359,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./reset-password/reset-password.component */ "./src/app/reset-password/reset-password.component.ts");
 /* harmony import */ var _registration_registration_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./registration/registration.component */ "./src/app/registration/registration.component.ts");
 /* harmony import */ var _app_userauth_service__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../app/userauth.service */ "./src/app/userauth.service.ts");
+/* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./page-not-found/page-not-found.component */ "./src/app/page-not-found/page-not-found.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -416,7 +418,8 @@ var robj = [
     { path: "send-otp-on", component: _send_otp_send_otp_component__WEBPACK_IMPORTED_MODULE_32__["SendOtpComponent"] },
     { path: "create-new-password", component: _reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_33__["ResetPasswordComponent"] },
     { path: "user-login-securly", component: _login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"] },
-    { path: "new-user-regitration", component: _registration_registration_component__WEBPACK_IMPORTED_MODULE_34__["RegistrationComponent"] }
+    { path: "new-user-regitration", component: _registration_registration_component__WEBPACK_IMPORTED_MODULE_34__["RegistrationComponent"] },
+    { path: "**", component: _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_36__["PageNotFoundComponent"] },
 ];
 var router = _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(robj);
 var AppModule = /** @class */ (function () {
@@ -449,7 +452,8 @@ var AppModule = /** @class */ (function () {
                 _newpassord_newpassord_component__WEBPACK_IMPORTED_MODULE_31__["NewpassordComponent"],
                 _send_otp_send_otp_component__WEBPACK_IMPORTED_MODULE_32__["SendOtpComponent"],
                 _reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_33__["ResetPasswordComponent"],
-                _registration_registration_component__WEBPACK_IMPORTED_MODULE_34__["RegistrationComponent"]
+                _registration_registration_component__WEBPACK_IMPORTED_MODULE_34__["RegistrationComponent"],
+                _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_36__["PageNotFoundComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"], _angular_http__WEBPACK_IMPORTED_MODULE_3__["HttpModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"], router, angular2_image_zoom__WEBPACK_IMPORTED_MODULE_18__["ImageZoomModule"], ngx_slider__WEBPACK_IMPORTED_MODULE_19__["SliderModule"], ngx_rating__WEBPACK_IMPORTED_MODULE_20__["RatingModule"]
@@ -1335,6 +1339,72 @@ var OtpComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
     ], OtpComponent);
     return OtpComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/page-not-found/page-not-found.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/page-not-found/page-not-found.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/page-not-found/page-not-found.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/page-not-found/page-not-found.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"row\">\n  <div class=\"col-sm-12\" style=\"text-align: center\">\n      <img src=\"../../assets/pagenotfound.png\" width=\"150px\">\n     <h1 style=\"color: rgb(82, 182, 82);font-size: 60px;font-family: Arial, Helvetica, sans-serif;font-weight: bold\">Error : 404</h1>\n      <p style=\"color: rgb(63, 57, 57);font-size: 35px;\">Seems you encountered a wrong address <br>Go back to Home Page</p>\n      <button class=\"btn btn-success\" (click)=\"shopping()\">Continue Shopping</button><br><br>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/page-not-found/page-not-found.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/page-not-found/page-not-found.component.ts ***!
+  \************************************************************/
+/*! exports provided: PageNotFoundComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageNotFoundComponent", function() { return PageNotFoundComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PageNotFoundComponent = /** @class */ (function () {
+    function PageNotFoundComponent() {
+    }
+    PageNotFoundComponent.prototype.ngOnInit = function () {
+    };
+    PageNotFoundComponent.prototype.shopping = function () {
+        window.location.href = '';
+    };
+    PageNotFoundComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-page-not-found',
+            template: __webpack_require__(/*! ./page-not-found.component.html */ "./src/app/page-not-found/page-not-found.component.html"),
+            styles: [__webpack_require__(/*! ./page-not-found.component.css */ "./src/app/page-not-found/page-not-found.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PageNotFoundComponent);
+    return PageNotFoundComponent;
 }());
 
 
