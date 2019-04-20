@@ -1363,7 +1363,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"row\">\n  <div class=\"col-sm-12\" style=\"text-align: center\">\n      <img src=\"../../assets/pagenotfound.png\" width=\"150px\">\n     <h1 style=\"color: rgb(82, 182, 82);font-size: 60px;font-family: Arial, Helvetica, sans-serif;font-weight: bold\">Error : 404</h1>\n      <p style=\"color: rgb(63, 57, 57);font-size: 35px;\">Seems you encountered a wrong address <br>Go back to Home Page</p>\n      <button class=\"btn btn-success\" (click)=\"shopping()\">Continue Shopping</button><br><br>\n  </div>\n</div>\n"
+module.exports = "\n<div class=\"row\">\n  <div class=\"col-sm-12\" style=\"text-align: center\">\n      <img src=\"../../assets/pagenotfound.png\" width=\"150px\">\n     <h1 style=\"color: rgb(253, 6, 47);font-size: 60px;font-family: Arial, Helvetica, sans-serif;font-weight: bold\">Error : 404</h1>\n      <p style=\"color: rgb(63, 57, 57);font-size: 35px;\">Seems you encountered a wrong address <br>Go back to Home Page</p>\n      <button class=\"btn btn-success\" (click)=\"shopping()\">Continue Shopping</button><br><br>\n  </div>\n</div>\n"
 
 /***/ }),
 
