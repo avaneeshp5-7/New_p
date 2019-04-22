@@ -46,8 +46,8 @@
  .cartbtn{
     border-radius: 0px;padding: 5px;color:white;margin-top: -6px;;background-color: rgb(0, 128, 128);
  }
- #prospn{
-   border-radius:4px;margin-top:13px; margin-left: 15px; padding: 10px; float: left; border: 1px solid silver;width: 230px;background-color: rgba(241, 221, 221, 0.137);box-shadow: 0px 0px 5px rgb(192, 186, 186);
+ .prospn{
+   border-radius:4px;margin: auto; padding: 10px; border: 1px solid silver;width: 230px;background-color: rgba(241, 221, 221, 0.137);box-shadow: 0px 0px 5px rgb(192, 186, 186);
  }
 
 
@@ -219,4 +219,13 @@ h2::after {
 	-ms-transform: scale(0.5); /* IE 9 */
 	-webkit-transform: scale(0.5); /* Safari 3-8 */
 	transform: scale(1.1); 
+  }
+
+
+  .prodetails{
+	  text-align: center;
+	  box-shadow: 0px 0px 5px rgb(192, 186, 186);
+	  margin-top: 15px;
+	  width: 230px;
+	  padding: 12px;
   }
