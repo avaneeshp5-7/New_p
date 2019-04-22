@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <div class="row">
       <div class="col-md-12">
         <h5 class="text-center" style="color:rgb(14, 9, 1);text-transform: uppercase;margin-left: 20px;font-weight: bold">Some Special Offer's</h5>
@@ -26,6 +26,40 @@
             <br>
           </span>
         </span>
+      </div>
+    </div>
+  </div> -->
+  <div class="row"><br> 
+    <div class="col-md-12">
+        <p style="text-align: center;font-size: 35px;">SOME SPECIAL OFFER'S</p><hr><br>
+      <div class="row">
+        <div class="col-md-3 col-sm-12" *ngFor="let pro of mdata" style="text-align: center;margin-top:40ppx;">
+          <span>
+            <span>
+              <span>
+              </span>
+              <img src="../../assets/uploads/{{pro.images}}" class="img" width="110px;" height="200"
+                (click)="funDetail(pro._id)"
+                style="cursor: pointer;margin-left: 15px;margin-top: -16px;"></span><br><br>
+            <span
+              style="color:black;font-weight:bolder;font-size: 14px;text-align: 
+              justify;text-transform: uppercase;font-family: arial">&nbsp;&nbsp;&nbsp;&nbsp;{{pro.pname}}</span>
+              </span><br>
+          <span>
+            <span style="color: rgb(55, 241, 18);font-size: 18px;">&nbsp;&nbsp;{{pro.pprice | currency: "INR"}}</span>
+          </span>
+          <br>
+          <span>
+            &nbsp; <span [ngStyle]="{backgroundColor:pro.pcolor,color:pro.pcolor}">. . . . .</span>
+          </span>
+          <br>
+          <span>
+            <span style="color: rgb(230, 40, 49)">&nbsp; {{pro.pdesc}} </span>
+          </span>
+          <br>
+          &nbsp;&nbsp;
+          <!-- </div> -->
+        </div>
       </div>
     </div>
   </div>

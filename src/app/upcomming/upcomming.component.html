@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
 
   <div class="row">
     <div class="col-md-3" style="height:400px;margin-top: 11px;">
@@ -31,5 +31,48 @@
         </span>
       </span>
     </div>
+  </div> -->
+
+
+  <div class="row"><br>
+    <div class="col-md-3 col-sm-12" style="height:400px;margin-top: 11px">
+      <img src="/assets/upcomming.jpg" class="ads" width="330px;" height="390px;" style="margin-left: 8px;">
+    </div>
+    <div class="col-md-9">
+        <p style="text-align: center;font-size: 35px;">Upcomming Product's</p><hr><br>
+      <div class="row">
+       
+        <div class="col-md-3 col-sm-12" *ngFor="let pro of uppdata" style="text-align: center;margin-top:40ppx;">
+          <!-- <div class="prodetails"> -->
+          <span>
+            <span>
+              <span>
+                <!-- <img src="/assets/spnow.png" width="230px;" style="margin-left: 20px;margin-top: -42px;height: 60px;"> -->
+                <!-- <img src="/assets/MyImges/new p.gif" width="50px" style="margin-left: 167px;margin-top: -47px"> -->
+              </span>
+              <img src="../../assets/uploads/{{pro.images}}" class="img" width="200px;" height="130"
+                (click)="funDetail(pro._id)"
+                style="cursor: pointer;margin-left: 15px;margin-top: -16px;"></span><br><br>
+            <span
+              style="color:black;font-weight:bolder;font-size: 14px;text-align: 
+              justify;text-transform: uppercase;font-family: arial">&nbsp;&nbsp;&nbsp;&nbsp;{{pro.pname}}</span>
+              </span><br>
+          <span>
+            <span style="color: rgb(55, 241, 18);font-size: 18px;">&nbsp;&nbsp;{{pro.pprice | currency: "INR"}}</span>
+          </span>
+          <br>
+          <span>
+            &nbsp; <span [ngStyle]="{backgroundColor:pro.pcolor,color:pro.pcolor}">. . . . .</span>
+          </span>
+          <br>
+          <span>
+            <span style="color: rgb(230, 40, 49)">&nbsp; {{pro.pdesc}} </span>
+          </span>
+          <br>
+          &nbsp;&nbsp;
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
   </div>
-</div><hr>
+<hr>
