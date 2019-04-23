@@ -65,3 +65,18 @@ form {
  .cartbtn{
     border-radius: 0px;padding: 5px;color:white;margin-top: -6px ;background-color: rgb(0, 128, 128)
  }
+
+ .offers{
+  color: rgba(4, 252, 99, 0.911);
+  cursor: pointer;
+  font-size: 14px;
+  margin: 6px;
+}
+.offers:hover{
+  color: rgb(74, 150, 124);
+  margin-left: 15px
+}
+.spn{
+  color: rgb(131, 145, 126);
+  padding: 6px;
+}
