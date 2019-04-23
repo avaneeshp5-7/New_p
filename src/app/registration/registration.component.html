@@ -4,15 +4,15 @@
   <div class="col-md-4 modal-dialogs" >
       <div class="col-lg-12 col-sm-12 col-12 user-img" style="text-align: center"><br>
         <img src="assets/man.png" style="height: 70px;width: 70px;padding: 5px;"><br>
-      </div>
-    <div class="col-lg-12 col-sm-12 col-12">
+      </div><br>
+    <div class="col-lg-12 col-sm-12 col-12 col-md-12">
       <form name="regfrm" #rfrm="ngForm">
           <div class="row">
             <div class="col-md-6 col-sm-12 col-xm-12 ">
-              <input type="text" class="texbox" placeholder="First Name..." [(ngModel)]="fname" name="nn1" #reg1="ngModel" required>
+              <input type="text" class="form-control  texboxes" placeholder="First Name..." [(ngModel)]="fname" name="nn1" #reg1="ngModel" required>
             </div>
             <div class="col-md-6 col-sm-12 col-xm-12 ">
-              <input type="text" class="texbox" placeholder="Last Name..." [(ngModel)]="lname" name="nn2" #reg2="ngModel" required>
+              <input type="text" class="form-control  texboxes" placeholder="Last Name..." [(ngModel)]="lname" name="nn2" #reg2="ngModel" required>
             </div>
           </div>
           <span *ngIf="reg1.errors && reg1.errors.required" class="regg">{{mm1}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -20,12 +20,12 @@
           <br>
           <div class="row">
             <div class="col-md-6 col-sm-12 col-xm-12">
-              <input type="email" class="texbox" placeholder="Email ID..." [(ngModel)]="email" name="nn3" #reg3="ngModel" ng-Model email required 
+              <input type="email" class="form-control  texboxes" placeholder="Email ID..." [(ngModel)]="email" name="nn3" #reg3="ngModel" ng-Model email required 
               pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
              
             </div>
             <div class="col-md-6 col-sm-12 col-xm-12">
-              <input type="text" class="texbox" placeholder="User ID..." [(ngModel)]="userid" name="nn4" #reg4="ngModel" required>
+              <input type="text" class="form-control  texboxes" placeholder="User ID..." [(ngModel)]="userid" name="nn4" #reg4="ngModel" required>
             </div>
           </div>
           <span *ngIf="reg3.errors && reg3.errors.pattern" style="color: rgb(246, 139, 180);;font-size: 12px;margin-left: -65px;">Invalid Email Id</span>
@@ -34,10 +34,10 @@
           <br>
           <div class="row">
             <div class="col-md-6 col-sm-12 col-xm-12 ">
-              <input type="password" class="texbox" placeholder="Password..." [(ngModel)]="password" name="nn5" #reg5="ngModel" required>
+              <input type="password" class="form-control  texboxes" placeholder="Password..." [(ngModel)]="password" name="nn5" #reg5="ngModel" required>
             </div>
             <div class="col-md-6 col-sm-12 col-xm-12 ">
-              <input type="password" class="texbox" placeholder="Re-Password.." [(ngModel)]="rpassword" (blur)="checkPass(password)" name="nn6" #reg6="ngModel" required>
+              <input type="password" class="form-control  texboxes" placeholder="Re-Password.." [(ngModel)]="rpassword" (blur)="checkPass(password)" name="nn6" #reg6="ngModel" required>
             </div>
           </div>
           <span style="color: rgb(246, 139, 180);font-size: 12px;margin-left: 0px;">{{psms}}</span>

@@ -1,8 +1,9 @@
 
-.texbox{
+.texboxes{
   padding: 7px;
-  width:186px;
+  /* width:186px; */
   height: 39px;
+  border-radius: 0px;
   border: 1px solid silver;
   color: rgb(112, 32, 8);
   /* font-size:22px; */
