@@ -1,10 +1,55 @@
-<div class="container">
+<div class="container" *ngIf="u_profile">
+  <div class="row">
+    <div class="col-md-5 col-sm-12 col-sm-12 pro_set">
+      <div class="cont">
+       <h3 style="color: rgb(65, 189, 71)">User's Profile</h3><hr>
+       <div class="row">
+        <div class="col-md-12">
+          <span class="prfsm">Full Name : {{uname}} {{last_name}}</span>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-12">
+          <span class="prfsm">Email : {{email}}</span>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-12">
+          <span class="prfsm">User ID : {{uid}}</span>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-12">
+          <span class="prfsm">contact : {{contact}}</span>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-12">
+          <span class="prfsm">Address : {{spaddr}}</span>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-12">
+         <input type="button" class="btn btn-warning" value="Edit Profile" (click)="edit_profile()" style="float: right;margin-right: 20px">
+        </div>
+        
+       </div>
+       <br>
+       </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container" *ngIf="edit_p">
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8 text-center">
       <form class="form-horizontal md-block">
         <fieldset class="frmdiv">
-          <h2 style="color:mediumspringgreen">Enter New Details</h2>
+          <h2 style="color:mediumspringgreen">Edit Profile</h2>
           <br>
           <div class="control-group">
             <div class="controls" >

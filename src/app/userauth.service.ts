@@ -8,7 +8,6 @@ export class UserauthService implements CanActivate {
 
   constructor(private _router: Router) {}
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    alert('auth');
     if(localStorage.getItem('login_check')!=null) {
         return true;
     }

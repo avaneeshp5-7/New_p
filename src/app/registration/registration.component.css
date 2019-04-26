@@ -5,19 +5,19 @@
   height: 39px;
   border-radius: 0px;
   border: 1px solid silver;
-  color: rgb(112, 32, 8);
+  color: rgb(59, 53, 51);
   /* font-size:22px; */
   font-family: Arial, Helvetica, sans-serif;
 }
 .areas{
-  color: rgb(112, 32, 8);
+  color: rgb(41, 35, 33);
   /* font-size: 22px; */
   border-radius: 0px;
   height: 50px;
   font-family: Arial, Helvetica, sans-serif;
 }
 .con{
-  color: rgb(112, 32, 8);
+  color: rgb(39, 35, 34);
   /* font-size: 22px; */
   border-radius: 0px;
   height: 39px;
@@ -25,10 +25,10 @@
 }
 
 .modal-dialogs{
-  box-shadow: 0px 8px 16px 0px rgb(245, 242, 242);
-  background:linear-gradient(rgb(46, 45, 46) 30%,rgb(59, 59, 61));
-  border-radius: 0px;
   margin: auto;
-  padding: 10px;
-  text-align: center
+  padding: 30px;
+}
+.registform{
+  padding: 10px; box-shadow:   0px 0px 8px rgb(156, 163, 155);
+  border: 1px solid silver;border-radius: 4px
 }

@@ -29,7 +29,7 @@ funRegister(regval)
   }
   else
   {
-  var userData={fullname:this.fname,email:this.email,userid:this.userid,
+  var userData={fname:this.fname,lname:this.lname,email:this.email,userid:this.userid,
   password:this.password,rpassword:this.rpassword,Contact:this.contact,
   address:{BillindAdsress:[{name:this.fname},{Contact:this.contact},{biladdress:this.address}],
   Shipping:[{lname:this.lname},{Contact:this.contact},{shipaddress:this.saddress}]}}

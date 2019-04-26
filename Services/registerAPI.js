@@ -25,7 +25,7 @@ router.post("/userReg", function (rq, rs) {
             }
             else {
                 con.userReg.save({
-                    _id: val, fullname: usrData.fullname, email: usrData.email,
+                    _id: val, fname: usrData.fname,lname:usrData.lname, email: usrData.email,
                     userid: usrData.userid, password: usrData.password, Contact: usrData.Contact,
                     address: usrData.address, active: 1
                 }, function () {
