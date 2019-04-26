@@ -871,11 +871,13 @@ var LoginComponent = /** @class */ (function () {
         this.cobj = cobj;
         this.rout = rout;
         this.logcback = function (dt) {
+            console.log(dt._body);
             _this.userdet = (JSON.parse(dt._body));
+            console.log(_this.userdet);
             if (_this.userdet.length == 1) {
                 localStorage.setItem("login_check", "1");
                 localStorage.setItem("userdata", _this.userdet);
-                localStorage.setItem("fullname", _this.userdet[0].uname);
+                localStorage.setItem("fullname", _this.userdet[0].fname);
                 localStorage.setItem("email", _this.userdet[0].email);
                 localStorage.setItem("Contact", _this.userdet[0].Contact);
                 localStorage.setItem("userid", _this.userdet[0]._id);

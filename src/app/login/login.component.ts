@@ -31,18 +31,20 @@ funlog(ldata)
 }
 }
 logcback=(dt)=>{
+  console.log(dt._body);
      this.userdet=(JSON.parse(dt._body))
+     console.log(this.userdet);
      if(this.userdet.length==1){
      localStorage.setItem("login_check","1")
      localStorage.setItem("userdata",this.userdet)
-     localStorage.setItem("fullname",   this.userdet[0].uname)
+     localStorage.setItem("fullname",   this.userdet[0].fname)
      localStorage.setItem("email",this.userdet[0].email)
      localStorage.setItem("Contact",this.userdet[0].Contact)
      localStorage.setItem("userid",this.userdet[0]._id)
      this.email=localStorage.getItem("email")
      this.fullname=localStorage.getItem("fullname")
      alert('User LoggedIn')
-     window.location.href=""
+      window.location.href=""
     }
   else
   {
