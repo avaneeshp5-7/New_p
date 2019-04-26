@@ -875,7 +875,7 @@ var LoginComponent = /** @class */ (function () {
             if (_this.userdet.length == 1) {
                 localStorage.setItem("login_check", "1");
                 localStorage.setItem("userdata", _this.userdet);
-                localStorage.setItem("fullname", _this.userdet[0].fullname);
+                localStorage.setItem("fullname", _this.userdet[0].uname);
                 localStorage.setItem("email", _this.userdet[0].email);
                 localStorage.setItem("Contact", _this.userdet[0].Contact);
                 localStorage.setItem("userid", _this.userdet[0]._id);
@@ -2618,7 +2618,7 @@ var UserauthService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".txt{\r\n    border-radius: 0px;\r\n    font-size: 20px;\r\n}\r\n.upbtn{\r\n    border-radius: 0px;     \r\n}\r\n.frmdiv{\r\n    border: 1px solid silver;\r\n    padding: 30px;\r\n    box-shadow:   0px 0px 8px rgb(156, 163, 155);\r\n    border-radius: 4px;\r\n}\r\n.pro_set{   \r\n    margin: auto;\r\n    text-align: center  \r\n}\r\n.prfsm{\r\n    float: left;\r\n    color: rgb(76, 205, 209);\r\n    font-size: 16px;\r\n    font-weight: lighter;\r\n    padding: 10px;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    margin-left: 55px;\r\n}\r\n.cont{\r\n    border: 1px solid silver;\r\n    margin: auto;\r\n    /* box-shadow:   0px 0px 8px rgb(156, 163, 155); */\r\n    border-radius: 4px;\r\n}"
+module.exports = ".txt{\r\n    border-radius: 0px;\r\n    font-size: 20px;\r\n}\r\n.upbtn{\r\n    border-radius: 0px;     \r\n}\r\n.frmdiv{\r\n    border: 1px solid silver;\r\n    padding: 30px;\r\n    box-shadow:   0px 0px 8px rgb(156, 163, 155);\r\n    border-radius: 4px;\r\n}\r\n.pro_set{   \r\n    margin: auto;\r\n    text-align: center  \r\n}\r\n.prfsm{\r\n    float: left;\r\n    color: rgb(76, 205, 209);\r\n    font-size: 14px;\r\n    font-weight: bold;\r\n    padding: 10px;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    margin-left: 55px;\r\n}\r\n.cont{\r\n    border: 1px solid silver;\r\n    margin: auto;\r\n    /* box-shadow:   0px 0px 8px rgb(156, 163, 155); */\r\n    border-radius: 4px;\r\n}"
 
 /***/ }),
 

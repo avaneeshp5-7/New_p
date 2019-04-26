@@ -35,7 +35,7 @@ logcback=(dt)=>{
      if(this.userdet.length==1){
      localStorage.setItem("login_check","1")
      localStorage.setItem("userdata",this.userdet)
-     localStorage.setItem("fullname",   this.userdet[0].fullname)
+     localStorage.setItem("fullname",   this.userdet[0].uname)
      localStorage.setItem("email",this.userdet[0].email)
      localStorage.setItem("Contact",this.userdet[0].Contact)
      localStorage.setItem("userid",this.userdet[0]._id)
