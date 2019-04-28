@@ -1,6 +1,8 @@
 .txt{
     border-radius: 0px;
-    font-size: 20px;
+    font-size: 16px;
+    height: 35px;
+    margin-top: -12px;
 }
 .upbtn{
     border-radius: 0px;     
