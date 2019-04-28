@@ -13,7 +13,7 @@
       <p style="color: rgb(96, 199, 96);font-weight: bold;"> {{product_info.pprice | currency: "INR" }}</p>
       <p style="color: crimson;">{{product_info.pdesc  }}</p>
   </div>
-  <div class="cl-md-3" style="text-align: center">
+  <div class="cl-md-3" style="text-align: center;margin: 18px;">
       <input type="button" class="btn btn-danger" value="Remove Item" (click)="remove_cart_item(ii)" style="height: 50px;font-size: 20px;margin-top: 50px;margin-left: 95px"><br>
   </div>
   </div>
@@ -21,7 +21,7 @@
 
   <div class="row">
       <div class="col-md-4">
-          <p style="box-shadow: 0px 0px 10px black;padding: 10px;width: 304px;margin-top: 7px;margin-left: 26px">
+          <p style="box-shadow: 0px 0px 10px black;padding: 10px;width: 304px;margin-top: 7px;margin-left: 34px">
               <span style="color: rgb(106, 238, 156);font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold">Total
                 Ammount</span>&nbsp;<span style="color: rgb(23, 192, 23);font-size: 15;font-weight: bold;"> :
                 {{TotalAmnt | currency: "INR"}}</span>
@@ -29,7 +29,7 @@
       </div>
       <div class="col-md-2" *ngIf="data.length>0" class="text-center" style="text-align: center">
           <input type="button" value="Order Now" class="btn btn-success text-center" (click)="fun_order_now()"
-            style="width: 200px;height: 50px;font-size: 20px;margin-left: 87px">&nbsp;&nbsp;&nbsp;&nbsp;
+            style="width: 200px;height: 50px;font-size: 20px;margin-left: 92px">&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
   </div>
 </div>
