@@ -105,5 +105,7 @@ export class ShowCartDetailsComponent implements OnInit {
     }
     this.robj.navigateByUrl("/cartdet")
   }
-
+  Continue(){
+    window.location.href='';
+  }
 }

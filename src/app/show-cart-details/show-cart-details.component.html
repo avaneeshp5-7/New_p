@@ -1,8 +1,7 @@
 
 
 
-<div class="container">
-
+<div class="container"  *ngIf="data.length>0">
   <h5 style="color: rgb(11, 194, 21);text-align: center;font-family: Arial, Helvetica, sans-serif">Your Cart Detail's</h5>
   <div class="row" *ngFor="let product_info of data;let ind=index" style="border: 1px solid silver;border-radius: 4px;margin: 10px;">
     <div class="col-md-3" style="text-align: center">
@@ -21,7 +20,7 @@
   </div>
 
 
-  <div class="row">
+  <div class="row" *ngIf="data.length>0">
       <div class="col-md-4">
           <p style="box-shadow: 0px 0px 10px black;padding: 10px;width: 304px;margin-top: 7px;margin-left: 34px">
               <span style="color: rgb(106, 238, 156);font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold">Total
@@ -34,6 +33,16 @@
             style="width: 200px;height: 50px;font-size: 20px;margin-left: 92px">&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
   </div>
+</div>
+
+<div class="container">
+    <div class="row" *ngIf="data.length<=0">
+        <div class="col-md-12" style="text-align: center">
+            <img src="../../assets/cart-empty-icon.png">
+             <h5 style="color: rgb(247, 16, 47);font-family: Arial, Helvetica, sans-serif">Your Cart Is Empaty</h5>
+             <div class="text-center"><button class="btn btn-success" (click)="Continue()">Shopping Continue</button></div>
+        </div>
+    </div>
 </div>
 
 
