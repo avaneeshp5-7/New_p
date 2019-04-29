@@ -1,36 +1,29 @@
+
 <div class="container">
     <h2 class="text-center" style="font-family: arial;color: rgb(110, 143, 118)">Purchage History</h2>
-    <hr>
-    <table class="table">
-      <tbody>
-        <tr *ngFor="let x of purdata" style="margin-top: 10px;padding: 20px; box-shadow: 0px 0px 5px  silver;margin-left: 200px;">
-          <td>
-            <span style="font-size: 20px;color: blue;">Purchage Date : {{x.date}}</span>
-            <tr *ngFor="let xx of x['Products']">
-              <td>
-                <img src="../../assets/uploads/{{xx.images}}" width="50px" height="40px;" style="float: left;">
-              </td>
-              <td>
-                <span style="color: black;font-size: 20px;margin-left: 20px;">{{xx.pname}}</span>
-              </td>
-              <td>
+   <div class="row" *ngFor="let x of purdata" style="border: 1px solid silver;margin: 8px">
+     <div class="col-md-8" style="text-align: center">
+        <span style="font-size: 20px;color: blue;">Purchage Date : {{x.date}}</span>
+     </div>
+     <div class="row" *ngFor="let xx of x['Products']">
+      <div class="col-md-4" style="text-align: center">
+          <img src="../../assets/uploads/{{xx.images}}" width="50px" height="40px">&nbsp;&nbsp;
+          <span style="color: black;font-size: 12px;">{{xx.pname}}</span>
+      </div>
+     <div class="col-md-4" style="text-align: center;">
                 <span style="color: rgba(255, 95, 47, 0.87);font-size: 20px;margin-left: 20px;"> Quantity: &nbsp;</span>
                 <span style="color: rgba(255, 95, 47, 0.87);font-weight: bold;margin-left: 0px;">{{xx.quantity}}</span>
-              </td>
-              <td>
-                
-                <span style="color: rgb(127, 190, 31);font-size: 19px;margin-left: 20px;">{{xx.pprice | currency: "INR"}}</span>               
-                <br>
-              </td>
-              <td>
-                <input type="button" value="Remove" class="btn btn-danger" (click)="removehisrty(x._id)">
-              </td>
-            </tr>
-            <td style="box-shadow:0px 0px  4px black;height:20px;"><span style="color: rgb(107, 238, 157);font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold">Total Ammount</span>&nbsp;<span style="color: rgb(60, 184, 60);font-size: 15;font-weight: bold;"> : {{x.Total_price | currency: "INR"}}</span></td>
-          </td>
-         
-        </tr>
-        
-      </tbody>
-    </table>
-  </div><br><br>
+                <span style="color: rgb(127, 190, 31);font-size: 19px;margin-left: 20px;">{{xx.pprice | currency: "INR"}}</span>  
+    </div><hr>
+   
+   </div><hr>
+   <div class="col-md-4" style="text-align: center">
+      <span style="color: rgb(60, 184, 60);font-size: 15;box-shadow:0px 0px 5px  silver;padding: 8px; "> Ammount: {{x.Total_price | currency: "INR"}}</span>
+      <input type="button" value="Remove" class="btn btn-danger" (click)="removehisrty(x._id)" style="margin: 7px;margin-top: 0px">
+  </div>
+   </div> <br><hr>
+</div>
+
+
+
+ 
