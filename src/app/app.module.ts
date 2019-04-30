@@ -35,7 +35,8 @@ import { SendOtpComponent } from './send-otp/send-otp.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { RegistrationComponent } from './registration/registration.component'
 import {UserauthService} from '../app/userauth.service';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ImgProductComponent } from './img-product/img-product.component'
 var robj=[
 {path:"",component:FirstPageComponent},
 	{path:"profile",component:UserprofileComponent,canActivate: [UserauthService]},
@@ -84,7 +85,8 @@ var router=RouterModule.forRoot(robj)
     SendOtpComponent,
     ResetPasswordComponent,
     RegistrationComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ImgProductComponent
   ],
 
 
