@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { HttpModule } from "@angular/http"
+import { HttpModule } from "@angular/http";
+// import { ServiceWorkerModule} from '@angular/service-worker'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from "@angular/forms";
@@ -37,6 +38,7 @@ import { RegistrationComponent } from './registration/registration.component'
 import { UserauthService } from '../app/userauth.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ImgProductComponent } from './img-product/img-product.component'
+import { environment } from 'src/environments/environment';
 var robj = [
   { path: "", component: FirstPageComponent },
   { path: "profile", component: UserprofileComponent, canActivate: [UserauthService] },
@@ -91,7 +93,10 @@ var router = RouterModule.forRoot(robj)
 
 
   imports: [
-    BrowserModule, BrowserAnimationsModule, HttpModule, FormsModule, router, ImageZoomModule, SliderModule, RatingModule
+    BrowserModule, BrowserAnimationsModule,
+     HttpModule, FormsModule, router, ImageZoomModule,
+      SliderModule, RatingModule,
+      // ServiceWorkerModule.register('/ngsw-worker.js',{enabled:environment.production})
   ],
   providers: [ShowCartImageServiceService, UserauthService],
   bootstrap: [AppComponent]

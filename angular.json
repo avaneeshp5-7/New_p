@@ -27,12 +27,7 @@
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "./node_modules/jquery/dist/jquery.min.js",
-              "myscript.js",
-              "sliderscript.js",
-              "jquery-1.10.2.js",
-              "jquery-ui.js",
-              "cycle.js"
+              "./node_modules/jquery/dist/jquery.min.js"
             ]
           },
           "configurations": {

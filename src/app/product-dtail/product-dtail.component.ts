@@ -27,7 +27,7 @@ export class ProductDtailComponent implements OnInit {
   rat_arr = []; half = 0
   constructor(public appobj: AppComponent, public aobj: ActivatedRoute, public robj: Http, private servar: ShowCartImageServiceService) {
   }
-  prodid; prodata; x = 0; message: string; prid;
+  prodid; prodata; x = 0; message: string; prid;releted
 
   ngOnInit() {
     if (localStorage.getItem("cart_items") != null) {
@@ -69,15 +69,11 @@ export class ProductDtailComponent implements OnInit {
         var pid = { _id: this.prodid }
         this.robj.post("category/getPro", pid).subscribe(pdata => {
           this.prodata = JSON.parse(pdata['_body'])
+          // console.log("act",this.prodata[0]['catid'])
           this.urat=this.prodata[0].userrating;
-          // for (var i = 1; i <= this.prodata[0].rating; i++) {
-          //   this.rat_arr.push(i)
-          // }
-          // i--
-          // this.half = 0
-          // if (this.prodata[0].rating > i)
-          //   this.half = 1
-          // alert(this.urat)
+          this.robj.post('category/getmorePro',{catid:this.prodata[0]['catid']}).subscribe(dt=>{
+           this.releted=(JSON.parse(dt['_body']))
+          })
         })
       }
     })

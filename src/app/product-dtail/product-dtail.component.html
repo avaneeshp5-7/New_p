@@ -50,13 +50,30 @@
      </div>
  </div>
 </div>
-
-
+<br><br>
+<div class="container" *ngIf="releted">
+    <h2 style="text-transform: uppercase;font-weight: 300;color: gray">Realted More Product's</h2><hr>
+   <div class="row">
+     <div class="col-md-3" *ngFor="let rel of releted">
+        <img src="../../assets/uploads/{{rel.images}}" width="150px" height="100px"><br><br>
+       <div style="text-align: justify;font-weight: bold;color: gray">
+          {{rel.pname}}
+       </div>
+       <div style="text-align: justify">
+          {{rel.pdesc}}
+       </div>
+       <div style="text-align: justify;font-family: Arial, Helvetica, sans-serif;color: #218cc4;font-size: 28px;font-weight: 700;line-height: 50px">
+          {{rel.pprice | currency: "INR"}}
+       </div>
+     </div>
+   </div>
+</div>
 
 <!-- Upcomming product details -->
 <div>
         <div  class="row" *ngFor="let p of updata">
-            <div class="col-md-4" style="text-align: center">
+         
+            <div class="col-md-4" style="text-align: center"><br><br>
                    <img src="../../assets/uploads/{{p.images}}" height="340px"   [imageZoom]="" [lensHeight]="40" [lensHeight]="40" width="400" [minZoomLevel]=".2" [maxZoomLevel]=".4" >
             </div>
             <div class="col-md-6 col-sm-12" style="text-align: center"><br>
