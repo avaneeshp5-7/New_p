@@ -9,53 +9,56 @@
                 </div>
                 <div class="panel-body">
                     <form role="form">
-                    <div class="form-group">
-                        <label for="cardNumber">
-                            CARD NUMBER</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
-                                required autofocus />
-                            <span class="input-group-addon">
-                              <span class="glyphicon glyphicon-lock"></span></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="cardEXP">
-                               EXPIRED MM</label>
-                           <div class="form-group">
-                             <input type="text" placeholder="MM" id="cardEXP" class="form-control" required autofocus>
-                           </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="cardEXPY">
-                                EXPIRED YY</label>
-                            <div class="form-group">
-                              <input type="text" placeholder="YY" id="cardEXPY" class="form-control" required autofocus>
+                        <div class="form-group">
+                            <label for="cardNumber">
+                                CARD NUMBER</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
+                                    required autofocus />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-lock"></span></span>
                             </div>
-                         </div>
-                         <div class="col-md-3">
-                            <label for="cardCVV">
-                                CVV</label>
-                            <div class="form-group">
-                              <input type="text" placeholder="CVV" id="cardCVV" class="form-control" required autofocus>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="cardEXP">
+                                    EXPIRED MM</label>
+                                <div class="form-group">
+                                    <input type="text" placeholder="MM" id="cardEXP" class="form-control" required
+                                        autofocus>
+                                </div>
                             </div>
-                         </div>
-                         <ul class="nav nav-pills nav-stacked" style="margin: 14px">
-                            <li class="active">
-                              <a>
-                                <span class="badge pull-right bg-warning" style="padding: 10px;color: white;font-weight: bold;">Final Payment {{amount | currency: "INR"}}</span>
-                              </a>
-                            </li>
-                        </ul>
-                        
-                      <button [disabled]="!valid" class="btn btn-success btn-lg btn-block" role="button" style="margin: 14px">Pay</button>
-                    </div>
+                            <div class="col-md-3">
+                                <label for="cardEXPY">
+                                    EXPIRED YY</label>
+                                <div class="form-group">
+                                    <input type="text" placeholder="YY" id="cardEXPY" class="form-control" required
+                                        autofocus>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="cardCVV">
+                                    CVV</label>
+                                <div class="form-group">
+                                    <input type="text" placeholder="CVV" id="cardCVV" class="form-control" required
+                                        autofocus>
+                                </div>
+                            </div>
+                            <ul class="nav nav-pills nav-stacked" style="margin: 14px">
+                                <li class="active">
+                                    <a>
+                                        <span class="badge pull-right bg-warning"
+                                            style="padding: 10px;color: white;font-weight: bold;">Final Payment
+                                            {{amount | currency: "INR"}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <button [disabled]="!valid" class="btn btn-success btn-lg btn-block" role="button"
+                                style="margin: 14px">Make Your Pay</button>
+                        </div>
                     </form>
                 </div>
             </div>
-            
-            
         </div>
     </div>
 </div>
