@@ -361,6 +361,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_userauth_service__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../app/userauth.service */ "./src/app/userauth.service.ts");
 /* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./page-not-found/page-not-found.component */ "./src/app/page-not-found/page-not-found.component.ts");
 /* harmony import */ var _img_product_img_product_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./img-product/img-product.component */ "./src/app/img-product/img-product.component.ts");
+/* harmony import */ var _payment_payment_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./payment/payment.component */ "./src/app/payment/payment.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -406,6 +407,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var robj = [
     { path: "", component: _first_page_first_page_component__WEBPACK_IMPORTED_MODULE_17__["FirstPageComponent"] },
     { path: "profile", component: _userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_22__["UserprofileComponent"], canActivate: [_app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]] },
@@ -415,6 +417,7 @@ var robj = [
     { path: "cartdet", component: _show_cart_details_show_cart_details_component__WEBPACK_IMPORTED_MODULE_24__["ShowCartDetailsComponent"], canActivate: [_app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]] },
     { path: "shopp", component: _shoppinghistry_shoppinghistry_component__WEBPACK_IMPORTED_MODULE_27__["ShoppinghistryComponent"], canActivate: [_app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]] },
     { path: "p_details", component: _purchagedetails_purchagedetails_component__WEBPACK_IMPORTED_MODULE_26__["PurchagedetailsComponent"], canActivate: [_app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]] },
+    { path: "paymet_gatway", component: _payment_payment_component__WEBPACK_IMPORTED_MODULE_38__["PaymentComponent"], canActivate: [_app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]] },
     { path: "mobil", component: _moblile_moblile_component__WEBPACK_IMPORTED_MODULE_28__["MoblileComponent"] },
     { path: "otp_enter", component: _otp_otp_component__WEBPACK_IMPORTED_MODULE_30__["OtpComponent"] },
     { path: "gen_new_pass", component: _newpassord_newpassord_component__WEBPACK_IMPORTED_MODULE_31__["NewpassordComponent"] },
@@ -457,7 +460,8 @@ var AppModule = /** @class */ (function () {
                 _reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_33__["ResetPasswordComponent"],
                 _registration_registration_component__WEBPACK_IMPORTED_MODULE_34__["RegistrationComponent"],
                 _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_36__["PageNotFoundComponent"],
-                _img_product_img_product_component__WEBPACK_IMPORTED_MODULE_37__["ImgProductComponent"]
+                _img_product_img_product_component__WEBPACK_IMPORTED_MODULE_37__["ImgProductComponent"],
+                _payment_payment_component__WEBPACK_IMPORTED_MODULE_38__["PaymentComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"],
@@ -1482,6 +1486,70 @@ var PageNotFoundComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/payment/payment.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/payment/payment.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "body { margin-top:20px; }\r\n.panel-title {display: inline;font-weight: bold;}\r\n.checkbox.pull-right { margin: 0; }\r\n.pl-ziro { padding-left: 0px; }"
+
+/***/ }),
+
+/***/ "./src/app/payment/payment.component.html":
+/*!************************************************!*\
+  !*** ./src/app/payment/payment.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-xs-12 col-md-5\">\n            <div class=\"panel panel-default\">\n                <div class=\"panel-heading card-header\">\n                    <h3 class=\"panel-title \">\n                        Payment Details\n                    </h3>\n                </div>\n                <div class=\"panel-body\">\n                    <form role=\"form\">\n                    <div class=\"form-group\">\n                        <label for=\"cardNumber\">\n                            CARD NUMBER</label>\n                        <div class=\"input-group\">\n                            <input type=\"text\" class=\"form-control\" id=\"cardNumber\" placeholder=\"Valid Card Number\"\n                                required autofocus />\n                            <span class=\"input-group-addon\">\n                              <span class=\"glyphicon glyphicon-lock\"></span></span>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-md-6\">\n                            <label for=\"cardEXP\">\n                               EXPIRED MM</label>\n                           <div class=\"form-group\">\n                             <input type=\"text\" placeholder=\"MM\" id=\"cardEXP\" class=\"form-control\" required autofocus>\n                           </div>\n                        </div>\n                        <div class=\"col-md-3\">\n                            <label for=\"cardEXPY\">\n                                EXPIRED YY</label>\n                            <div class=\"form-group\">\n                              <input type=\"text\" placeholder=\"YY\" id=\"cardEXPY\" class=\"form-control\" required autofocus>\n                            </div>\n                         </div>\n                         <div class=\"col-md-3\">\n                            <label for=\"cardCVV\">\n                                CVV</label>\n                            <div class=\"form-group\">\n                              <input type=\"text\" placeholder=\"CVV\" id=\"cardCVV\" class=\"form-control\" required autofocus>\n                            </div>\n                         </div>\n                         <ul class=\"nav nav-pills nav-stacked\" style=\"margin: 14px\">\n                            <li class=\"active\">\n                              <a>\n                                <span class=\"badge pull-right bg-warning\" style=\"padding: 10px;color: white;font-weight: bold;\">Final Payment {{amount | currency: \"INR\"}}</span>\n                              </a>\n                            </li>\n                        </ul>\n                        \n                      <button [disabled]=\"!valid\" class=\"btn btn-success btn-lg btn-block\" role=\"button\" style=\"margin: 14px\">Pay</button>\n                    </div>\n                    </form>\n                </div>\n            </div>\n            \n            \n        </div>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/payment/payment.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/payment/payment.component.ts ***!
+  \**********************************************/
+/*! exports provided: PaymentComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaymentComponent", function() { return PaymentComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PaymentComponent = /** @class */ (function () {
+    function PaymentComponent() {
+    }
+    PaymentComponent.prototype.ngOnInit = function () {
+        this.amount = 200;
+    };
+    PaymentComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-payment',
+            template: __webpack_require__(/*! ./payment.component.html */ "./src/app/payment/payment.component.html"),
+            styles: [__webpack_require__(/*! ./payment.component.css */ "./src/app/payment/payment.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PaymentComponent);
+    return PaymentComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/product-dtail/product-dtail.component.css":
 /*!***********************************************************!*\
   !*** ./src/app/product-dtail/product-dtail.component.css ***!
@@ -1500,7 +1568,7 @@ module.exports = "form {\r\n    width: 600px;\r\n    margin: 0 auto;\r\n    /* t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<div>\r\n <div  class=\"row\" *ngFor=\"let p of prodata\">\r\n     <div class=\"col-md-4 col-sm-12\" style=\"text-align: center\">\r\n            <img src=\"../../assets/uploads/{{p.images}}\" height=\"340px\"   [imageZoom]=\"\" [lensHeight]=\"40\" [lensHeight]=\"40\" width=\"300\" [minZoomLevel]=\".2\" [maxZoomLevel]=\".4\" >\r\n     </div>\r\n     <div class=\"col-md-4 col-sm-12\" style=\"margin-top: -7px; text-align: center\">\r\n            <span style=\"font-weight:bold;font-size:25px;\">{{p.pname | uppercase}}</span><br>\r\n            <span style=\"font-weight:bold;color:green;font-size:30px\">{{p.pprice | currency: \"INR\"}}</span><br>\r\n            <span style=\"font-weight:bold\"> Color:&nbsp;&nbsp;&nbsp;<span [ngStyle]=\"{backgroundColor:p.pcolor,color:p.pcolor}\"> . . . . </span></span><br>\r\n            \r\n            <span style=\"font-size:15px;color: rgb(144, 146, 143)\"> {{p.pdesc}}</span><br>\r\n           \r\n            <span>\r\n                <rating [(ngModel)]=\"urat\" [max]=\"5\"   (click)=\"funRat(urat)\" [readonly]=\"false\">{{p.urat}}</rating>\r\n            </span>\r\n           <br>\r\n       \r\n            <span style=\"font-weight:bold;color:chocolate\">Available Quantity:{{p.quantity}}</span>\r\n            <br>\r\n            <span style=\"color: rgb(17, 175, 59);font-size:15px;font-weight:bold;\"> {{p.offer}}</span>\r\n            <br>\r\n            <span style=\"text-align: center\">\r\n                <div class=\"value-button\" id=\"decrease\" (click)=\"decreaseValue()\" ><img src=\"/assets/-.png\" width=\"30px\"></div>\r\n                <input type=\"number\" id=\"number\" value=\"1\"  name=\"qty\"   readonly [(ngModel)]=\"value\">\r\n                <div class=\"value-button\" id=\"increase\" (click)=\"increaseValue(p.quantity)\" ><img src=\"/assets/+.png\" width=\"20px\"></div>\r\n            </span><br><br>\r\n           <span id=\"spnbtn\">\r\n                <i class=\"fa fa-shopping-cart fas\"></i>\r\n                <button type=\"button\"  class=\"btn b.tn-default cartbtn addcartbtn\"  (click)=\"funaddcart(p)\">\r\n                  Add To Cart\r\n              </button>\r\n              &nbsp;&nbsp;\r\n              <button type=\"button\" class=\"btn btn-danger\" style=\"margin-top: -8px;\" (click)=\"appobj.fun_cart_detail()\">\r\n                    <span class=\"fa fa-shopping-cart \"></span>\r\n                Buy Now\r\n              </button>\r\n            </span>\r\n\r\n     </div>\r\n     <div class=\"col-md-4 col-sm-12\">\r\n        <p style=\"color: rgb(52, 54, 54);font-size: 25px; text-align: center\">Payment Offer's</p>\r\n        <p class=\"offers\"><span class=\"spn\">&#187;</span>Special PriceGet extra 12% off (price inclusive of discount)T&C</p>\r\n        <p class=\"offers\"><span class=\"spn\">&#187;</span>Bank Offer5% Instant Discount on EMIs with Axis Bank Credit CardT&C</p>\r\n        <p class=\"offers\"><span class=\"spn\">&#187;</span>Bank OfferExtra 5% off* with Axis Bank Buzz Credit CardT&C</p>\r\n        <p class=\"offers\"><span class=\"spn\">&#187;</span>Partner OfferShop for Rs1500+ from 22 to 31st March & get extra 10% off on next purchase</p>\r\n        <p class=\"offers\"><span class=\"spn\">&#187;</span>The Offer is valid on all modes of payment.</p>\r\n        <p class=\"offers\"><span class=\"spn\">&#187;</span>Offer is not applicable on orders of Products cancelled on or before April 2019</p>    \r\n     </div>\r\n </div>\r\n</div>\r\n<br><br>\r\n<div class=\"container\" *ngIf=\"releted\">\r\n    <h2 style=\"text-transform: uppercase;font-weight: 300;color: gray\">Realted More Product's</h2><hr>\r\n   <div class=\"row\">\r\n     <div class=\"col-md-3\" *ngFor=\"let rel of releted\">\r\n        <img src=\"../../assets/uploads/{{rel.images}}\" width=\"150px\" height=\"100px\"><br><br>\r\n       <div style=\"text-align: justify;font-weight: bold;color: gray\">\r\n          {{rel.pname}}\r\n       </div>\r\n       <div style=\"text-align: justify\">\r\n          {{rel.pdesc}}\r\n       </div>\r\n       <div style=\"text-align: justify;font-family: Arial, Helvetica, sans-serif;color: #218cc4;font-size: 28px;font-weight: 700;line-height: 50px\">\r\n          {{rel.pprice | currency: \"INR\"}}\r\n       </div>\r\n     </div>\r\n   </div>\r\n</div>\r\n\r\n<!-- Upcomming product details -->\r\n<div>\r\n        <div  class=\"row\" *ngFor=\"let p of updata\">\r\n         \r\n            <div class=\"col-md-4\" style=\"text-align: center\"><br><br>\r\n                   <img src=\"../../assets/uploads/{{p.images}}\" height=\"340px\"   [imageZoom]=\"\" [lensHeight]=\"40\" [lensHeight]=\"40\" width=\"400\" [minZoomLevel]=\".2\" [maxZoomLevel]=\".4\" >\r\n            </div>\r\n            <div class=\"col-md-6 col-sm-12\" style=\"text-align: center\"><br>\r\n                   <span style=\"font-weight:bold;font-size:25px;\">{{p.pname | uppercase}}</span><br>\r\n                   <span style=\"font-weight:bold;color:green;font-size:30px\">{{p.pprice | currency: \"INR\"}}</span><br>\r\n                   <span style=\"font-weight:bold\"> Color:&nbsp;&nbsp;&nbsp;<span [ngStyle]=\"{backgroundColor:p.pcolor,color:p.pcolor}\">. . . . </span></span><br>\r\n                   <span style=\"font-size:15px;color: rgb(144, 146, 143)\"> {{p.pdesc}}</span><br>\r\n                  <br>\r\n                   <span *ngFor=\"let rat of rat_arr\"  class=\"fa fa-star\" style=\"font-size:30px;color:rgb(54, 27, 206);margin-right:2px\">\r\n                     \r\n                   </span>\r\n                   <span *ngIf=\"half==1\" class=\"fa fa-star-half\" style=\"font-size:30px;color:rgb(54, 27, 206);margin-right:2px\"> </span>\r\n                 <br>\r\n                 <br>\r\n                   <span style=\"color: rgb(17, 175, 59);font-size:15px;font-weight:bold;\"> {{p.offer}}</span>       \r\n            </div>\r\n        </div>\r\n       </div>"
+module.exports = "\r\n\r\n<div>\r\n <div  class=\"row\" *ngFor=\"let p of prodata\">\r\n     <div class=\"col-md-4 col-sm-12\" style=\"text-align: center\">\r\n            <img src=\"../../assets/uploads/{{p.images}}\" height=\"340px\"   [imageZoom]=\"\" [lensHeight]=\"40\" [lensHeight]=\"40\" width=\"300\" [minZoomLevel]=\".2\" [maxZoomLevel]=\".4\" >\r\n     </div>\r\n     <div class=\"col-md-4 col-sm-12\" style=\"margin-top: -7px; text-align: center\">\r\n            <span style=\"font-weight:bold;font-size:25px;\">{{p.pname | uppercase}}</span><br>\r\n            <span style=\"font-weight:bold;color:green;font-size:30px\">{{p.pprice | currency: \"INR\"}}</span><br>\r\n            <span style=\"font-weight:bold\"> Color:&nbsp;&nbsp;&nbsp;<span [ngStyle]=\"{backgroundColor:p.pcolor,color:p.pcolor}\"> . . . . </span></span><br>\r\n            \r\n            <span style=\"font-size:15px;color: rgb(144, 146, 143)\"> {{p.pdesc}}</span><br>\r\n           \r\n            <span>\r\n                <rating [(ngModel)]=\"urat\" [max]=\"5\"   (click)=\"funRat(urat)\" [readonly]=\"false\">{{p.urat}}</rating>\r\n            </span>\r\n           <br>\r\n       \r\n            <span style=\"font-weight:bold;color:chocolate\">Available Quantity:{{p.quantity}}</span>\r\n            <br>\r\n            <span style=\"color: rgb(17, 175, 59);font-size:15px;font-weight:bold;\"> {{p.offer}}</span>\r\n            <br>\r\n            <span style=\"text-align: center\">\r\n                <div class=\"value-button\" id=\"decrease\" (click)=\"decreaseValue()\" ><img src=\"/assets/-.png\" width=\"30px\"></div>\r\n                <input type=\"number\" id=\"number\" value=\"1\"  name=\"qty\"   readonly [(ngModel)]=\"value\">\r\n                <div class=\"value-button\" id=\"increase\" (click)=\"increaseValue(p.quantity)\" ><img src=\"/assets/+.png\" width=\"20px\"></div>\r\n            </span><br><br>\r\n           <span id=\"spnbtn\">\r\n                <i class=\"fa fa-shopping-cart fas\"></i>\r\n                <button type=\"button\"  class=\"btn b.tn-default cartbtn addcartbtn\"  (click)=\"funaddcart(p)\">\r\n                  Add To Cart\r\n              </button>\r\n              &nbsp;&nbsp;\r\n              <button type=\"button\" class=\"btn btn-danger\" style=\"margin-top: -8px;\" (click)=\"appobj.fun_cart_detail()\">\r\n                    <span class=\"fa fa-shopping-cart \"></span>\r\n                Buy Now\r\n              </button>\r\n            </span>\r\n\r\n     </div>\r\n     <div class=\"col-md-4 col-sm-12\">\r\n        <p style=\"color: rgb(52, 54, 54);font-size: 25px; text-align: center\">Payment Offer's</p>\r\n        <p class=\"offers\"><span class=\"spn\">&#187;</span>Special PriceGet extra 12% off (price inclusive of discount)T&C</p>\r\n        <p class=\"offers\"><span class=\"spn\">&#187;</span>Bank Offer5% Instant Discount on EMIs with Axis Bank Credit CardT&C</p>\r\n        <p class=\"offers\"><span class=\"spn\">&#187;</span>Bank OfferExtra 5% off* with Axis Bank Buzz Credit CardT&C</p>\r\n        <p class=\"offers\"><span class=\"spn\">&#187;</span>Partner OfferShop for Rs1500+ from 22 to 31st March & get extra 10% off on next purchase</p>\r\n        <p class=\"offers\"><span class=\"spn\">&#187;</span>The Offer is valid on all modes of payment.</p>\r\n        <p class=\"offers\"><span class=\"spn\">&#187;</span>Offer is not applicable on orders of Products cancelled on or before April 2019</p>    \r\n     </div>\r\n </div>\r\n</div>\r\n<br><br>\r\n<div class=\"container\" *ngIf=\"releted\">\r\n    <h2 style=\"text-transform: uppercase;font-weight: 300;color: gray\">Realted More Product's</h2><hr>\r\n   <div class=\"row\">\r\n     <div class=\"col-md-3\" *ngFor=\"let rel of releted\">\r\n        <img src=\"../../assets/uploads/{{rel.images}}\" width=\"150px\" height=\"100px\" (click)=\"funDetail(rel._id)\"><br><br>\r\n       <div style=\"text-align: justify;font-weight: bold;color: gray\">\r\n          {{rel.pname}}\r\n       </div>\r\n       <div style=\"text-align: justify\">\r\n          {{rel.pdesc}}\r\n       </div>\r\n       <div style=\"text-align: justify;font-family: Arial, Helvetica, sans-serif;color: #218cc4;font-size: 28px;font-weight: 700;line-height: 50px\">\r\n          {{rel.pprice | currency: \"INR\"}}\r\n       </div>\r\n     </div>\r\n   </div>\r\n</div>\r\n\r\n<!-- Upcomming product details -->\r\n<div>\r\n        <div  class=\"row\" *ngFor=\"let p of updata\">\r\n         \r\n            <div class=\"col-md-4\" style=\"text-align: center\"><br><br>\r\n                   <img src=\"../../assets/uploads/{{p.images}}\" height=\"340px\"   [imageZoom]=\"\" [lensHeight]=\"40\" [lensHeight]=\"40\" width=\"400\" [minZoomLevel]=\".2\" [maxZoomLevel]=\".4\" >\r\n            </div>\r\n            <div class=\"col-md-6 col-sm-12\" style=\"text-align: center\"><br>\r\n                   <span style=\"font-weight:bold;font-size:25px;\">{{p.pname | uppercase}}</span><br>\r\n                   <span style=\"font-weight:bold;color:green;font-size:30px\">{{p.pprice | currency: \"INR\"}}</span><br>\r\n                   <span style=\"font-weight:bold\"> Color:&nbsp;&nbsp;&nbsp;<span [ngStyle]=\"{backgroundColor:p.pcolor,color:p.pcolor}\">. . . . </span></span><br>\r\n                   <span style=\"font-size:15px;color: rgb(144, 146, 143)\"> {{p.pdesc}}</span><br>\r\n                  <br>\r\n                   <span *ngFor=\"let rat of rat_arr\"  class=\"fa fa-star\" style=\"font-size:30px;color:rgb(54, 27, 206);margin-right:2px\">\r\n                     \r\n                   </span>\r\n                   <span *ngIf=\"half==1\" class=\"fa fa-star-half\" style=\"font-size:30px;color:rgb(54, 27, 206);margin-right:2px\"> </span>\r\n                 <br>\r\n                 <br>\r\n                   <span style=\"color: rgb(17, 175, 59);font-size:15px;font-weight:bold;\"> {{p.offer}}</span>       \r\n            </div>\r\n        </div>\r\n       </div>"
 
 /***/ }),
 
@@ -1537,7 +1605,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var ProductDtailComponent = /** @class */ (function () {
-    function ProductDtailComponent(appobj, aobj, robj, servar) {
+    function ProductDtailComponent(route, appobj, aobj, robj, servar) {
+        this.route = route;
         this.appobj = appobj;
         this.aobj = aobj;
         this.robj = robj;
@@ -1616,6 +1685,9 @@ var ProductDtailComponent = /** @class */ (function () {
             }
         });
     };
+    ProductDtailComponent.prototype.funDetail = function (x) {
+        this.route.navigateByUrl("/prodetail;proid=" + x);
+    };
     ProductDtailComponent.prototype.funaddcart = function (pd) {
         var abc = [];
         var newarr = [];
@@ -1652,7 +1724,8 @@ var ProductDtailComponent = /** @class */ (function () {
     ProductDtailComponent.prototype.funRat = function (rat) {
         alert(rat);
         var oldob = { _id: this.prodata[0]._id };
-        var newob = { userrating: rat };
+        var intrat = parseInt(rat);
+        var newob = { userrating: intrat };
         var ratdata = [oldob, newob];
         this.robj.post("category/ratdata", ratdata).subscribe(function (dt) {
             alert(dt['_body']);
@@ -1664,7 +1737,7 @@ var ProductDtailComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./product-dtail.component.html */ "./src/app/product-dtail/product-dtail.component.html"),
             styles: [__webpack_require__(/*! ./product-dtail.component.css */ "./src/app/product-dtail/product-dtail.component.css")]
         }),
-        __metadata("design:paramtypes", [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"], _show_cart_image_service_service__WEBPACK_IMPORTED_MODULE_4__["ShowCartImageServiceService"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"], _show_cart_image_service_service__WEBPACK_IMPORTED_MODULE_4__["ShowCartImageServiceService"]])
     ], ProductDtailComponent);
     return ProductDtailComponent;
 }());
@@ -2433,40 +2506,40 @@ var ShowCartDetailsComponent = /** @class */ (function () {
         }
     };
     ShowCartDetailsComponent.prototype.fun_order_now = function () {
-        var _this = this;
         var arr;
         if (localStorage.getItem("login_check") != null) {
-            arr = localStorage.getItem("cart_items");
-            arr = arr.replace(/\\/g, "");
-            arr = arr.replace(/"{/g, "{");
-            arr = arr.replace(/}"/g, "}");
-            arr = JSON.parse(arr);
-            this.uid = localStorage.getItem("userid");
-            var oredr_data = [];
-            for (var i = 0; i < arr.length; i++) {
-                var product = {};
-                product.pname = arr[i].pname;
-                product.quantity = arr[i].selqty;
-                product.pprice = arr[i].pprice;
-                product.allpprice = product.quantity * parseInt(arr[i].pprice);
-                // alert(product.pprice)
-                this.total += product.allpprice;
-                product.images = arr[i].images;
-                oredr_data.push(product);
-                console.log(oredr_data);
-            }
-            var dobj = { _id: this.uid, date: new Date(), Products: oredr_data, Total_price: this.total };
-            this.http.post("category/addcart_data", dobj).subscribe(function (dt) {
-                alert(dt['_body']);
-                if (localStorage.getItem("login_check") != null) {
-                    localStorage.removeItem("cart_items");
-                    _this.robj.navigateByUrl("/p_details");
-                }
-            });
-        }
-        else {
-            alert('User must be logged In !!');
-            this.app.toLogin();
+            this.robj.navigateByUrl("/paymet_gatway");
+            //   arr = localStorage.getItem("cart_items")
+            //   arr = arr.replace(/\\/g, "")
+            //   arr = arr.replace(/"{/g, "{")
+            //   arr = arr.replace(/}"/g, "}")
+            //   arr = JSON.parse(arr)
+            //   this.uid = localStorage.getItem("userid")
+            //   var oredr_data = [];
+            //   for (var i = 0; i < arr.length; i++) {
+            //     var product: any = {}
+            //     product.pname = arr[i].pname
+            //     product.quantity = arr[i].selqty
+            //     product.pprice=arr[i].pprice
+            //     product.allpprice = product.quantity*parseInt(arr[i].pprice)
+            //     // alert(product.pprice)
+            //     this.total+=product.allpprice
+            //     product.images = arr[i].images
+            //     oredr_data.push(product)
+            //     console.log(oredr_data)
+            //   }
+            //   var dobj: any = { _id: this.uid, date: new Date(), Products: oredr_data ,Total_price:this.total}
+            //   this.http.post("category/addcart_data", dobj).subscribe(dt => {
+            //     alert(dt['_body'])
+            //     if(localStorage.getItem("login_check") != null) {
+            //       localStorage.removeItem("cart_items")
+            //       // this.robj.navigateByUrl("/p_details")
+            //     }
+            //   })
+            // }
+            // else {
+            //   alert('User must be logged In !!');
+            //   this.app.toLogin();
         }
     };
     ShowCartDetailsComponent.prototype.remove_cart_item = function (ind) {

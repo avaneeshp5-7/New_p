@@ -60,37 +60,38 @@ export class ShowCartDetailsComponent implements OnInit {
   fun_order_now() {
     var arr
     if (localStorage.getItem("login_check") != null) {
-      arr = localStorage.getItem("cart_items")
-      arr = arr.replace(/\\/g, "")
-      arr = arr.replace(/"{/g, "{")
-      arr = arr.replace(/}"/g, "}")
-      arr = JSON.parse(arr)
-      this.uid = localStorage.getItem("userid")
-      var oredr_data = [];
-      for (var i = 0; i < arr.length; i++) {
-        var product: any = {}
-        product.pname = arr[i].pname
-        product.quantity = arr[i].selqty
-        product.pprice=arr[i].pprice
-        product.allpprice = product.quantity*parseInt(arr[i].pprice)
-        // alert(product.pprice)
-        this.total+=product.allpprice
-        product.images = arr[i].images
-        oredr_data.push(product)
-        console.log(oredr_data)
-      }
-      var dobj: any = { _id: this.uid, date: new Date(), Products: oredr_data ,Total_price:this.total}
-      this.http.post("category/addcart_data", dobj).subscribe(dt => {
-        alert(dt['_body'])
-        if(localStorage.getItem("login_check") != null) {
-          localStorage.removeItem("cart_items")
-          this.robj.navigateByUrl("/p_details")
-        }
-      })
-    }
-    else {
-      alert('User must be logged In !!');
-      this.app.toLogin();
+      this.robj.navigateByUrl("/paymet_gatway")
+    //   arr = localStorage.getItem("cart_items")
+    //   arr = arr.replace(/\\/g, "")
+    //   arr = arr.replace(/"{/g, "{")
+    //   arr = arr.replace(/}"/g, "}")
+    //   arr = JSON.parse(arr)
+    //   this.uid = localStorage.getItem("userid")
+    //   var oredr_data = [];
+    //   for (var i = 0; i < arr.length; i++) {
+    //     var product: any = {}
+    //     product.pname = arr[i].pname
+    //     product.quantity = arr[i].selqty
+    //     product.pprice=arr[i].pprice
+    //     product.allpprice = product.quantity*parseInt(arr[i].pprice)
+    //     // alert(product.pprice)
+    //     this.total+=product.allpprice
+    //     product.images = arr[i].images
+    //     oredr_data.push(product)
+    //     console.log(oredr_data)
+    //   }
+    //   var dobj: any = { _id: this.uid, date: new Date(), Products: oredr_data ,Total_price:this.total}
+    //   this.http.post("category/addcart_data", dobj).subscribe(dt => {
+    //     alert(dt['_body'])
+    //     if(localStorage.getItem("login_check") != null) {
+    //       localStorage.removeItem("cart_items")
+    //       // this.robj.navigateByUrl("/p_details")
+    //     }
+    //   })
+    // }
+    // else {
+    //   alert('User must be logged In !!');
+    //   this.app.toLogin();
     }
   }
   remove_cart_item(ind) {

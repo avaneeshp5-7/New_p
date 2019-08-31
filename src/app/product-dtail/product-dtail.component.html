@@ -55,7 +55,7 @@
     <h2 style="text-transform: uppercase;font-weight: 300;color: gray">Realted More Product's</h2><hr>
    <div class="row">
      <div class="col-md-3" *ngFor="let rel of releted">
-        <img src="../../assets/uploads/{{rel.images}}" width="150px" height="100px"><br><br>
+        <img src="../../assets/uploads/{{rel.images}}" width="150px" height="100px" (click)="funDetail(rel._id)"><br><br>
        <div style="text-align: justify;font-weight: bold;color: gray">
           {{rel.pname}}
        </div>

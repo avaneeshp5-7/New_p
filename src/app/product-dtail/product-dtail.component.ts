@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute ,Router} from "@angular/router";
 import { Http } from "@angular/http";
 import { AppComponent } from "../app.component"
 import { ShowCartImageServiceService } from "../show-cart-image-service.service"
@@ -25,7 +25,7 @@ export class ProductDtailComponent implements OnInit {
     }
   }
   rat_arr = []; half = 0
-  constructor(public appobj: AppComponent, public aobj: ActivatedRoute, public robj: Http, private servar: ShowCartImageServiceService) {
+  constructor(private route:Router,public appobj: AppComponent, public aobj: ActivatedRoute, public robj: Http, private servar: ShowCartImageServiceService) {
   }
   prodid; prodata; x = 0; message: string; prid;releted
 
@@ -88,6 +88,9 @@ export class ProductDtailComponent implements OnInit {
       }
     })
   }
+  funDetail(x){
+    this.route.navigateByUrl("/prodetail;proid="+x)
+  }
   updata; arr;urat="";
   tot_cart_items = 0
   funaddcart(pd) {
@@ -125,7 +128,8 @@ export class ProductDtailComponent implements OnInit {
   funRat(rat) {
     alert(rat)
     var oldob = { _id: this.prodata[0]._id }
-    var newob = { userrating: rat }
+    var intrat=parseInt(rat)
+    var newob = { userrating: intrat }
     var ratdata = [oldob, newob]
     this.robj.post("category/ratdata", ratdata).subscribe(dt => {
       alert(dt['_body'])

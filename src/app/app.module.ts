@@ -39,6 +39,7 @@ import { UserauthService } from '../app/userauth.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ImgProductComponent } from './img-product/img-product.component'
 import { environment } from 'src/environments/environment';
+import { PaymentComponent } from './payment/payment.component';
 var robj = [
   { path: "", component: FirstPageComponent },
   { path: "profile", component: UserprofileComponent, canActivate: [UserauthService] },
@@ -48,6 +49,7 @@ var robj = [
   { path: "cartdet", component: ShowCartDetailsComponent, canActivate: [UserauthService] },
   { path: "shopp", component: ShoppinghistryComponent, canActivate: [UserauthService] },
   { path: "p_details", component: PurchagedetailsComponent, canActivate: [UserauthService] },
+  { path: "paymet_gatway", component: PaymentComponent, canActivate: [UserauthService] },
   { path: "mobil", component: MoblileComponent },
   { path: "otp_enter", component: OtpComponent },
   { path: "gen_new_pass", component: NewpassordComponent },
@@ -88,7 +90,8 @@ var router = RouterModule.forRoot(robj)
     ResetPasswordComponent,
     RegistrationComponent,
     PageNotFoundComponent,
-    ImgProductComponent
+    ImgProductComponent,
+    PaymentComponent
   ],
 
 
