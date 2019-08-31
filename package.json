@@ -40,6 +40,7 @@
     "passport-google-oauth": "^2.0.0",
     "path": "^0.12.7",
     "rxjs": "^6.0.0",
+    "set-value": "^2.0.1",
     "typescript": "~2.7.2",
     "zone.js": "^0.8.26"
   },
@@ -66,6 +67,6 @@
   },
   "engines": {
     "node": "v10.15.2",
-    "npm": "6.8.0"
+    "npm": "6.11.2"
   }
 }
