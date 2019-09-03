@@ -2,14 +2,14 @@
  <!-- <app-header-menu></app-header-menu> -->
   <div class="container-fluid" style="background-color:rgb(158, 198, 233);">
     <div class="row">
-      <div class="col-md-3 col-sm-12 col-xm-12 ">
+      <div class="col-md-5 col-sm-12 col-xm-12">
         <img src="../assets/reg/unnamed.png" width="70" height="70px;" style="margin: 6px"> 
         <span style="color: azure;font-size: 20px;font-weight: bold">Our Shopping Bazar</span>
       </div>
       
       
       
-      <div class="col-md-3 col-sm-12 col-xm-12 "  >
+      <div class="col-md-4 col-sm-6 col-xm-6">
         <form action="" class="search-form">
           <div class="form-group has-feedback">
           <input type="text" (keyup)="search_keyup()"  class="form-control" name="search" id="search" placeholder="search" [(ngModel)]="txtsearch" (keyup)="fun_search_product()">
@@ -33,29 +33,9 @@
 
 
 
-      <div class="col-md-6 col-sm-12 col-xm-12 text-center">
-          <button class="rounded-circle"  style="background-color: rgb(255, 153, 0); 
-          color: rgb(252, 249, 248);font-size: 18px;margin:auto;border: 2px solid rgb(151, 99, 248);height: 30px;width: 30px;"
-          (click)="fun_cart_detail()">
-          {{msg}}
-        </button>
-            <span class="fa fa-shopping-cart dropdown rounded-circle"  data-toggle="dropdown" aria-hidden="true" style="width:50px;color:rgb(151, 99, 248);font-size:32px;
-            cursor: pointer;width: 30px;height: 30px;padding: 5px;margin-top: 20px;margin-left: -14px">
-               
-                <span class="dropdown-menu dropdown-menu-right text-center" style="width: auto;border-radius: 0px;margin-right: 50px;margin-top: 22px;box-shadow: 0px 0px 10px black;border-radius: 4px;">
-                  <span class="dropdown-brand" href="#">
-                    <h4>About Cart</h4>
-                  </span>
-                  <hr>
-                    <input type="button" class="btn btn-primary" value="Clear Item" (click)="fun_clear_cart_detail()" style="border-radius: 0px; font-family: arial">    
-                     <br><br>
-                    <input type="button" class="btn btn-primary" value="Show Items" (click)="fun_cart_detail()" style="border-radius: 0px; font-family: arial">
-                </span>
-              </span>
-              
-        
-        
-      </div>
+      <!-- <div class="col-md-3 col-sm-6 col-xm-6 text-center" style="background-color: palegoldenrod">
+         
+      </div> -->
     </div>
   </div>
   <nav class="navbar navbar-expand-md  navbar-dark bg-dark">
@@ -84,6 +64,29 @@
         </li>
       </ul>
     </div>
+ 
+    <form *ngIf="msg>0" class="text-center" style="margin-right: 20px;">
+        <button class="rounded-circle"  style="background-color: rgb(255, 153, 0); 
+              color: rgb(252, 249, 248);font-size: 18px;border: 2px solid rgb(151, 99, 248);height: 30px;width: 30px;"
+              (click)="fun_cart_detail()">
+              {{msg}}
+            </button>
+                <p class="fa fa-shopping-cart dropdown rounded-circle"  data-toggle="dropdown" aria-hidden="true" style="width:50px;color:rgb(151, 99, 248);font-size:32px;
+                cursor: pointer;width: 30px;height: 30px;padding: 5px;margin-left: -14px">
+                   
+                    <span class="dropdown-menu dropdown-menu-right text-center" style="width: auto;border-radius: 0px;margin-right: 50px;margin-top: 22px;box-shadow: 0px 0px 10px black;border-radius: 4px;">
+                      <span class="dropdown-brand" href="#">
+                        <h4>About Cart</h4>
+                      </span>
+                      <hr>
+                        <input type="button" class="btn btn-primary" value="Clear Item" (click)="fun_clear_cart_detail()" style="border-radius: 0px; font-family: arial">    
+                         <br><br>
+                        <input type="button" class="btn btn-primary" value="Show Items" (click)="fun_cart_detail()" style="border-radius: 0px; font-family: arial">
+                    </span>
+                  </p>
+     </form>
+
+
     <form class="form-inline">
       <span class="lgn_sup_btn">
         <!-- *ngIf="login_display" -->
