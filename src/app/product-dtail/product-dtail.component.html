@@ -72,12 +72,12 @@
 <!-- Upcomming product details -->
 <div>
         <div  class="row" *ngFor="let p of updata">
-         
             <div class="col-md-4" style="text-align: center"><br><br>
-                   <img src="../../assets/uploads/{{p.images}}" height="340px"   [imageZoom]="" [lensHeight]="40" [lensHeight]="40" width="400" [minZoomLevel]=".2" [maxZoomLevel]=".4" >
+                   <img src="../../assets/uploads/{{p.images}}" height="340px" style="width: 318px;margin-top: -85px;">
             </div>
             <div class="col-md-6 col-sm-12" style="text-align: center"><br>
-                   <span style="font-weight:bold;font-size:25px;">{{p.pname | uppercase}}</span><br>
+              <h2 style="color: rgb(255, 158, 1);font-size: 35px;margin: auto"><u><i>Available Soon !!</i></u></h2>
+                   <span style="font-weight:bold;font-size:25px;color: rgb(93, 93, 192)">{{p.pname | uppercase}}</span><br>
                    <span style="font-weight:bold;color:green;font-size:30px">{{p.pprice | currency: "INR"}}</span><br>
                    <span style="font-weight:bold"> Color:&nbsp;&nbsp;&nbsp;<span [ngStyle]="{backgroundColor:p.pcolor,color:p.pcolor}">. . . . </span></span><br>
                    <span style="font-size:15px;color: rgb(144, 146, 143)"> {{p.pdesc}}</span><br>
