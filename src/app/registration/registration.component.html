@@ -1,15 +1,16 @@
 <div>
 <div class="row"> 
   <div class="col-md-5 col-sm-12 modal-dialogs">
-    <div class="col-lg-12 col-sm-12 col-12 col-md-12" style="padding: 20px">
-      <form name="regfrm" #rfrm="ngForm" class="registform">
-            <div style="text-align: center">
-              <img src="assets/man.png" style="height: 70px;width: 70px;padding: 5px;text-align: center"><br><br>
-            </div>
+      <div style="text-align: center;background-image:linear-gradient(rgb(153, 6, 252),rgb(180, 85, 243)) ">
+          <img src="../../assets/reg/d1.png" class="rounded-circle"  style="height: 130px;width: 130px;margin-top: 22px;text-align: center;"><br><br>
+        </div>
+    <div class="col-lg-12 col-sm-12 col-12 col-md-12" style="background-color: cadetblue"><br>
+      <form name="regfrm" #rfrm="ngForm" class="registform"> 
           <div class="row">
             <div class="col-md-6 col-sm-12 col-xm-12 ">
               <input type="text" class="form-control  texboxes" placeholder="First Name..." [(ngModel)]="fname" name="nn1" #reg1="ngModel" required>
             </div>
+            
             <div class="col-md-6 col-sm-12 col-xm-12 ">
               <input type="text" class="form-control  texboxes" placeholder="Last Name..." [(ngModel)]="lname" name="nn2" #reg2="ngModel" required>
             </div>
@@ -74,7 +75,7 @@
                   <input type="reset" value="Reset" data-dismiss="modal" class="btn btn-danger" style="border-radius: 0px;float: right;margin-right: 7px;">
               </div>
           </div>
-      </form>
+      </form><br>
   </div>
   </div>
   
