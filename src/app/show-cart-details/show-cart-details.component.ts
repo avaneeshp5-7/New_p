@@ -60,7 +60,7 @@ export class ShowCartDetailsComponent implements OnInit {
   fun_order_now() {
     var arr
     if (localStorage.getItem("login_check") != null) {
-      this.robj.navigateByUrl("/paymet_gatway")
+      this.robj.navigateByUrl("/shipping/address")
     //   arr = localStorage.getItem("cart_items")
     //   arr = arr.replace(/\\/g, "")
     //   arr = arr.replace(/"{/g, "{")

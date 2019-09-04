@@ -37,7 +37,4 @@ export class ProducttemplateComponent implements OnInit {
   funDetail(y){
     this.rout.navigateByUrl("/prodetail;proid="+y)
   }
-  // funDetails(y){
-  //   this.rout.navigateByUrl("/prodetail;proid="+y)
-  // }
 }

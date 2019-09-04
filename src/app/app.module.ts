@@ -5,14 +5,14 @@ import { HttpModule } from "@angular/http";
 // import { ServiceWorkerModule} from '@angular/service-worker'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import { ProducttemplateComponent } from './producttemplate/producttemplate.component'
 import { RouterModule } from "@angular/router";
 import { FooterComponent } from './footer/footer.component';
 import { ImageSlideComponent } from './image-slide/image-slide.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { NewArivalComponent } from './new-arival/new-arival.component';
-import { AdsComponent } from './ads/ads.component';
+import { AdsComponent } from './shipping-address/ads.component';
 import { ButtonsDirective } from './buttons.directive';
 import { ButtonDirectiveDirective } from './button-directive.directive';
 import { ProductDtailComponent } from './product-dtail/product-dtail.component';
@@ -43,6 +43,7 @@ import { PaymentComponent } from './payment/payment.component';
 var robj = [
   { path: "", component: FirstPageComponent },
   { path: "profile", component: UserprofileComponent, canActivate: [UserauthService] },
+  { path: "shipping/address", component: AdsComponent, canActivate: [UserauthService] },
   { path: "upcon", component: UpcommingComponent },
   { path: "protemp", component: ProducttemplateComponent },
   { path: "prodetail", component: ProductDtailComponent },
@@ -98,7 +99,7 @@ var router = RouterModule.forRoot(robj)
   imports: [
     BrowserModule, BrowserAnimationsModule,
      HttpModule, FormsModule, router, ImageZoomModule,
-      SliderModule, RatingModule,
+      SliderModule, RatingModule,ReactiveFormsModule
       // ServiceWorkerModule.register('/ngsw-worker.js',{enabled:environment.production})
   ],
   providers: [ShowCartImageServiceService, UserauthService],

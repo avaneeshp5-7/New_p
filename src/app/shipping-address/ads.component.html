@@ -1,0 +1,48 @@
+<div>
+  <form [formGroup]='addressForm' (ngSubmit)="submitAdress()">
+      <div class="container text-center">
+        <h2 style="margin: auto;color: turquoise;font-family: Verdana, Geneva, Tahoma, sans-serif">Enter Your Shiping Adrress</h2><br>
+          <div class="row">
+            <div class="col-md-12">
+               <div class="row">
+                 <div class="col-md-3">
+                  <input type="text" class="form-control setit" formControlName="pincode" placeholder="Pin Code 6 didit *" [ngClass]="{'is-invalid':submited && f.pincode.errors}">
+                  <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback"></div>
+                  </div>
+                 <div class="col-md-3">
+                    <input type="text" class="form-control setit" formControlName='city' placeholder="City *" [ngClass]="{'is-invalid':submited && f.city.errors}">
+                    <div *ngIf="submitted && f.city.errors" class="invalid-feedback"></div>
+                  </div>
+                 <div class="col-md-3">
+                    <input type="text" class="form-control setit" formControlName="state" placeholder="State *" [ngClass]="{'is-invalid':submited && f.state.errors}">
+                    <div *ngIf="submitted && f.state.errors" class="invalid-feedback"></div>
+                 </div>
+                 <div class="col-md-3">
+                    <input type="text" class="form-control setit" formControlName="street" placeholder="Street/Colony *" [ngClass]="{'is-invalid':submited && f.street.errors}">
+                    <div *ngIf="submitted && f.street.errors" class="invalid-feedback"></div>
+                  </div>
+               </div>
+            </div>
+          </div><br>
+          <div class="row">
+              <div class="col-md-12">
+                 <div class="row">
+                   <div class="col-md-4">
+                      <input type="text" class="form-control setit" formControlName='houseno' placeholder="House No *" [ngClass]="{'is-invalid':submited && f.houseno.errors}">
+                      <div *ngIf="submitted && f.houseno.errors" class="invalid-feedback"></div>
+                    </div>
+                   <div class="col-md-4">
+                      <input type="text" class="form-control setit" formControlName="fullname" placeholder="Full Name *" [ngClass]="{'is-invalid':submited && f.fullname.errors}">
+                      <div *ngIf="submitted && f.fullname.errors" class="invalid-feedback"></div>
+                    </div>
+                   <div class="col-md-4">
+                      <input type="text" class="form-control setit" formControlName='contact' placeholder="Contact No 10 digit *" [ngClass]="{'is-invalid':submited && f.contact.errors}">
+                      <div *ngIf="submitted && f.contact.errors" class="invalid-feedback"></div>
+                    </div>
+                 </div>
+              </div>
+            </div>
+            <input type="submit" [disabled]="!addressForm.valid" value="Proceed" class="btn btn-success form-control" style="width: 200px;border-radius: 0px;margin: 16px;border: 0px;cursor: pointer;">
+        </div>
+  </form>
+</div>

@@ -12,10 +12,10 @@
       <p style="font-weight: bold;font-size: 20px;">{{product_info.pname  }}</p>
       <span [ngStyle]="{backgroundColor:product_info.pcolor,color:product_info.pcolor}">. . . . . .</span>
       <p style="color: rgb(96, 199, 96);font-weight: bold;"> {{product_info.pprice | currency: "INR" }}</p>
-      <p style="color: crimson;">{{product_info.pdesc  }}</p>
+      <p style="color: rgb(45, 79, 153);">{{product_info.pdesc  }}</p>
   </div>
   <div class="cl-md-3" style="text-align: center;margin: 18px;">
-      <input type="button" class="btn btn-danger" value="Remove Item" (click)="remove_cart_item(ii)" style="height: 50px;font-size: 20px;margin-top: 50px;margin-left: 95px"><br>
+      <a (click)="remove_cart_item(ii)" class="rmitm" style="font-size: 20px;margin-top: 0px;margin-left: 55px;cursor: pointer;color: rgb(253, 4, 4)">Remove Item</a><br>
   </div>
   </div>
 

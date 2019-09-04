@@ -97,20 +97,20 @@ export class ProductDtailComponent implements OnInit {
     var abc = []; var newarr = []
     if (localStorage.getItem("cart_items") != null) {
       abc = JSON.parse(localStorage.getItem('cart_items'));
-     // alert(abc)
+    
       pd.selqty = this.value
       var str = '\\"_id\\":' + pd._id + ",";
-     // alert(str)
+  
       if ((localStorage.getItem('cart_items').indexOf(str))) {
         for (var loop = 0; loop < abc.length; loop++) {
           var str1 = JSON.parse(abc[loop])
           if (str1._id == pd._id) {
             str1.selqty = pd.selqty
-           // alert("Product Updated")
+           
           }
           else
             newarr.push(JSON.stringify(str1))
-         // alert(newarr.length)
+        
         }
       }
       newarr.push(JSON.stringify(pd));

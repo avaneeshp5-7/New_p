@@ -23,69 +23,6 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "./src/app/ads/ads.component.css":
-/*!***************************************!*\
-  !*** ./src/app/ads/ads.component.css ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/ads/ads.component.html":
-/*!****************************************!*\
-  !*** ./src/app/ads/ads.component.html ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\r\n  ads works!\r\n</p>\r\n"
-
-/***/ }),
-
-/***/ "./src/app/ads/ads.component.ts":
-/*!**************************************!*\
-  !*** ./src/app/ads/ads.component.ts ***!
-  \**************************************/
-/*! exports provided: AdsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdsComponent", function() { return AdsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var AdsComponent = /** @class */ (function () {
-    function AdsComponent() {
-    }
-    AdsComponent.prototype.ngOnInit = function () {
-    };
-    AdsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-ads',
-            template: __webpack_require__(/*! ./ads.component.html */ "./src/app/ads/ads.component.html"),
-            styles: [__webpack_require__(/*! ./ads.component.css */ "./src/app/ads/ads.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], AdsComponent);
-    return AdsComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/app.component.css":
 /*!***********************************!*\
   !*** ./src/app/app.component.css ***!
@@ -334,7 +271,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _image_slide_image_slide_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./image-slide/image-slide.component */ "./src/app/image-slide/image-slide.component.ts");
 /* harmony import */ var _new_product_new_product_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./new-product/new-product.component */ "./src/app/new-product/new-product.component.ts");
 /* harmony import */ var _new_arival_new_arival_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./new-arival/new-arival.component */ "./src/app/new-arival/new-arival.component.ts");
-/* harmony import */ var _ads_ads_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ads/ads.component */ "./src/app/ads/ads.component.ts");
+/* harmony import */ var _shipping_address_ads_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./shipping-address/ads.component */ "./src/app/shipping-address/ads.component.ts");
 /* harmony import */ var _buttons_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./buttons.directive */ "./src/app/buttons.directive.ts");
 /* harmony import */ var _button_directive_directive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./button-directive.directive */ "./src/app/button-directive.directive.ts");
 /* harmony import */ var _product_dtail_product_dtail_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./product-dtail/product-dtail.component */ "./src/app/product-dtail/product-dtail.component.ts");
@@ -411,6 +348,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var robj = [
     { path: "", component: _first_page_first_page_component__WEBPACK_IMPORTED_MODULE_17__["FirstPageComponent"] },
     { path: "profile", component: _userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_22__["UserprofileComponent"], canActivate: [_app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]] },
+    { path: "shipping/address", component: _shipping_address_ads_component__WEBPACK_IMPORTED_MODULE_13__["AdsComponent"], canActivate: [_app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]] },
     { path: "upcon", component: _upcomming_upcomming_component__WEBPACK_IMPORTED_MODULE_23__["UpcommingComponent"] },
     { path: "protemp", component: _producttemplate_producttemplate_component__WEBPACK_IMPORTED_MODULE_7__["ProducttemplateComponent"] },
     { path: "prodetail", component: _product_dtail_product_dtail_component__WEBPACK_IMPORTED_MODULE_16__["ProductDtailComponent"] },
@@ -441,7 +379,7 @@ var AppModule = /** @class */ (function () {
                 _image_slide_image_slide_component__WEBPACK_IMPORTED_MODULE_10__["ImageSlideComponent"],
                 _new_product_new_product_component__WEBPACK_IMPORTED_MODULE_11__["NewProductComponent"],
                 _new_arival_new_arival_component__WEBPACK_IMPORTED_MODULE_12__["NewArivalComponent"],
-                _ads_ads_component__WEBPACK_IMPORTED_MODULE_13__["AdsComponent"],
+                _shipping_address_ads_component__WEBPACK_IMPORTED_MODULE_13__["AdsComponent"],
                 _buttons_directive__WEBPACK_IMPORTED_MODULE_14__["ButtonsDirective"],
                 _button_directive_directive__WEBPACK_IMPORTED_MODULE_15__["ButtonDirectiveDirective"],
                 _product_dtail_product_dtail_component__WEBPACK_IMPORTED_MODULE_16__["ProductDtailComponent"],
@@ -466,7 +404,8 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_3__["HttpModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"], router, angular2_image_zoom__WEBPACK_IMPORTED_MODULE_18__["ImageZoomModule"],
-                ngx_slider__WEBPACK_IMPORTED_MODULE_19__["SliderModule"], ngx_rating__WEBPACK_IMPORTED_MODULE_20__["RatingModule"],
+                ngx_slider__WEBPACK_IMPORTED_MODULE_19__["SliderModule"], ngx_rating__WEBPACK_IMPORTED_MODULE_20__["RatingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ReactiveFormsModule"]
+                // ServiceWorkerModule.register('/ngsw-worker.js',{enabled:environment.production})
             ],
             providers: [_show_cart_image_service_service__WEBPACK_IMPORTED_MODULE_21__["ShowCartImageServiceService"], _app_userauth_service__WEBPACK_IMPORTED_MODULE_35__["UserauthService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -908,7 +847,7 @@ module.exports = ".modal-content{\r\n  /* box-shadow:   0px 0px 8px rgb(156, 163
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-4\">\r\n  </div>\r\n  <div class=\"col-md-4\" >\r\n    <div class=\"col-lg-12 col-sm-12 col-12 main-section\">\r\n      <div class=\"modal-content\" style=\"background-color: cadetblue;border-radius: 0px;box-shadow: 0px;border: 0px\">\r\n        <div class=\"col-lg-12 col-sm-12 col-12 user-img\" style=\"text-align: center;background-image:linear-gradient(rgb(153, 6, 252),rgb(180, 85, 243))\">\r\n          <img src=\"assets/login.jpg\" class=\"rounded-circle\" style=\"width: 100px;height: 100px;margin-top: 20px\"><br><br>\r\n        </div><br>\r\n        <div class=\"col-lg-12 col-sm-12 col-12 form-input text-center\" >\r\n          <form name=\"frm1\" #lform=\"ngForm\">\r\n            <div class=\"row text-center\">\r\n              <div class=\"col-md-12 col-sm-12 col-xs-12\">\r\n                <div class=\"form-group\">\r\n                  <br>\r\n                  <div>\r\n                    <input type=\"text\" class=\"form-control ltt\" name=\"log1\" [(ngModel)]=\"usrname\" placeholder=\"Enter User ID\" #up=\"ngModel\"\r\n                           required style=\"border-radius: 0px\" />\r\n                  </div>\r\n                  <br>\r\n                  <div class=\"input-group text-center\">\r\n                    <input type=\"password\" class=\"form-control ltt\"  name=\"log2\" [(ngModel)]=\"upass\" placeholder=\"Enter Password\" #uid=\"ngModel\"\r\n                           required style=\"border-radius: 0px ; width: 300px;\" />\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <span *ngIf=\"up.errors && up.errors.required\" class=\"valsp1\">{{m1}}</span>\r\n            <span *ngIf=\"uid.errors && uid.errors.required\" class=\"valsp\">{{m2}}</span>\r\n            <br>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12 col-sm-12 col-xs-12\">\r\n                <a (click)=\"funforgote()\" style=\"color:rgb(176, 231, 213);cursor: pointer;\" data-dismiss=\"modal\">Fogot password ?</a>\r\n                <input type=\"button\" value=\"Google+\" class=\"btn btn-danger lbtnn\" (click)=\"google_login()\" style=\"float: right;\" >&nbsp;&nbsp;\r\n                <input type=\"button\" value=\"LogIn\" class=\"btn btn-success lbtnn\" (click)=\"funlog(lform)\" style=\"float: right;margin-right: 8px;\">&nbsp;&nbsp;\r\n                <!-- <input type=\"button\" value=\"Reset\" class=\"btn btn-danger lbtnn\" data-dismiss=\"modal\" style=\"float: right;margin-right: 7px;\" > -->\r\n              </div>\r\n            </div>\r\n          </form>\r\n        </div>\r\n        <br>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"col-md-4\">\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-4\">\r\n  </div>\r\n  <div class=\"col-md-4\" >\r\n    <div class=\"col-lg-12 col-sm-12 col-12 main-section\">\r\n      <div class=\"modal-content\" style=\"background-color: cadetblue;border-radius: 0px;box-shadow: 0px;border: 0px\">\r\n        <div class=\"col-lg-12 col-sm-12 col-12 user-img\" style=\"text-align: center;background-image:linear-gradient(rgb(153, 6, 252),rgb(180, 85, 243))\">\r\n          <img src=\"assets/login.jpg\" class=\"rounded-circle\" style=\"width: 100px;height: 100px;margin-top: 20px\"><br><br>\r\n        </div><br>\r\n        <div class=\"col-lg-12 col-sm-12 col-12 form-input text-center\" >\r\n          <form name=\"frm1\" #lform=\"ngForm\">\r\n            <div class=\"row text-center\">\r\n              <div class=\"col-md-12 col-sm-12 col-xs-12\">\r\n                <div class=\"form-group\">\r\n                  <br>\r\n                  <div>\r\n                    <input type=\"text\" class=\"form-control ltt\" name=\"log1\" [(ngModel)]=\"usrname\" placeholder=\"Enter User ID\" #up=\"ngModel\"\r\n                           required style=\"border-radius: 0px\" />\r\n                  </div>\r\n                  <br>\r\n                  <div class=\"input-group text-center\">\r\n                    <input type=\"password\" class=\"form-control ltt\"  name=\"log2\" [(ngModel)]=\"upass\" placeholder=\"Enter Password\" #uid=\"ngModel\"\r\n                           required style=\"border-radius: 0px ; width: 300px;\" />\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <span *ngIf=\"up.errors && up.errors.required\" class=\"valsp1\">{{m1}}</span>\r\n            <span *ngIf=\"uid.errors && uid.errors.required\" class=\"valsp\">{{m2}}</span>\r\n            <br>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12 col-sm-12 col-xs-12\">\r\n                <a (click)=\"funforgote()\" style=\"color:rgb(176, 231, 213);cursor: pointer;font-size: 12px\" data-dismiss=\"modal\">Fogot password ?</a>\r\n                <input type=\"button\" value=\"Google+\" class=\"btn btn-danger lbtnn\" (click)=\"google_login()\" style=\"float: right;\" >&nbsp;&nbsp;\r\n                <input type=\"button\" value=\"LogIn\" class=\"btn btn-success lbtnn\" (click)=\"funlog(lform)\" style=\"float: right;margin-right: 8px;\">&nbsp;&nbsp;\r\n                <!-- <input type=\"button\" value=\"Reset\" class=\"btn btn-danger lbtnn\" data-dismiss=\"modal\" style=\"float: right;margin-right: 7px;\" > -->\r\n              </div>\r\n            </div>\r\n          </form>\r\n        </div>\r\n        <br>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"col-md-4\">\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1693,20 +1632,16 @@ var ProductDtailComponent = /** @class */ (function () {
         var newarr = [];
         if (localStorage.getItem("cart_items") != null) {
             abc = JSON.parse(localStorage.getItem('cart_items'));
-            // alert(abc)
             pd.selqty = this.value;
             var str = '\\"_id\\":' + pd._id + ",";
-            // alert(str)
             if ((localStorage.getItem('cart_items').indexOf(str))) {
                 for (var loop = 0; loop < abc.length; loop++) {
                     var str1 = JSON.parse(abc[loop]);
                     if (str1._id == pd._id) {
                         str1.selqty = pd.selqty;
-                        // alert("Product Updated")
                     }
                     else
                         newarr.push(JSON.stringify(str1));
-                    // alert(newarr.length)
                 }
             }
             newarr.push(JSON.stringify(pd));
@@ -2319,6 +2254,96 @@ var SendOtpComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/shipping-address/ads.component.css":
+/*!****************************************************!*\
+  !*** ./src/app/shipping-address/ads.component.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".setit{\r\n    /* border: 0px solid gray;\r\n    border-bottom: 1px solid silver; */\r\n    border-radius: 0px;\r\n    margin-top: 6px\r\n}\r\n/* .setit:focus{\r\n  \r\n    } */"
+
+/***/ }),
+
+/***/ "./src/app/shipping-address/ads.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/shipping-address/ads.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\r\n  <form [formGroup]='addressForm' (ngSubmit)=\"submitAdress()\">\r\n      <div class=\"container text-center\">\r\n        <h2 style=\"margin: auto;color: turquoise;font-family: Verdana, Geneva, Tahoma, sans-serif\">Enter Your Shiping Adrress</h2><br>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n               <div class=\"row\">\r\n                 <div class=\"col-md-3\">\r\n                  <input type=\"text\" class=\"form-control setit\" formControlName=\"pincode\" placeholder=\"Pin Code 6 didit *\" [ngClass]=\"{'is-invalid':submited && f.pincode.errors}\">\r\n                  <div *ngIf=\"submitted && f.pincode.errors\" class=\"invalid-feedback\"></div>\r\n                  </div>\r\n                 <div class=\"col-md-3\">\r\n                    <input type=\"text\" class=\"form-control setit\" formControlName='city' placeholder=\"City *\" [ngClass]=\"{'is-invalid':submited && f.city.errors}\">\r\n                    <div *ngIf=\"submitted && f.city.errors\" class=\"invalid-feedback\"></div>\r\n                  </div>\r\n                 <div class=\"col-md-3\">\r\n                    <input type=\"text\" class=\"form-control setit\" formControlName=\"state\" placeholder=\"State *\" [ngClass]=\"{'is-invalid':submited && f.state.errors}\">\r\n                    <div *ngIf=\"submitted && f.state.errors\" class=\"invalid-feedback\"></div>\r\n                 </div>\r\n                 <div class=\"col-md-3\">\r\n                    <input type=\"text\" class=\"form-control setit\" formControlName=\"street\" placeholder=\"Street/Colony *\" [ngClass]=\"{'is-invalid':submited && f.street.errors}\">\r\n                    <div *ngIf=\"submitted && f.street.errors\" class=\"invalid-feedback\"></div>\r\n                  </div>\r\n               </div>\r\n            </div>\r\n          </div><br>\r\n          <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                 <div class=\"row\">\r\n                   <div class=\"col-md-4\">\r\n                      <input type=\"text\" class=\"form-control setit\" formControlName='houseno' placeholder=\"House No *\" [ngClass]=\"{'is-invalid':submited && f.houseno.errors}\">\r\n                      <div *ngIf=\"submitted && f.houseno.errors\" class=\"invalid-feedback\"></div>\r\n                    </div>\r\n                   <div class=\"col-md-4\">\r\n                      <input type=\"text\" class=\"form-control setit\" formControlName=\"fullname\" placeholder=\"Full Name *\" [ngClass]=\"{'is-invalid':submited && f.fullname.errors}\">\r\n                      <div *ngIf=\"submitted && f.fullname.errors\" class=\"invalid-feedback\"></div>\r\n                    </div>\r\n                   <div class=\"col-md-4\">\r\n                      <input type=\"text\" class=\"form-control setit\" formControlName='contact' placeholder=\"Contact No 10 digit *\" [ngClass]=\"{'is-invalid':submited && f.contact.errors}\">\r\n                      <div *ngIf=\"submitted && f.contact.errors\" class=\"invalid-feedback\"></div>\r\n                    </div>\r\n                 </div>\r\n              </div>\r\n            </div>\r\n            <input type=\"submit\" [disabled]=\"!addressForm.valid\" value=\"Proceed\" class=\"btn btn-success form-control\" style=\"width: 200px;border-radius: 0px;margin: 16px;border: 0px;cursor: pointer;\">\r\n        </div>\r\n  </form>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/shipping-address/ads.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/shipping-address/ads.component.ts ***!
+  \***************************************************/
+/*! exports provided: AdsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdsComponent", function() { return AdsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AdsComponent = /** @class */ (function () {
+    function AdsComponent(fb) {
+        this.fb = fb;
+        this.submited = false;
+    }
+    AdsComponent.prototype.ngOnInit = function () {
+        this.addressForm = this.fb.group({
+            pincode: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern('[0-9]*'), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(6), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(6)]],
+            city: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            state: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            street: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            houseno: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            fullname: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            contact: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern('[0-9]*'), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(10), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(10)]]
+        });
+    };
+    Object.defineProperty(AdsComponent.prototype, "f", {
+        get: function () {
+            return this.addressForm.controls;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AdsComponent.prototype.submitAdress = function () {
+        this.submited = true;
+        if (this.addressForm.invalid) {
+            return;
+        }
+        console.log(this.addressForm.controls);
+    };
+    AdsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-ads',
+            template: __webpack_require__(/*! ./ads.component.html */ "./src/app/shipping-address/ads.component.html"),
+            styles: [__webpack_require__(/*! ./ads.component.css */ "./src/app/shipping-address/ads.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+    ], AdsComponent);
+    return AdsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/shoppinghistry/shoppinghistry.component.css":
 /*!*************************************************************!*\
   !*** ./src/app/shoppinghistry/shoppinghistry.component.css ***!
@@ -2413,7 +2438,7 @@ var ShoppinghistryComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "li{\r\n    list-style: none;   \r\n}\r\n  \r\nform #decrease {\r\n    /* margin-right: -4px; */\r\n    border-radius: 8px 0 0 8px;\r\n  }\r\n  \r\nform #increase {\r\n    /* margin-left: -4px; */\r\n    border-radius: 0 8px 8px 0;\r\n  }\r\n  \r\ninput#number {\r\n    text-align: center;\r\n    margin-top: -50px;\r\n    border: none;\r\n    padding-left:12px;\r\n    border: 1px solid #ddd;\r\n\r\n    margin: 0px;\r\n    width: 40px;\r\n    height: 38px;\r\n  }\r\n  \r\n.value-button {\r\n    display: inline-block;\r\n    border: 1px solid  rgb(152, 153, 226);\r\n    margin-top: -7px;\r\n    width: 40px;\r\n    height: 40px;\r\n    font-weight: bolder;\r\n    text-align: center;\r\n    font-size:20px;\r\n    vertical-align: middle;\r\n    padding: 2px 0;\r\n    background:rgb(152, 153, 226);\r\n \r\n    color:white;\r\n  }\r\n  \r\n.value-button:hover {\r\n    cursor: pointer;\r\n    background-color:mediumslateblue;\r\n    color:rgb(0, 247, 255);\r\n  }\r\n  \r\n/* #ttlamt{\r\n    background-color: #ddd\r\n  } */\r\n  \r\n.ttlamt {\r\n   \r\n    transition: -webkit-transform .4s;\r\n   \r\n    transition: transform .4s;\r\n   \r\n    transition: transform .4s, -webkit-transform .4s;\r\n    margin: 0 auto;\r\n}\r\n  \r\n.ttlamt:hover { /* IE 9 */\r\n    -webkit-transform: scale(0.5); /* Safari 3-8 */\r\n    transform: scale(1.2); \r\n}"
+module.exports = "li{\r\n    list-style: none;   \r\n}\r\n  \r\nform #decrease {\r\n    /* margin-right: -4px; */\r\n    border-radius: 8px 0 0 8px;\r\n  }\r\n  \r\nform #increase {\r\n    /* margin-left: -4px; */\r\n    border-radius: 0 8px 8px 0;\r\n  }\r\n  \r\ninput#number {\r\n    text-align: center;\r\n    margin-top: -50px;\r\n    border: none;\r\n    padding-left:12px;\r\n    border: 1px solid #ddd;\r\n\r\n    margin: 0px;\r\n    width: 40px;\r\n    height: 38px;\r\n  }\r\n  \r\n.value-button {\r\n    display: inline-block;\r\n    border: 1px solid  rgb(152, 153, 226);\r\n    margin-top: -7px;\r\n    width: 40px;\r\n    height: 40px;\r\n    font-weight: bolder;\r\n    text-align: center;\r\n    font-size:20px;\r\n    vertical-align: middle;\r\n    padding: 2px 0;\r\n    background:rgb(152, 153, 226);\r\n \r\n    color:white;\r\n  }\r\n  \r\n.value-button:hover {\r\n    cursor: pointer;\r\n    background-color:mediumslateblue;\r\n    color:rgb(0, 247, 255);\r\n  }\r\n  \r\n/* #ttlamt{\r\n    background-color: #ddd\r\n  } */\r\n  \r\n.ttlamt {\r\n   \r\n    transition: -webkit-transform .4s;\r\n   \r\n    transition: transform .4s;\r\n   \r\n    transition: transform .4s, -webkit-transform .4s;\r\n    margin: 0 auto;\r\n}\r\n  \r\n.ttlamt:hover { /* IE 9 */\r\n    -webkit-transform: scale(0.5); /* Safari 3-8 */\r\n    transform: scale(1.2); \r\n}\r\n  \r\n.rmitm:hover{\r\n  text-decoration: underline;\r\n  color: aqua\r\n}"
 
 /***/ }),
 
@@ -2424,7 +2449,7 @@ module.exports = "li{\r\n    list-style: none;   \r\n}\r\n  \r\nform #decrease {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n\r\n<div class=\"container\"  *ngIf=\"data.length>0\">\r\n  <h5 style=\"color: rgb(11, 194, 21);text-align: center;font-family: Arial, Helvetica, sans-serif\">Your Cart Detail's</h5>\r\n  <div class=\"row\" *ngFor=\"let product_info of data;let ind=index\" style=\"border: 1px solid silver;border-radius: 4px;margin: 10px;\">\r\n    <div class=\"col-md-3\" style=\"text-align: center\">\r\n        <img src=\"../../assets/uploads/{{product_info.images}}\" width=\"150px\" height=\"130px;\"\r\n          style=\"border: 1px solid silver;margin: 10px\">   \r\n    </div>\r\n    <div class=\"col-md-3\" style=\"text-align: center;\">\r\n      <p style=\"font-weight: bold;font-size: 20px;\">{{product_info.pname  }}</p>\r\n      <span [ngStyle]=\"{backgroundColor:product_info.pcolor,color:product_info.pcolor}\">. . . . . .</span>\r\n      <p style=\"color: rgb(96, 199, 96);font-weight: bold;\"> {{product_info.pprice | currency: \"INR\" }}</p>\r\n      <p style=\"color: crimson;\">{{product_info.pdesc  }}</p>\r\n  </div>\r\n  <div class=\"cl-md-3\" style=\"text-align: center;margin: 18px;\">\r\n      <input type=\"button\" class=\"btn btn-danger\" value=\"Remove Item\" (click)=\"remove_cart_item(ii)\" style=\"height: 50px;font-size: 20px;margin-top: 50px;margin-left: 95px\"><br>\r\n  </div>\r\n  </div>\r\n\r\n\r\n  <div class=\"row\" *ngIf=\"data.length>0\">\r\n      <div class=\"col-md-4\">\r\n          <p style=\"box-shadow: 0px 0px 10px black;padding: 10px;width: 231px;margin-top: 7px;margin-left: 34px\">\r\n              <span style=\"color: rgb(106, 238, 156);font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold\">Total\r\n                Ammount</span>&nbsp;<span style=\"color: rgb(23, 192, 23);font-size: 15;font-weight: bold;\"> :\r\n                {{TotalAmnt | currency: \"INR\"}}</span>\r\n          </p>\r\n      </div>\r\n      <div class=\"col-md-2\" *ngIf=\"data.length>0\" class=\"text-center\" style=\"text-align: center\">\r\n          <input type=\"button\" value=\"Order Now\" class=\"btn btn-success text-center\" (click)=\"fun_order_now()\"\r\n            style=\"width: 200px;height: 50px;font-size: 20px;margin-left: 65px\">&nbsp;&nbsp;&nbsp;&nbsp;\r\n        </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"container\">\r\n    <div class=\"row\" *ngIf=\"data.length<=0\">\r\n        <div class=\"col-md-12\" style=\"text-align: center\">\r\n            <img src=\"../../assets/cart-empty-icon.png\">\r\n             <h5 style=\"color: rgb(247, 16, 47);font-family: Arial, Helvetica, sans-serif\">Your Cart Is Empaty</h5>\r\n             <div class=\"text-center\"><button class=\"btn btn-success\" (click)=\"Continue()\">Shopping Continue</button></div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n<!-- \r\n <button class=\"btn btn-warning\" (click)=\"remove_cart_item(ii)\">Remove Item </button>\r\n  <div class=\"ttlamt\" style=\"width: 300px;margin-left: -10px;\">\r\n    <span style=\"box-shadow: 0px 0px 10px black;padding: 10px;margin-left: 90px;\">\r\n      <span\r\n        style=\"color: rgb(106, 238, 156);font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold\">Total\r\n        Ammount</span>&nbsp;<span style=\"color: rgb(23, 192, 23);font-size: 15;font-weight: bold;\"> :\r\n        {{TotalAmnt | currency: \"INR\"}}</span>\r\n    </span>\r\n  </div>\r\n</div>\r\n<br><br> -->\r\n\r\n\r\n\r\n\r\n\r\n <!-- <form>\r\n        <div class=\"value-button\" id=\"decrease\" (click)=\"decreaseValue(ind)\"><img src=\"/assets/-.png\" width=\"30px\">\r\n        </div>\r\n        <input type=\"number\" id=\"number\" value=\"1\" name=\"qty\" readonly [(ngModel)]=\"product_info.selqty  \">\r\n        <div class=\"value-button\" id=\"increase\" (click)=\"increaseValue(product_info.quantity,ind)\"><img\r\n            src=\"/assets/+.png\" width=\"20px\"></div>\r\n      </form> -->"
+module.exports = "\r\n\r\n\r\n<div class=\"container\"  *ngIf=\"data.length>0\">\r\n  <h5 style=\"color: rgb(11, 194, 21);text-align: center;font-family: Arial, Helvetica, sans-serif\">Your Cart Detail's</h5>\r\n  <div class=\"row\" *ngFor=\"let product_info of data;let ind=index\" style=\"border: 1px solid silver;border-radius: 4px;margin: 10px;\">\r\n    <div class=\"col-md-3\" style=\"text-align: center\">\r\n        <img src=\"../../assets/uploads/{{product_info.images}}\" width=\"150px\" height=\"130px;\"\r\n          style=\"border: 1px solid silver;margin: 10px\">   \r\n    </div>\r\n    <div class=\"col-md-3\" style=\"text-align: center;\">\r\n      <p style=\"font-weight: bold;font-size: 20px;\">{{product_info.pname  }}</p>\r\n      <span [ngStyle]=\"{backgroundColor:product_info.pcolor,color:product_info.pcolor}\">. . . . . .</span>\r\n      <p style=\"color: rgb(96, 199, 96);font-weight: bold;\"> {{product_info.pprice | currency: \"INR\" }}</p>\r\n      <p style=\"color: rgb(45, 79, 153);\">{{product_info.pdesc  }}</p>\r\n  </div>\r\n  <div class=\"cl-md-3\" style=\"text-align: center;margin: 18px;\">\r\n      <a (click)=\"remove_cart_item(ii)\" class=\"rmitm\" style=\"font-size: 20px;margin-top: 0px;margin-left: 55px;cursor: pointer;color: rgb(253, 4, 4)\">Remove Item</a><br>\r\n  </div>\r\n  </div>\r\n\r\n\r\n  <div class=\"row\" *ngIf=\"data.length>0\">\r\n      <div class=\"col-md-4\">\r\n          <p style=\"box-shadow: 0px 0px 10px black;padding: 10px;width: 231px;margin-top: 7px;margin-left: 34px\">\r\n              <span style=\"color: rgb(106, 238, 156);font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold\">Total\r\n                Ammount</span>&nbsp;<span style=\"color: rgb(23, 192, 23);font-size: 15;font-weight: bold;\"> :\r\n                {{TotalAmnt | currency: \"INR\"}}</span>\r\n          </p>\r\n      </div>\r\n      <div class=\"col-md-2\" *ngIf=\"data.length>0\" class=\"text-center\" style=\"text-align: center\">\r\n          <input type=\"button\" value=\"Order Now\" class=\"btn btn-success text-center\" (click)=\"fun_order_now()\"\r\n            style=\"width: 200px;height: 50px;font-size: 20px;margin-left: 65px\">&nbsp;&nbsp;&nbsp;&nbsp;\r\n        </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"container\">\r\n    <div class=\"row\" *ngIf=\"data.length<=0\">\r\n        <div class=\"col-md-12\" style=\"text-align: center\">\r\n            <img src=\"../../assets/cart-empty-icon.png\">\r\n             <h5 style=\"color: rgb(247, 16, 47);font-family: Arial, Helvetica, sans-serif\">Your Cart Is Empaty</h5>\r\n             <div class=\"text-center\"><button class=\"btn btn-success\" (click)=\"Continue()\">Shopping Continue</button></div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n<!-- \r\n <button class=\"btn btn-warning\" (click)=\"remove_cart_item(ii)\">Remove Item </button>\r\n  <div class=\"ttlamt\" style=\"width: 300px;margin-left: -10px;\">\r\n    <span style=\"box-shadow: 0px 0px 10px black;padding: 10px;margin-left: 90px;\">\r\n      <span\r\n        style=\"color: rgb(106, 238, 156);font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold\">Total\r\n        Ammount</span>&nbsp;<span style=\"color: rgb(23, 192, 23);font-size: 15;font-weight: bold;\"> :\r\n        {{TotalAmnt | currency: \"INR\"}}</span>\r\n    </span>\r\n  </div>\r\n</div>\r\n<br><br> -->\r\n\r\n\r\n\r\n\r\n\r\n <!-- <form>\r\n        <div class=\"value-button\" id=\"decrease\" (click)=\"decreaseValue(ind)\"><img src=\"/assets/-.png\" width=\"30px\">\r\n        </div>\r\n        <input type=\"number\" id=\"number\" value=\"1\" name=\"qty\" readonly [(ngModel)]=\"product_info.selqty  \">\r\n        <div class=\"value-button\" id=\"increase\" (click)=\"increaseValue(product_info.quantity,ind)\"><img\r\n            src=\"/assets/+.png\" width=\"20px\"></div>\r\n      </form> -->"
 
 /***/ }),
 
@@ -2508,7 +2533,7 @@ var ShowCartDetailsComponent = /** @class */ (function () {
     ShowCartDetailsComponent.prototype.fun_order_now = function () {
         var arr;
         if (localStorage.getItem("login_check") != null) {
-            this.robj.navigateByUrl("/paymet_gatway");
+            this.robj.navigateByUrl("/shipping/address");
             //   arr = localStorage.getItem("cart_items")
             //   arr = arr.replace(/\\/g, "")
             //   arr = arr.replace(/"{/g, "{")
