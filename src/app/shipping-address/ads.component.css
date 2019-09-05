@@ -7,3 +7,11 @@
 /* .setit:focus{
   
     } */
+    td{
+    text-align: -webkit-center;
+    /* margin: 42px; */
+    padding: 10px;
+    width: 225px;
+    /* margin-left: -18px; */
+}
+    

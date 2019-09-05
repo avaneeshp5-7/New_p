@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="getlen<=0">
   <form [formGroup]='addressForm' (ngSubmit)="submitAdress()">
       <div class="container text-center">
         <h2 style="margin: auto;color: turquoise;font-family: Verdana, Geneva, Tahoma, sans-serif">Enter Your Shiping Adrress</h2><br>
@@ -46,3 +46,71 @@
         </div>
   </form>
 </div>
+<div *ngIf="getlen>=0" class="container text-center">
+    <h5 style="margin: auto;color: turquoise;font-family: Verdana, Geneva, Tahoma, sans-serif">Select Shiping Adrress</h5><br>
+    <div class="col-md-12" *ngFor="let ad of getadr">
+      <div style="text-align: justify;font-family: Verdana, Geneva, Tahoma, sans-serif">
+          <h6 style="color: rgb(7, 7, 7);font-weight: bold">{{ad.fullname}}</h6>
+          <span>{{ad.street}}</span>,&nbsp;<span>{{ad.houseno}}</span><br>
+          <span>{{ad.city}}</span>,&nbsp;<span>{{ad.pincode}}</span><br>
+          <span>{{ad.contact}}</span> &nbsp;
+          <span *ngIf="!edt" style="font-size: 12px;color: rgb(255, 95, 2)" (click)="EditAdd(ad)">Skip Edit</span>
+          <span *ngIf="edt" style="font-size: 12px;color: rgb(255, 95, 2)" (click)="EditAdd(ad)">Edit</span>
+          <br> 
+      </div>
+      <input type="button" class="btn btn-primary" value="Continue.." style="border-radius: 0px; width: 268px;margin-top: 20px;color: whitesmoke;font-weight: bold">
+    </div>
+</div><br>
+<!-- Updating div -->
+ <div *ngIf='editinfo' class="container">
+   <div class="row text-center">
+     <div class="col-md-12">
+        <form [formGroup]='addressForm' (ngSubmit)="updateSubmit()">
+            <div class="container text-center">
+              <h4 style="margin: auto;color: turquoise;font-family: Verdana, Geneva, Tahoma, sans-serif">Edit Shiping Adrress</h4><br>
+                <div class="row">
+                  <div class="col-md-12">
+                     <div class="row">
+                       <div class="col-md-3">
+                        <input type="text" class="form-control setit" formControlName="pincode" placeholder="Pin Code 6 didit *" [ngClass]="{'is-invalid':submited && f.pincode.errors}">
+                        <div *ngIf="submited && f.pincode.errors" class="invalid-feedback"></div>
+                        </div>
+                       <div class="col-md-3">
+                          <input type="text" class="form-control setit" formControlName='city' placeholder="City *" [ngClass]="{'is-invalid':submited && f.city.errors}">
+                          <div *ngIf="submited && f.city.errors" class="invalid-feedback"></div>
+                        </div>
+                       <div class="col-md-3">
+                          <input type="text" class="form-control setit" formControlName="state" placeholder="State *" [ngClass]="{'is-invalid':submited && f.state.errors}">
+                          <div *ngIf="submited && f.state.errors" class="invalid-feedback"></div>
+                       </div>
+                       <div class="col-md-3">
+                          <input type="text" class="form-control setit" formControlName="street" placeholder="Street/Colony *" [ngClass]="{'is-invalid':submited && f.street.errors}">
+                          <div *ngIf="submited && f.street.errors" class="invalid-feedback"></div>
+                        </div>
+                     </div>
+                  </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-12">
+                       <div class="row">
+                         <div class="col-md-4">
+                            <input type="text" class="form-control setit" formControlName='houseno' placeholder="House No *" [ngClass]="{'is-invalid':submited && f.houseno.errors}">
+                            <div *ngIf="submited && f.houseno.errors" class="invalid-feedback"></div>
+                          </div>
+                         <div class="col-md-4">
+                            <input type="text" class="form-control setit" formControlName="fullname" placeholder="Full Name *" [ngClass]="{'is-invalid':submited && f.fullname.errors}">
+                            <div *ngIf="submited && f.fullname.errors" class="invalid-feedback"></div>
+                          </div>
+                         <div class="col-md-4">
+                            <input type="text" class="form-control setit" formControlName='contact' placeholder="Contact No 10 digit *" [ngClass]="{'is-invalid':submited && f.contact.errors}">
+                            <div *ngIf="submited && f.contact.errors" class="invalid-feedback"></div>
+                          </div>
+                       </div>
+                    </div>
+                  </div>
+                  <input type="submit" [disabled]="!addressForm.valid" value="Update" class="btn btn-warning form-control" style="width: 200px;border-radius: 0px;margin: 16px;border: 0px;cursor: pointer;">
+              </div>
+        </form>
+     </div>
+   </div>
+ </div>

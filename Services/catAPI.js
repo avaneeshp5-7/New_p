@@ -137,4 +137,17 @@ router.post('/getmorePro', (req, res) => {
     })
 })
 
+router.post('/shipping',(req,res)=>{
+    con.ship_details.save(req.body,(err,result)=>{
+        res.send({
+            message:"Address added",
+            success:true
+        })
+    })
+})
+router.get('/ship_adrs',(req,res)=>{
+ con.ship_details.find((err,result)=>{
+     res.send(result)
+ })
+})
 module.exports = router;

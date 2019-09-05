@@ -96,7 +96,7 @@ var AppComponent = /** @class */ (function () {
         this.reg = "rsh"; /*bodystate="bshow" */
         this.lpage = "hide";
         this.catcab = function (dt) {
-            console.log('menu data', dt);
+            // console.log('menu data',dt);
             _this.getcat = JSON.parse(dt._body);
             _this.cobj.post("/category/subcat").subscribe(_this.subcback);
         };
@@ -2261,7 +2261,7 @@ var SendOtpComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".setit{\r\n    /* border: 0px solid gray;\r\n    border-bottom: 1px solid silver; */\r\n    border-radius: 0px;\r\n    margin-top: 6px\r\n}\r\n/* .setit:focus{\r\n  \r\n    } */"
+module.exports = ".setit{\r\n    /* border: 0px solid gray;\r\n    border-bottom: 1px solid silver; */\r\n    border-radius: 0px;\r\n    margin-top: 6px\r\n}\r\n/* .setit:focus{\r\n  \r\n    } */\r\ntd{\r\n    text-align: -webkit-center;\r\n    /* margin: 42px; */\r\n    padding: 10px;\r\n    width: 225px;\r\n    /* margin-left: -18px; */\r\n}\r\n    "
 
 /***/ }),
 
@@ -2272,7 +2272,7 @@ module.exports = ".setit{\r\n    /* border: 0px solid gray;\r\n    border-bottom
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <form [formGroup]='addressForm' (ngSubmit)=\"submitAdress()\">\r\n      <div class=\"container text-center\">\r\n        <h2 style=\"margin: auto;color: turquoise;font-family: Verdana, Geneva, Tahoma, sans-serif\">Enter Your Shiping Adrress</h2><br>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n               <div class=\"row\">\r\n                 <div class=\"col-md-3\">\r\n                  <input type=\"text\" class=\"form-control setit\" formControlName=\"pincode\" placeholder=\"Pin Code 6 didit *\" [ngClass]=\"{'is-invalid':submited && f.pincode.errors}\">\r\n                  <div *ngIf=\"submited && f.pincode.errors\" class=\"invalid-feedback\"></div>\r\n                  </div>\r\n                 <div class=\"col-md-3\">\r\n                    <input type=\"text\" class=\"form-control setit\" formControlName='city' placeholder=\"City *\" [ngClass]=\"{'is-invalid':submited && f.city.errors}\">\r\n                    <div *ngIf=\"submited && f.city.errors\" class=\"invalid-feedback\"></div>\r\n                  </div>\r\n                 <div class=\"col-md-3\">\r\n                    <input type=\"text\" class=\"form-control setit\" formControlName=\"state\" placeholder=\"State *\" [ngClass]=\"{'is-invalid':submited && f.state.errors}\">\r\n                    <div *ngIf=\"submited && f.state.errors\" class=\"invalid-feedback\"></div>\r\n                 </div>\r\n                 <div class=\"col-md-3\">\r\n                    <input type=\"text\" class=\"form-control setit\" formControlName=\"street\" placeholder=\"Street/Colony *\" [ngClass]=\"{'is-invalid':submited && f.street.errors}\">\r\n                    <div *ngIf=\"submited && f.street.errors\" class=\"invalid-feedback\"></div>\r\n                  </div>\r\n               </div>\r\n            </div>\r\n          </div><br>\r\n          <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                 <div class=\"row\">\r\n                   <div class=\"col-md-4\">\r\n                      <input type=\"text\" class=\"form-control setit\" formControlName='houseno' placeholder=\"House No *\" [ngClass]=\"{'is-invalid':submited && f.houseno.errors}\">\r\n                      <div *ngIf=\"submited && f.houseno.errors\" class=\"invalid-feedback\"></div>\r\n                    </div>\r\n                   <div class=\"col-md-4\">\r\n                      <input type=\"text\" class=\"form-control setit\" formControlName=\"fullname\" placeholder=\"Full Name *\" [ngClass]=\"{'is-invalid':submited && f.fullname.errors}\">\r\n                      <div *ngIf=\"submited && f.fullname.errors\" class=\"invalid-feedback\"></div>\r\n                    </div>\r\n                   <div class=\"col-md-4\">\r\n                      <input type=\"text\" class=\"form-control setit\" formControlName='contact' placeholder=\"Contact No 10 digit *\" [ngClass]=\"{'is-invalid':submited && f.contact.errors}\">\r\n                      <div *ngIf=\"submited && f.contact.errors\" class=\"invalid-feedback\"></div>\r\n                    </div>\r\n                 </div>\r\n              </div>\r\n            </div>\r\n            <input type=\"submit\" [disabled]=\"!addressForm.valid\" value=\"Proceed\" class=\"btn btn-success form-control\" style=\"width: 200px;border-radius: 0px;margin: 16px;border: 0px;cursor: pointer;\">\r\n        </div>\r\n  </form>\r\n</div>"
+module.exports = "<div *ngIf=\"getlen<=0\">\r\n  <form [formGroup]='addressForm' (ngSubmit)=\"submitAdress()\">\r\n      <div class=\"container text-center\">\r\n        <h2 style=\"margin: auto;color: turquoise;font-family: Verdana, Geneva, Tahoma, sans-serif\">Enter Your Shiping Adrress</h2><br>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n               <div class=\"row\">\r\n                 <div class=\"col-md-3\">\r\n                  <input type=\"text\" class=\"form-control setit\" formControlName=\"pincode\" placeholder=\"Pin Code 6 didit *\" [ngClass]=\"{'is-invalid':submited && f.pincode.errors}\">\r\n                  <div *ngIf=\"submited && f.pincode.errors\" class=\"invalid-feedback\"></div>\r\n                  </div>\r\n                 <div class=\"col-md-3\">\r\n                    <input type=\"text\" class=\"form-control setit\" formControlName='city' placeholder=\"City *\" [ngClass]=\"{'is-invalid':submited && f.city.errors}\">\r\n                    <div *ngIf=\"submited && f.city.errors\" class=\"invalid-feedback\"></div>\r\n                  </div>\r\n                 <div class=\"col-md-3\">\r\n                    <input type=\"text\" class=\"form-control setit\" formControlName=\"state\" placeholder=\"State *\" [ngClass]=\"{'is-invalid':submited && f.state.errors}\">\r\n                    <div *ngIf=\"submited && f.state.errors\" class=\"invalid-feedback\"></div>\r\n                 </div>\r\n                 <div class=\"col-md-3\">\r\n                    <input type=\"text\" class=\"form-control setit\" formControlName=\"street\" placeholder=\"Street/Colony *\" [ngClass]=\"{'is-invalid':submited && f.street.errors}\">\r\n                    <div *ngIf=\"submited && f.street.errors\" class=\"invalid-feedback\"></div>\r\n                  </div>\r\n               </div>\r\n            </div>\r\n          </div><br>\r\n          <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                 <div class=\"row\">\r\n                   <div class=\"col-md-4\">\r\n                      <input type=\"text\" class=\"form-control setit\" formControlName='houseno' placeholder=\"House No *\" [ngClass]=\"{'is-invalid':submited && f.houseno.errors}\">\r\n                      <div *ngIf=\"submited && f.houseno.errors\" class=\"invalid-feedback\"></div>\r\n                    </div>\r\n                   <div class=\"col-md-4\">\r\n                      <input type=\"text\" class=\"form-control setit\" formControlName=\"fullname\" placeholder=\"Full Name *\" [ngClass]=\"{'is-invalid':submited && f.fullname.errors}\">\r\n                      <div *ngIf=\"submited && f.fullname.errors\" class=\"invalid-feedback\"></div>\r\n                    </div>\r\n                   <div class=\"col-md-4\">\r\n                      <input type=\"text\" class=\"form-control setit\" formControlName='contact' placeholder=\"Contact No 10 digit *\" [ngClass]=\"{'is-invalid':submited && f.contact.errors}\">\r\n                      <div *ngIf=\"submited && f.contact.errors\" class=\"invalid-feedback\"></div>\r\n                    </div>\r\n                 </div>\r\n              </div>\r\n            </div>\r\n            <input type=\"submit\" [disabled]=\"!addressForm.valid\" value=\"Proceed\" class=\"btn btn-success form-control\" style=\"width: 200px;border-radius: 0px;margin: 16px;border: 0px;cursor: pointer;\">\r\n        </div>\r\n  </form>\r\n</div>\r\n<div *ngIf=\"getlen>=0\" class=\"container text-center\">\r\n    <h5 style=\"margin: auto;color: turquoise;font-family: Verdana, Geneva, Tahoma, sans-serif\">Select Shiping Adrress</h5><br>\r\n    <div class=\"col-md-12\" *ngFor=\"let ad of getadr\">\r\n      <div style=\"text-align: justify;font-family: Verdana, Geneva, Tahoma, sans-serif\">\r\n          <h6 style=\"color: rgb(7, 7, 7);font-weight: bold\">{{ad.fullname}}</h6>\r\n          <span>{{ad.street}}</span>,&nbsp;<span>{{ad.houseno}}</span><br>\r\n          <span>{{ad.city}}</span>,&nbsp;<span>{{ad.pincode}}</span><br>\r\n          <span>{{ad.contact}}</span> &nbsp;\r\n          <span *ngIf=\"!edt\" style=\"font-size: 12px;color: rgb(255, 95, 2)\" (click)=\"EditAdd(ad)\">Skip Edit</span>\r\n          <span *ngIf=\"edt\" style=\"font-size: 12px;color: rgb(255, 95, 2)\" (click)=\"EditAdd(ad)\">Edit</span>\r\n          <br> \r\n      </div>\r\n      <input type=\"button\" class=\"btn btn-primary\" value=\"Continue..\" style=\"border-radius: 0px; width: 268px;margin-top: 20px;color: whitesmoke;font-weight: bold\">\r\n    </div>\r\n</div><br>\r\n<!-- Updating div -->\r\n <div *ngIf='editinfo' class=\"container\">\r\n   <div class=\"row text-center\">\r\n     <div class=\"col-md-12\">\r\n        <form [formGroup]='addressForm' (ngSubmit)=\"updateSubmit()\">\r\n            <div class=\"container text-center\">\r\n              <h4 style=\"margin: auto;color: turquoise;font-family: Verdana, Geneva, Tahoma, sans-serif\">Edit Shiping Adrress</h4><br>\r\n                <div class=\"row\">\r\n                  <div class=\"col-md-12\">\r\n                     <div class=\"row\">\r\n                       <div class=\"col-md-3\">\r\n                        <input type=\"text\" class=\"form-control setit\" formControlName=\"pincode\" placeholder=\"Pin Code 6 didit *\" [ngClass]=\"{'is-invalid':submited && f.pincode.errors}\">\r\n                        <div *ngIf=\"submited && f.pincode.errors\" class=\"invalid-feedback\"></div>\r\n                        </div>\r\n                       <div class=\"col-md-3\">\r\n                          <input type=\"text\" class=\"form-control setit\" formControlName='city' placeholder=\"City *\" [ngClass]=\"{'is-invalid':submited && f.city.errors}\">\r\n                          <div *ngIf=\"submited && f.city.errors\" class=\"invalid-feedback\"></div>\r\n                        </div>\r\n                       <div class=\"col-md-3\">\r\n                          <input type=\"text\" class=\"form-control setit\" formControlName=\"state\" placeholder=\"State *\" [ngClass]=\"{'is-invalid':submited && f.state.errors}\">\r\n                          <div *ngIf=\"submited && f.state.errors\" class=\"invalid-feedback\"></div>\r\n                       </div>\r\n                       <div class=\"col-md-3\">\r\n                          <input type=\"text\" class=\"form-control setit\" formControlName=\"street\" placeholder=\"Street/Colony *\" [ngClass]=\"{'is-invalid':submited && f.street.errors}\">\r\n                          <div *ngIf=\"submited && f.street.errors\" class=\"invalid-feedback\"></div>\r\n                        </div>\r\n                     </div>\r\n                  </div>\r\n                </div><br>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                       <div class=\"row\">\r\n                         <div class=\"col-md-4\">\r\n                            <input type=\"text\" class=\"form-control setit\" formControlName='houseno' placeholder=\"House No *\" [ngClass]=\"{'is-invalid':submited && f.houseno.errors}\">\r\n                            <div *ngIf=\"submited && f.houseno.errors\" class=\"invalid-feedback\"></div>\r\n                          </div>\r\n                         <div class=\"col-md-4\">\r\n                            <input type=\"text\" class=\"form-control setit\" formControlName=\"fullname\" placeholder=\"Full Name *\" [ngClass]=\"{'is-invalid':submited && f.fullname.errors}\">\r\n                            <div *ngIf=\"submited && f.fullname.errors\" class=\"invalid-feedback\"></div>\r\n                          </div>\r\n                         <div class=\"col-md-4\">\r\n                            <input type=\"text\" class=\"form-control setit\" formControlName='contact' placeholder=\"Contact No 10 digit *\" [ngClass]=\"{'is-invalid':submited && f.contact.errors}\">\r\n                            <div *ngIf=\"submited && f.contact.errors\" class=\"invalid-feedback\"></div>\r\n                          </div>\r\n                       </div>\r\n                    </div>\r\n                  </div>\r\n                  <input type=\"submit\" [disabled]=\"!addressForm.valid\" value=\"Update\" class=\"btn btn-warning form-control\" style=\"width: 200px;border-radius: 0px;margin: 16px;border: 0px;cursor: pointer;\">\r\n              </div>\r\n        </form>\r\n     </div>\r\n   </div>\r\n </div>"
 
 /***/ }),
 
@@ -2288,6 +2288,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdsComponent", function() { return AdsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2299,12 +2300,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var AdsComponent = /** @class */ (function () {
-    function AdsComponent(fb) {
+    function AdsComponent(fb, http) {
         this.fb = fb;
+        this.http = http;
         this.submited = false;
+        this.editinfo = false;
+        this.edt = true;
     }
     AdsComponent.prototype.ngOnInit = function () {
+        this.user = (localStorage.getItem('userid'));
+        this.getAdrs();
         this.addressForm = this.fb.group({
             pincode: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern('[0-9]*'), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(6), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(6)]],
             city: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
@@ -2315,6 +2322,32 @@ var AdsComponent = /** @class */ (function () {
             contact: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern('[0-9]*'), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(10), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(10)]]
         });
     };
+    AdsComponent.prototype.EditAdd = function (inform) {
+        this.editinfo = !this.editinfo;
+        this.edt = !this.edt;
+        this.addressForm = this.fb.group({
+            pincode: [inform.pincode, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern('[0-9]*'), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(6), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(6)]],
+            city: [inform.city, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            state: [inform.state, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            street: [inform.street, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            houseno: [inform.houseno, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            fullname: [inform.fullname, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            contact: [inform.contact, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern('[0-9]*'), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(10), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(10)]]
+        });
+    };
+    AdsComponent.prototype.updateSubmit = function () {
+        console.log(this.addressForm.value);
+        alert("hii");
+        this.editinfo = !this.editinfo;
+        this.edt = !this.edt;
+    };
+    AdsComponent.prototype.getAdrs = function () {
+        var _this = this;
+        this.http.get('/category/ship_adrs').subscribe(function (dt) {
+            _this.getadr = JSON.parse(dt['_body']);
+            _this.getlen = (_this.getadr).length;
+        });
+    };
     Object.defineProperty(AdsComponent.prototype, "f", {
         get: function () {
             return this.addressForm.controls;
@@ -2323,11 +2356,18 @@ var AdsComponent = /** @class */ (function () {
         configurable: true
     });
     AdsComponent.prototype.submitAdress = function () {
+        var _this = this;
         this.submited = true;
         if (this.addressForm.invalid) {
             return;
         }
-        console.log(this.addressForm.controls);
+        var data = this.addressForm.value;
+        console.log(data);
+        var alldata = { pincode: data.pincode, city: data.city, state: data.state, street: data.street, houseno: data.houseno, fullname: data.fullname, contact: data.contact, userides: this.user };
+        this.http.post('/category/shipping', alldata).subscribe(function (dt) {
+            alert("Done");
+            _this.getAdrs();
+        });
     };
     AdsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2335,7 +2375,7 @@ var AdsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./ads.component.html */ "./src/app/shipping-address/ads.component.html"),
             styles: [__webpack_require__(/*! ./ads.component.css */ "./src/app/shipping-address/ads.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"], _angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"]])
     ], AdsComponent);
     return AdsComponent;
 }());
