@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup, Validators} from '@angular/forms';
 import {Http} from '@angular/http'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ads',
@@ -15,7 +16,7 @@ export class AdsComponent implements OnInit {
   user:any;
   editinfo:boolean=false;
   edt:boolean=true
-  constructor(private fb:FormBuilder,private http:Http) { }
+  constructor(private fb:FormBuilder,private http:Http,private route:Router) { }
   ngOnInit() {
     this.user=(localStorage.getItem('userid'))
     this.getAdrs();
@@ -44,6 +45,11 @@ export class AdsComponent implements OnInit {
       contact:[inform.contact,[Validators.required,Validators.pattern('[0-9]*'),Validators.maxLength(10),Validators.minLength(10)]]
     })
   }
+
+   getShope(){
+    this.route.navigateByUrl("/paymet_gatway")
+   }
+
   updateSubmit(){
     console.log(this.addressForm.value)
     alert("hii")

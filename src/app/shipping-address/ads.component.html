@@ -46,7 +46,7 @@
         </div>
   </form>
 </div>
-<div *ngIf="getlen>=0" class="container text-center">
+<div *ngIf="getlen>=0" class="container text-center"> 
     <h5 style="margin: auto;color: turquoise;font-family: Verdana, Geneva, Tahoma, sans-serif">Select Shiping Adrress</h5><br>
     <div class="col-md-12" *ngFor="let ad of getadr">
       <div style="text-align: justify;font-family: Verdana, Geneva, Tahoma, sans-serif">
@@ -54,11 +54,11 @@
           <span>{{ad.street}}</span>,&nbsp;<span>{{ad.houseno}}</span><br>
           <span>{{ad.city}}</span>,&nbsp;<span>{{ad.pincode}}</span><br>
           <span>{{ad.contact}}</span> &nbsp;
-          <span *ngIf="!edt" style="font-size: 12px;color: rgb(255, 95, 2)" (click)="EditAdd(ad)">Skip Edit</span>
-          <span *ngIf="edt" style="font-size: 12px;color: rgb(255, 95, 2)" (click)="EditAdd(ad)">Edit</span>
+          <span *ngIf="!edt" style="font-size: 12px;color: rgb(255, 95, 2);cursor: pointer;" (click)="EditAdd(ad)">Skip Edit</span>
+          <span *ngIf="edt" style="font-size: 12px;color: rgb(255, 95, 2);cursor: pointer;" (click)="EditAdd(ad)">Edit</span>
           <br> 
       </div>
-      <input type="button" class="btn btn-primary" value="Continue.." style="border-radius: 0px; width: 268px;margin-top: 20px;color: whitesmoke;font-weight: bold">
+      <input type="button" class="btn btn-primary" (click)="getShope()" value="Continue.." style="border-radius: 0px; width: 268px;margin-top: 20px;color: whitesmoke;font-weight: bold">
     </div>
 </div><br>
 <!-- Updating div -->
@@ -108,7 +108,7 @@
                        </div>
                     </div>
                   </div>
-                  <input type="submit" [disabled]="!addressForm.valid" value="Update" class="btn btn-warning form-control" style="width: 200px;border-radius: 0px;margin: 16px;border: 0px;cursor: pointer;">
+                  <input type="submit" [disabled]="!addressForm.valid" value="Update" class="btn btn-warning form-control" style="width: 268px;border-radius: 0px;margin-top: 16px;border: 0px;cursor: pointer;color: whitesmoke;font-weight: bold">
               </div>
         </form>
      </div>
