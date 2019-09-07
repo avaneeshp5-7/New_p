@@ -12,7 +12,7 @@
       <p class="prices"> {{product_info.pprice | currency: "INR" }}</p>
       <p class="descrip">{{product_info.pdesc  }}</p>
   </div>
-  <div class="cl-md-3" style="text-align: center;margin: 18px;">
+  <div class="cl-md-3">
       <p (click)="remove_cart_item(ii)" class="rmitm">Remove Item</p><br>
   </div>
   </div>
@@ -26,8 +26,8 @@
             </span>
           </p>
       </div>
-      <div class="col-md-2" *ngIf="data.length>0" class="text-center" style="text-align: center">
-          <input type="button" value="Order Now" class="btn btn-success text-center ordnow" (click)="fun_order_now()">&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="col-md-4" *ngIf="data.length>0" class="text-center" style="text-align: center">
+          <input type="button" value="Order Now" class="btn btn-primary ordnow" (click)="fun_order_now()">
         </div>
   </div>
 </div>

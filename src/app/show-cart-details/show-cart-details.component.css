@@ -92,12 +92,13 @@ form #decrease {
   }
 
   .ordnow{
-    background-color: cadetblue;
-    border: 2px cadetblue;
+    /* background-color: cadetblue;
+    border: 2px cadetblue; */
     border-radius: 0px;
   }
  .imgset{
-  border: 1px solid silver;margin: 10px;width: 150px;height: 150px;
+  /* border: 1px solid silver; */
+  margin: 10px;width: 150px;height: 150px;
  }
  .detsets{
    text-align: center;
@@ -106,7 +107,7 @@ form #decrease {
 @media (max-width: 360px){
 
   .imgset{
-    border: 1px solid silver;
+    /* border: 1px solid silver; */
   /* margin: 10px; */
   width: 120px;
   height: 120px;
@@ -138,12 +139,12 @@ form #decrease {
     border: 1px solid silver;
     border-radius: 4px;
     margin: 10px;
-    height: 177px;
+    /* height: 177px; */
   }
    .rmitm{
     font-size: 12px;
     font-weight: bold;
-    margin-top: -18px;
+    margin-top: 0px;
     margin-left: 85px;
     cursor: pointer;
     color: rgb(253, 4, 4);
@@ -152,12 +153,13 @@ form #decrease {
     width: 130px;
     margin-left: 171px;
     margin-top: -95px;
-    background-color: cadetblue;
-    border: 2px cadetblue;
+    /* background-color: cadetblue;
+    border: 2px cadetblue; */
     border-radius: 0px;
     height: 34px;
     font-size: 12px;
     font-weight: bold;
+    cursor: pointer;
   }
   .amts{
     padding: 5px;
