@@ -3,34 +3,31 @@
 
 <div class="container"  *ngIf="data.length>0">
   <h5 style="color: rgb(11, 194, 21);text-align: center;font-family: Arial, Helvetica, sans-serif">Your Cart Detail's</h5>
-  <div class="row" *ngFor="let product_info of data;let ind=index" style="border: 1px solid silver;border-radius: 4px;margin: 10px;">
+  <div class="row setdiv" *ngFor="let product_info of data;let ind=index">
     <div class="col-md-3" style="text-align: center">
-        <img src="../../assets/uploads/{{product_info.images}}" width="150px" height="130px;"
-          style="border: 1px solid silver;margin: 10px">   
+        <img src="../../assets/uploads/{{product_info.images}}" class="imgset">   
     </div>
-    <div class="col-md-3" style="text-align: center;">
-      <p style="font-weight: bold;font-size: 20px;">{{product_info.pname  }}</p>
-      <span [ngStyle]="{backgroundColor:product_info.pcolor,color:product_info.pcolor}">. . . . . .</span>
-      <p style="color: rgb(96, 199, 96);font-weight: bold;"> {{product_info.pprice | currency: "INR" }}</p>
-      <p style="color: rgb(45, 79, 153);">{{product_info.pdesc  }}</p>
+    <div class="col-md-3 class detsets">
+      <p class="pnames">{{product_info.pname  }}</p>
+      <p class="prices"> {{product_info.pprice | currency: "INR" }}</p>
+      <p class="descrip">{{product_info.pdesc  }}</p>
   </div>
   <div class="cl-md-3" style="text-align: center;margin: 18px;">
-      <a (click)="remove_cart_item(ii)" class="rmitm" style="font-size: 20px;margin-top: 0px;margin-left: 55px;cursor: pointer;color: rgb(253, 4, 4)">Remove Item</a><br>
+      <p (click)="remove_cart_item(ii)" class="rmitm">Remove Item</p><br>
   </div>
   </div>
 
 
   <div class="row" *ngIf="data.length>0">
       <div class="col-md-4">
-          <p style="box-shadow: 0px 0px 10px black;padding: 10px;width: 231px;margin-top: 7px;margin-left: 34px">
-              <span style="color: rgb(106, 238, 156);font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold">Total
-                Ammount</span>&nbsp;<span style="color: rgb(23, 192, 23);font-size: 15;font-weight: bold;"> :
-                {{TotalAmnt | currency: "INR"}}</span>
+          <p class="amts">
+            <span class="spnamt"> 
+                {{TotalAmnt | currency: "INR"}}
+            </span>
           </p>
       </div>
       <div class="col-md-2" *ngIf="data.length>0" class="text-center" style="text-align: center">
-          <input type="button" value="Order Now" class="btn btn-success text-center" (click)="fun_order_now()"
-            style="width: 200px;height: 50px;font-size: 20px;margin-left: 65px">&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="button" value="Order Now" class="btn btn-success text-center ordnow" (click)="fun_order_now()">&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
   </div>
 </div>

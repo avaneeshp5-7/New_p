@@ -62,3 +62,112 @@ form #decrease {
   text-decoration: underline;
   color: aqua
 }
+
+
+.pnames{
+  font-weight: bold;font-size: 20px;
+}
+.prices{
+  color: rgb(96, 199, 96);font-weight: bold;
+}
+.descrip{
+  color: rgb(45, 79, 153);
+}
+
+.setdiv{
+  border: 1px solid silver;border-radius: 4px;margin: 10px;
+}
+.rmitm{
+  font-size: 20px;margin-top: 0px;margin-left: 55px;cursor: pointer;color: rgb(253, 4, 4);
+  }
+
+  .ordnow{
+    width: 200px;height: 50px;font-size: 20px;margin-left: 65px;
+  }
+  .amts{
+    background-color: orange;box-shadow: 0px 0px 0px black;padding: 10px;width: 231px;margin-top: 7px;margin-left: 34px;
+  }
+  .spnamt{
+    color: rgb(23, 192, 23);font-size: 15;font-weight: bold;
+  }
+
+  .ordnow{
+    background-color: cadetblue;
+    border: 2px cadetblue;
+    border-radius: 0px;
+  }
+ .imgset{
+  border: 1px solid silver;margin: 10px;width: 150px;height: 150px;
+ }
+ .detsets{
+   text-align: center;
+ }
+
+@media (max-width: 360px){
+
+  .imgset{
+    border: 1px solid silver;
+  /* margin: 10px; */
+  width: 120px;
+  height: 120px;
+  margin-top: 15px;
+  margin-right: 128px;
+  }
+  .detsets{
+    text-align: center;
+    margin-left: 128px;
+    margin-top: -106px;
+  }
+  .pnames{
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: -10px;
+    color: burlywood;
+  }
+  .prices{
+    color: rgb(96, 199, 96);
+    font-weight: bold;
+    margin-top: -20px;
+  }
+  .descrip{
+    color: rgb(45, 79, 153);
+    margin-top: -20px;
+    font-weight: 500;
+  }
+  .setdiv{
+    border: 1px solid silver;
+    border-radius: 4px;
+    margin: 10px;
+    height: 177px;
+  }
+   .rmitm{
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: -18px;
+    margin-left: 85px;
+    cursor: pointer;
+    color: rgb(253, 4, 4);
+  }
+  .ordnow{
+    width: 130px;
+    margin-left: 171px;
+    margin-top: -95px;
+    background-color: cadetblue;
+    border: 2px cadetblue;
+    border-radius: 0px;
+    height: 34px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .amts{
+    padding: 5px;
+    width: 115px;
+    margin-top: 0px;
+    margin-left: 12px;
+    background-color: orange;
+  }
+  .spnamt{
+    color: whitesmoke;
+    font-size: 15;font-weight: bold;
+  }
+}

@@ -15,9 +15,15 @@ export class AdsComponent implements OnInit {
   getlen:any;
   user:any;
   editinfo:boolean=false;
-  edt:boolean=true
+  edt:boolean=true;
+  cartitems:any;
   constructor(private fb:FormBuilder,private http:Http,private route:Router) { }
   ngOnInit() {
+    this.cartitems=localStorage.getItem("cart_items");
+    this.cartitems = this.cartitems.replace(/\\/g, "")
+    this.cartitems = this.cartitems.replace(/"{/g, "{")
+    this.cartitems = this.cartitems.replace(/}"/g, "}")
+    this.cartitems = JSON.parse(this.cartitems)
     this.user=(localStorage.getItem('userid'))
     this.getAdrs();
     this.addressForm=this.fb.group({
