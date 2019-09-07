@@ -19,16 +19,14 @@
 
 
   <div class="row" *ngIf="data.length>0">
-      <div class="col-md-4">
+      <div class="col-md-6">
           <p class="amts">
             <span class="spnamt"> 
                 {{TotalAmnt | currency: "INR"}}
             </span>
+            <input type="button" value="Order Now" class="btn btn-primary ordnow" (click)="fun_order_now()">
           </p>
       </div>
-      <div class="col-md-4" *ngIf="data.length>0" class="text-center" style="text-align: center">
-          <input type="button" value="Order Now" class="btn btn-primary ordnow" (click)="fun_order_now()">
-        </div>
   </div>
 </div>
 
