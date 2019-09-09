@@ -89,7 +89,6 @@ if(localStorage.getItem("email")!=null)
     this.cobj.get("/category/getcato").subscribe(this.catcab)
   }
   catcab = (dt) => {
-    // console.log('menu data',dt);
     this.getcat = JSON.parse(dt._body)
     this.cobj.post("/category/subcat").subscribe(this.subcback)
   }

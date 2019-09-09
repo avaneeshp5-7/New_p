@@ -2,3 +2,36 @@ body { margin-top:20px; }
 .panel-title {display: inline;font-weight: bold;}
 .checkbox.pull-right { margin: 0; }
 .pl-ziro { padding-left: 0px; }
+
+.headset{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 0px;
+    color: #56a4f8;
+    font-style: oblique;
+    font-family: unset;
+}
+.spnset{
+    color: rgb(92, 88, 88);
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: inherit;
+}
+.btncont{
+    padding: 3px;
+    border: 2px solid rgb(255, 102, 0);
+    width: 130px;
+    margin-left: 25px;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: rgb(255, 102, 0);
+    border-radius: 2px
+}
+.amt{
+    padding: 4px;
+    color: black;
+    font-weight: 600;
+    font-family: inherit;
+}

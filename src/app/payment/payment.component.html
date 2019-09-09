@@ -1,4 +1,30 @@
-<div class="container" >
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+           <h4 class="headset">
+            Select Payment Methods
+           </h4><hr>
+           <form>
+              <input type="radio" name="p_type" class="radioset"> <span class="spnset">Credit / Debit / ATM Card</span> <br><hr>
+              <input type="radio" name="p_type" class="radioset"> <span class="spnset">PhonePe / BHIM UPI</span><br><hr>
+              <input type="radio" name="p_type" class="radioset"> <span class="spnset">Net Banking</span><br><hr>
+              <input type="radio" name="p_type" class="radioset"> <span class="spnset">Cash On Delivery</span><br><hr>
+             <span class="amt">  Payable : {{amount | currency : "INR"}}</span> 
+             <button class="btncont" (click)="nextProces()"> CONTINUE </button>
+           </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <div class="container" >
     <div class="row">
         <div class="col-xs-12 col-md-4" style="border: 0px solid gray;padding: 10px;border-radius: 4px;box-shadow: 0px 0px 2px 3px rgb(206, 204, 204);margin: 10px">
             <div class="panel panel-default">
@@ -65,4 +91,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

@@ -12,5 +12,7 @@ export class PaymentComponent implements OnInit {
   ngOnInit() {
     this.amount=200
   }
-
+  nextProces(){
+    alert("Somthing Is Pending !!")
+  }
 }
