@@ -87,7 +87,7 @@ color: #32CD32;
     /* margin-left: 0px; */
     font-size: 14px;
 	}
-	.img:hover {
+	.img:hover{
     cursor: pointer;
   }
   .ads{
@@ -95,5 +95,8 @@ color: #32CD32;
     height: 125px;
     width: 326px;
     border-bottom: 1px solid silver;
+  }
+  .ads:hover{
+    cursor: pointer;
   }
   }
