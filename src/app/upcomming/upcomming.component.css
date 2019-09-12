@@ -98,5 +98,8 @@ color: #32CD32;
   }
   .ads:hover{
     cursor: pointer;
+    -ms-transform: none ;
+  -webkit-transform: none;
+  transform: none; 
   }
   }
