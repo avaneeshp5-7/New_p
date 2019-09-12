@@ -692,7 +692,7 @@ var HeaderMenuComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".imgslide{\r\n    height: 400px;\r\n    width: 100%\r\n}\r\n@media (max-width: 360px){\r\n    .imgslide{\r\n        height: 160px;\r\n        width: 100%;\r\n    }\r\n}\r\n"
 
 /***/ }),
 
@@ -703,7 +703,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "  <div id=\"demo\" class=\"carousel slide\" data-ride=\"carousel\" style=\"margin-top:-23px;\">\r\n    <!-- Indicators -->\r\n    <ul class=\"carousel-indicators\">\r\n      <li data-target=\"#demo\" data-slide-to=\"0\" class=\"active\"></li>\r\n      <li data-target=\"#demo\" data-slide-to=\"1\"></li>\r\n      <li data-target=\"#demo\" data-slide-to=\"2\"></li>\r\n      <li data-target=\"#demo\" data-slide-to=\"3\"></li>\r\n    </ul>\r\n    <div class=\"carousel-inner\">\r\n      <div class=\"carousel-item active\">\r\n        <img src=\"../../assets/sl4.jpg\" alt=\"First slide\" style=\"height: 400px;width: 100%\">\r\n      </div>\r\n      <div class=\"carousel-item\">\r\n        <img src=\"../../assets/sl5.jpg\" alt=\"Second slide\" style=\"height: 400px;width: 100%\">\r\n      </div>\r\n      <div class=\"carousel-item\">\r\n        <img src=\"../../assets/baner/susm.jpg\" alt=\"Third slide\" style=\"height: 400px;width: 100%\">\r\n      </div>\r\n      <div class=\"carousel-item\">\r\n        <img src=\"../../assets/sl2.jpg\" alt=\"Third slide\" style=\"height: 400px;width: 100%\">\r\n      </div>\r\n    </div>\r\n    <a class=\"carousel-control-prev\" href=\"#demo\" data-slide=\"prev\">\r\n      <span class=\"carousel-control-prev-icon\"></span>\r\n    </a>\r\n    <a class=\"carousel-control-next\" href=\"#demo\" data-slide=\"next\">\r\n      <span class=\"carousel-control-next-icon\"></span>\r\n    </a>\r\n  </div>\r\n  "
+module.exports = "  <div id=\"demo\" class=\"carousel slide\" data-ride=\"carousel\" style=\"margin-top:-23px;\">\r\n    <!-- Indicators -->\r\n    <ul class=\"carousel-indicators\">\r\n      <li data-target=\"#demo\" data-slide-to=\"0\" class=\"active\"></li>\r\n      <li data-target=\"#demo\" data-slide-to=\"1\"></li>\r\n      <li data-target=\"#demo\" data-slide-to=\"2\"></li>\r\n      <li data-target=\"#demo\" data-slide-to=\"3\"></li>\r\n    </ul>\r\n    <div class=\"carousel-inner\">\r\n      <div class=\"carousel-item active\">\r\n        <img src=\"../../assets/sl4.jpg\" alt=\"First slide\"  class=\"imgslide\">\r\n      </div>\r\n      <div class=\"carousel-item\">\r\n        <img src=\"../../assets/sl5.jpg\" alt=\"Second slide\"  class=\"imgslide\">\r\n      </div>\r\n      <div class=\"carousel-item\">\r\n        <img src=\"../../assets/baner/susm.jpg\" alt=\"Third slide\"  class=\"imgslide\">\r\n      </div>\r\n      <div class=\"carousel-item\">\r\n        <img src=\"../../assets/sl2.jpg\" alt=\"Third slide\"  class=\"imgslide\">\r\n      </div>\r\n    </div>\r\n    <a class=\"carousel-control-prev\" href=\"#demo\" data-slide=\"prev\">\r\n      <span class=\"carousel-control-prev-icon\"></span>\r\n    </a>\r\n    <a class=\"carousel-control-next\" href=\"#demo\" data-slide=\"next\">\r\n      <span class=\"carousel-control-next-icon\"></span>\r\n    </a>\r\n  </div>\r\n  "
 
 /***/ }),
 
