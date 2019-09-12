@@ -1,45 +1,19 @@
 
-<div>
-  <div class="row"><br>
-    <div class="col-md-3 col-sm-12" style="height:400px;text-align: center">
+<div class="container-fluid">
+  <div class="row">
+    <!-- <div class="col-md-3 col-sm-12" style="height:400px;text-align: center">
       <img src="./assets/offer.jpg" class="ads" width="270px;" height="350px;" style="margin-top: -4px">
-    </div>
-    <div class="col-md-9">
-        <p style="text-align: center;font-size: 35px;margin-top: -25px">New Product's</p><hr><br>
+    </div> -->
+    <div class="col-md-12">
+        <p style="text-align: center;font-size: 20px; font-weight: bold;">New Product's</p><hr><br>
       <div class="row">
        
-        <div class="col-md-3 col-sm-12" *ngFor="let pro of prodata" style="text-align: center;margin-top:40ppx;">
+        <div class="col-md-3 col-sm-6 col-xs-6" *ngFor="let pro of prodata" style="text-align: center;margin-top:40ppx;">
           <!-- <div class="prodetails"> -->
-          <span>
-            <span>
-              <span>
-                <!-- <img src="/assets/spnow.png" width="230px;" style="margin-left: 20px;margin-top: -42px;height: 60px;"> -->
-                <!-- <img src="/assets/MyImges/new p.gif" width="50px" style="margin-left: 167px;margin-top: -47px"> -->
-              </span>
-              <img src="../../assets/uploads/{{pro.images}}" class="img" width="200px;" height="130"
-                (click)="funDetail(pro._id)"
-                style="cursor: pointer;margin-left: 15px;margin-top: -16px;"></span><br><br>
-            <span
-              style="color:black;
-              font-weight:bolder;
-              font-size: 14px;
-              text-align: justify;
-              text-transform: uppercase;
-              font-family: arial">{{pro.pname}}</span>
-              </span><br>
-          <span>
-            <span style="color: rgb(55, 241, 18);font-size: 18px;">&nbsp;&nbsp;{{pro.pprice | currency: "INR"}}</span>
-          </span>
-          <br>
-          <!-- <span>
-            &nbsp; <span [ngStyle]="{backgroundColor:pro.pcolor,color:pro.pcolor}">. . . . .</span>
-          </span>
-          <br>-->
-          <span>
-            <span style="color: rgb(230, 40, 49)">&nbsp; {{pro.pdesc}} </span>
-          </span>
-          <br> 
-          &nbsp;&nbsp;
+              <img src="../../assets/uploads/{{pro.images}}" class="img" (click)="funDetail(pro._id)">
+             <p class="pnames">{{pro.pname}}</p>
+             <p class="pprices">{{pro.pprice | currency: "INR"}}</p>
+             <p class="pdescs">{{pro.pdesc}} </p>
           <!-- </div> -->
         </div>
       </div>

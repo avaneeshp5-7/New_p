@@ -11,9 +11,12 @@
   border-radius:4px;margin-top:13px; margin-left: 15px; padding: 10px; float: left; border: 1px solid silver;width: 230px;
 }
 .img {
-   
   transition: transform .4s;
-  margin: 0 auto;
+	margin: 0 auto;
+	cursor: pointer;margin-left: 15px;
+	margin-top: -16px;
+	height: 130px;
+	width: 200px;
 }
 
 .img:hover {
@@ -33,3 +36,56 @@
   -webkit-transform: scale(0.5); /* Safari 3-8 */
   transform: scale(1.1); 
 }
+
+.prodetails{
+  text-align: left;
+  box-shadow: 0px 0px 5px rgb(192, 186, 186);
+  margin-top: 15px;
+  width: 230px;
+  padding: 12px;
+}
+
+.pnames{
+color: #00008B;
+  font-weight: bold;
+  font-size: 14px;
+}
+.pprices{
+color: #32CD32;
+  margin-top: -16px;
+}
+.pdescs{
+  color: #A9A9A9;
+  margin-top: -18px;
+}
+
+@media (max-width: 360px){
+	.pnames{
+		color: #00008B;
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 14px;
+    padding: 2px;
+    margin-top: 10px;
+    text-transform: uppercase;
+	}
+	.img{
+		cursor: pointer;
+    margin: 2px;
+    float: left;
+    width: 142px;
+    height: 120px;
+    border: 1px solid silver;
+	background-color: white;
+	padding: 2px;
+	}
+	.pdescs{
+		color: #A9A9A9;
+    margin-top: -18px;
+    /* margin-left: 0px; */
+    font-size: 14px;
+	}
+	.img:hover {
+    cursor: pointer;
+  }
+  }

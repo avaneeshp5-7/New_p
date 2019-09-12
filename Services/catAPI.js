@@ -27,7 +27,7 @@ router.get("/ssub", function (r, s) {
 // New Product//
 
 router.get("/products", function (req, resp) {
-    con.product.find({ "upcoming": "New_Product" }).sort({ upcoming: -1 }).limit(4, function (err, proresult) {
+    con.product.find({ "upcoming": "New_Product" }).sort({ upcoming: -1 }).limit(12, function (err, proresult) {
         resp.send(proresult)
         // console.log(proresult)
     })
