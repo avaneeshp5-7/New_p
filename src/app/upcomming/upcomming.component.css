@@ -26,7 +26,9 @@
 }
 
 .ads {
-   
+  margin-top: 0px;
+   width: 270px;
+   height: 350px;
   transition: transform .4s;
   margin: 0 auto;
 }
@@ -87,5 +89,11 @@ color: #32CD32;
 	}
 	.img:hover {
     cursor: pointer;
+  }
+  .ads{
+    margin: 0 auto;
+    height: 125px;
+    width: 326px;
+    border-bottom: 1px solid silver;
   }
   }
