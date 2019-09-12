@@ -68,5 +68,11 @@
   .img:hover {
     cursor: pointer;
 }
-	
+	.ads{
+    /* transition: transform .4s, -webkit-transform .4s; */
+    margin: 0 auto;
+    height: 125px;
+    width: 326px;
+    border-bottom: 1px solid silver;
+  }
   }
