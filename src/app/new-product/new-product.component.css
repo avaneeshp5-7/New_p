@@ -247,6 +247,17 @@ h2::after {
     color: #A9A9A9;
     margin-top: -18px;
 }
+
+.setcent{
+	width: 96px;
+    height: 55px;
+    margin-left: 10px;
+    border: 1px solid silver;
+    padding: 2px;
+    box-shadow: 4px 4px 0px 0px lightgrey;
+	margin-top: -15px;
+	cursor: pointer;
+}
   @media (max-width: 360px){
 	.pnames{
 		color: #00008B;
@@ -272,6 +283,9 @@ h2::after {
     margin-top: -18px;
     /* margin-left: 0px; */
     font-size: 14px;
+	}
+	.setcent{
+		display: none;
 	}
 	
   }
