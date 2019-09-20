@@ -33,3 +33,60 @@
   /* padding: 10px; box-shadow:   0px 0px 8px rgb(156, 163, 155); */
   /* border: 1px solid silver;border-radius: 4px */
 }
+.ersms{
+  text-align: center;
+    background-color: rgb(209, 5, 5);
+    margin-top: -35px;
+    color: white;
+    padding: 4px;
+    font-family: cursive;
+    font-size: 16px;
+}
+@media (max-width: 360px){
+  .texboxes{
+    padding: 7px;
+    /* width:186px; */
+    border: 2px solid cadetblue;
+    height: 39px;
+    border-radius: 0px;
+    /* border: 1px solid silver; */
+    color: rgb(59, 53, 51);
+    margin-top: 13px;
+    /* font-size:22px; */
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .rowses{
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: -22px;
+  }
+  .con{
+    color: rgb(39, 35, 34);
+    border-radius: 0px;
+    height: 39px;
+    border: 2px solid cadetblue;
+    margin-top: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .areas{
+    color: rgb(41, 35, 33);
+    border-radius: 0px;
+    height: 112px;
+    margin-top: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid cadetblue;
+}
+.ersms{
+  text-align: center;
+    background-color: rgb(209, 5, 5);
+    margin-top: -35px;
+    color: white;
+    padding: 4px;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: bold;
+}
+}

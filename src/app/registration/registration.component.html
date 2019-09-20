@@ -1,12 +1,13 @@
 <div>
 <div class="row"> 
   <div class="col-md-5 col-sm-12 modal-dialogs">
+      <p *ngIf="mm1" class="ersms">{{mm1}}</p>
       <div style="text-align: center;background-image:linear-gradient(rgb(153, 6, 252),rgb(180, 85, 243)) ">
           <img src="../../assets/reg/d1.png" class="rounded-circle"  style="height: 130px;width: 130px;margin-top: 22px;text-align: center;"><br><br>
         </div>
     <div class="col-lg-12 col-sm-12 col-12 col-md-12" style="background-color: cadetblue"><br>
       <form name="regfrm" #rfrm="ngForm" class="registform"> 
-          <div class="row">
+          <div class="row rowses">
             <div class="col-md-6 col-sm-12 col-xm-12 ">
               <input type="text" class="form-control  texboxes" placeholder="First Name..." [(ngModel)]="fname" name="nn1" #reg1="ngModel" required>
             </div>
@@ -15,10 +16,10 @@
               <input type="text" class="form-control  texboxes" placeholder="Last Name..." [(ngModel)]="lname" name="nn2" #reg2="ngModel" required>
             </div>
           </div>
-          <span *ngIf="reg1.errors && reg1.errors.required" class="regg">{{mm1}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <span *ngIf="reg2.errors && reg2.errors.required" class="regg">{{mm2}}</span>
+          <!-- <span *ngIf="reg1.errors && reg1.errors.required" class="regg">{{mm1}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span *ngIf="reg2.errors && reg2.errors.required" class="regg">{{mm2}}</span> -->
           <br>
-          <div class="row">
+          <div class="row rowses">
             <div class="col-md-6 col-sm-12 col-xm-12">
               <input type="email" class="form-control  texboxes" placeholder="Email ID..." [(ngModel)]="email" name="nn3" #reg3="ngModel" ng-Model email required 
               pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
@@ -28,11 +29,11 @@
               <input type="text" class="form-control  texboxes" placeholder="User ID..." [(ngModel)]="userid" name="nn4" #reg4="ngModel" required>
             </div>
           </div>
-          <span *ngIf="reg3.errors && reg3.errors.pattern" style="color: rgb(246, 139, 180);;font-size: 12px;margin-left: -65px;">Invalid Email Id</span>
+          <!-- <span *ngIf="reg3.errors && reg3.errors.pattern" style="color: rgb(246, 139, 180);;font-size: 12px;margin-left: -65px;">Invalid Email Id</span>
           <span *ngIf="reg3.errors && reg3.errors.required" class="regg">{{mm3}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <span *ngIf="reg4.errors && reg4.errors.required" class="regg">{{mm4}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+          <span *ngIf="reg4.errors && reg4.errors.required" class="regg">{{mm4}}</span>&nbsp;&nbsp;&nbsp;&nbsp; -->
           <br>
-          <div class="row">
+          <div class="row rowses">
             <div class="col-md-6 col-sm-12 col-xm-12 ">
               <input type="password" class="form-control  texboxes" placeholder="Password..." [(ngModel)]="password" name="nn5" #reg5="ngModel" required>
             </div>
@@ -40,37 +41,29 @@
               <input type="password" class="form-control  texboxes" placeholder="Re-Password.." [(ngModel)]="rpassword" (blur)="checkPass(password)" name="nn6" #reg6="ngModel" required>
             </div>
           </div>
-          <span style="color: rgb(246, 139, 180);font-size: 12px;margin-left: 0px;">{{psms}}</span>
+          <!-- <span style="color: rgb(246, 139, 180);font-size: 12px;margin-left: 0px;">{{psms}}</span>
           <span *ngIf="reg5.errors && reg5.errors.required" class="regg">{{mm5}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <span *ngIf="reg6.errors && reg6.errors.required" class="regg">{{mm6}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+          <span *ngIf="reg6.errors && reg6.errors.required" class="regg">{{mm6}}</span>&nbsp;&nbsp;&nbsp;&nbsp; -->
           <br>
-          <div class="row">
+          <div class="row rowses">
             <div class="col-md-12 col-sm-12 col-xm-12">
               <input type="text" class="form-control con" placeholder="Contact No.." [(ngModel)]="contact" name="nn7" #reg7="ngModel"
               pattern="[0-9]*" maxlength="10" minlength="10" required>
             </div>
           </div>
-          <span *ngIf="reg7.errors && reg7.errors.required" class="regg">{{mm7}}</span>&nbsp;
-          <span *ngIf="reg7.errors && reg7.errors.maxlength" class="regg">{{csms}}</span>
+          <!-- <span *ngIf="reg7.errors && reg7.errors.required" class="regg">{{mm7}}</span>&nbsp;
+          <span *ngIf="reg7.errors && reg7.errors.maxlength" class="regg">{{csms}}</span> -->
           <br>
-          <div class="row">
+          <div class="row rowses">
             <div class="col-md-12 col-sm-12 col-xm-12 ">
               <textarea type="text" class="form-control areas"  placeholder="Address Details..." [(ngModel)]="address" name="nn8" #reg8="ngModel" required></textarea>
             </div>
           </div>
-          <span *ngIf="reg8.errors && reg8.errors.required" class="regg">{{mm8}}</span>
+          <!-- <span *ngIf="reg8.errors && reg8.errors.required" class="regg">{{mm8}}</span> -->
           <br>
-          <div class="row">
+          <div class="row rowses">
             <div class="col-md-12 col-sm-12 col-xm-12 ">
-              <textarea type="text" class="form-control areas"  placeholder="Billing Address..." name="nn9" [(ngModel)]="saddress" name="nn9" #reg9="ngModel"
-                required></textarea>
-            </div>
-          </div>
-          <span *ngIf="reg9.errors && reg9.errors.required" class="regg" >{{mm9}}</span>
-          <br>
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xm-12 ">
-                <input type="button" value="Register" class="btn btn-success" style="border-radius: 0px;width:150px;float: right;"
+                <input type="button" value="Register" class="btn btn-success" style="border-radius: 0px;width:150px; background-color: darkseagreen"
                   (click)="funRegister(rfrm)">
                   <input type="reset" value="Reset" data-dismiss="modal" class="btn btn-danger" style="border-radius: 0px;float: right;margin-right: 7px;">
               </div>

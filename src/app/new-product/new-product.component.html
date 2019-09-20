@@ -10,7 +10,7 @@
         
         <hr><br>
       <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-6" *ngFor="let pro of prodata" style="text-align: center;margin-top:40ppx;">
+        <div class="col-md-3 col-sm-6 col-xs-6 ppdetaiss" *ngFor="let pro of prodata">
           <!-- <div class="prodetails"> -->
               <img src="../../assets/uploads/{{pro.images}}" class="img" (click)="funDetail(pro._id)">
              <p class="pnames">{{pro.pname}}</p>

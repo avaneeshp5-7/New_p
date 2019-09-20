@@ -17,15 +17,15 @@ funRegister(regval)
 {
   if(regval.valid==false)
   {
-   this.mm1=" * First name "
-   this.mm2=" * Last name  "
-   this.mm3=" * Enter Email  "
-   this.mm4=" * User id "
-   this.mm5=" * Enter Password "
-   this.mm6=" * Re-password"
-   this.mm7=" * Enter Contact "
-   this.mm8=" * Enter address "
-   this.mm9=" * Shipping address"
+   this.mm1=" * Every fields are required amd must be currect value ! "
+  //  this.mm2=" * Last name  "
+  //  this.mm3=" * Enter Email  "
+  //  this.mm4=" * User id "
+  //  this.mm5=" * Enter Password "
+  //  this.mm6=" * Re-password"
+  //  this.mm7=" * Enter Contact "
+  //  this.mm8=" * Enter address "
+  //  this.mm9=" * Shipping address"
   }
   else
   {

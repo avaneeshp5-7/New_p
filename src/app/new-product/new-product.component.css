@@ -258,6 +258,9 @@ h2::after {
 	margin-top: -15px;
 	cursor: pointer;
 }
+.ppdetaiss{
+	text-align: center;
+}
   @media (max-width: 360px){
 	.pnames{
 		color: #00008B;
@@ -287,5 +290,9 @@ h2::after {
 	.setcent{
 		display: none;
 	}
-	
+	/* .ppdetaiss{
+		text-align: center;
+		margin-top: -36px;
+	}
+	 */
   }
