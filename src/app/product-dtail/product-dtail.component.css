@@ -91,7 +91,7 @@ form {
   font-weight:bold;font-size:25px;
 }
 .pprice{
-  font-weight:bold;color:green;font-size:30px
+  font-weight:bold;color:rgb(12, 212, 12);font-size:30px
 }
 .pdesc{
   font-size:15px;
@@ -104,7 +104,6 @@ form {
   color: rgb(52, 54, 54);
   font-size: 25px;
 }
-
 @media(max-width:361px){
   .poffer{
      font-size: 14px;
