@@ -3,24 +3,22 @@
 <div>
  <div  class="row" *ngFor="let p of prodata">
      <div class="col-md-4 col-sm-12" style="text-align: center">
-            <img src="../../assets/uploads/{{p.images}}" height="340px"   [imageZoom]="" [lensHeight]="40" [lensHeight]="40" width="300" [minZoomLevel]=".2" [maxZoomLevel]=".4" >
+            <img src="../../assets/uploads/{{p.images}}"  class="set_image">
      </div>
-     <div class="col-md-4 col-sm-12" style="margin-top: -7px; text-align: center">
-            <span style="font-weight:bold;font-size:25px;">{{p.pname | uppercase}}</span><br>
-            <span style="font-weight:bold;color:green;font-size:30px">{{p.pprice | currency: "INR"}}</span><br>
+     <div class="col-md-4 col-sm-12 setmndiv">
+            <span class="pname">{{p.pname | uppercase}}</span><br>
+            <span class="pprice">{{p.pprice | currency: "INR"}}</span><br>
             <span style="font-weight:bold"> Color:&nbsp;&nbsp;&nbsp;<span [ngStyle]="{backgroundColor:p.pcolor,color:p.pcolor}"> . . . . </span></span><br>
             
-            <span style="font-size:15px;color: rgb(144, 146, 143)"> {{p.pdesc}}</span><br>
+            <span class="pdesc"> {{p.pdesc}}</span><br>
            
             <span>
                 <rating [(ngModel)]="urat" [max]="5"   (click)="funRat(urat)" [readonly]="false">{{p.urat}}</rating>
             </span>
            <br>
-       
-            <span style="font-weight:bold;color:chocolate">Available Quantity:{{p.quantity}}</span>
+            <span style="color: rgb(18, 163, 90);font-size:15px;font-weight:bold;"> {{p.offer}}</span>
             <br>
-            <span style="color: rgb(17, 175, 59);font-size:15px;font-weight:bold;"> {{p.offer}}</span>
-            <br>
+            <p style="font-weight: bold;color: darkorange;font-size: 12px;">In Stock &nbsp;:&nbsp;{{p.quantity}}</p>
             <span style="text-align: center">
                 <div class="value-button" id="decrease" (click)="decreaseValue()" ><img src="/assets/-.png" width="30px"></div>
                 <input type="number" id="number" value="1"  name="qty"   readonly [(ngModel)]="value">
@@ -39,8 +37,9 @@
             </span>
 
      </div>
+
      <div class="col-md-4 col-sm-12">
-        <p style="color: rgb(52, 54, 54);font-size: 25px; text-align: center">Payment Offer's</p>
+        <p class="poffer">Payment Offer's</p>
         <p class="offers"><span class="spn">&#187;</span>Special PriceGet extra 12% off (price inclusive of discount)T&C</p>
         <p class="offers"><span class="spn">&#187;</span>Bank Offer5% Instant Discount on EMIs with Axis Bank Credit CardT&C</p>
         <p class="offers"><span class="spn">&#187;</span>Bank OfferExtra 5% off* with Axis Bank Buzz Credit CardT&C</p>
@@ -52,7 +51,7 @@
 </div>
 <br><br>
 <div class="container" *ngIf="releted">
-    <h2 style="text-transform: uppercase;font-weight: 300;color: gray">Realted More Product's</h2><hr>
+    <h2 class="morerel">Realted More Product's</h2><hr>
    <div class="row">
      <div class="col-md-3" *ngFor="let rel of releted">
         <img src="../../assets/uploads/{{rel.images}}" width="150px" height="100px" (click)="funDetail(rel._id)"><br><br>

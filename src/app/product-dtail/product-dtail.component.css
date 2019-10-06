@@ -80,3 +80,69 @@ form {
   color: rgb(131, 145, 126);
   padding: 6px;
 }
+.set_image{
+  height:340px;width:300px
+}
+.setmndiv{
+  margin-top: -7px; 
+  /* text-align: center */
+}
+.pname{
+  font-weight:bold;font-size:25px;
+}
+.pprice{
+  font-weight:bold;color:green;font-size:30px
+}
+.pdesc{
+  font-size:15px;
+  color: rgb(144, 146, 143)
+}
+.morerel{
+  text-transform: uppercase;font-weight: 300;color: gray
+}
+.poffer{
+  color: rgb(52, 54, 54);
+  font-size: 25px;
+}
+
+@media(max-width:361px){
+  .poffer{
+     font-size: 14px;
+     font-weight: bold;
+     margin-top: 17px;
+     margin-left: 12px;
+     color: deepskyblue;
+  }
+  .morerel{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    color: cadetblue;
+    margin-top: -35px;
+  }
+  .pname{
+    font-weight: bold;
+    font-size: 16px;
+    color: darkblue;
+  }
+  .pprice{
+    font-weight: bold;
+    color: darkturquoise;
+    font-size: 18px;
+  }
+  .set_image{
+    height: 190px;
+    width: 280px;
+    box-shadow: 0px 0px 16px ghostwhite;
+  }
+  .pdesc{
+    font-size: 13px;
+    color: blueviolet;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+  .setmndiv{
+    margin-top: 10px;
+    margin-left: 28px;
+  }
+ }
