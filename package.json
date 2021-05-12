@@ -35,7 +35,7 @@
     "ngx-img-zoom": "^1.2.3",
     "ngx-rating": "0.0.9",
     "ngx-slider": "0.0.5",
-    "nodemailer": "^5.1.1",
+    "nodemailer": "^6.4.16",
     "passport": "^0.4.0",
     "passport-google-oauth": "^2.0.0",
     "path": "^0.12.7",
